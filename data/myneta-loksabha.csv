@@ -1,0 +1,545 @@
+ST_NAME,PC_NAME,ST_CODE,PC_CODE,Res,PC_NAME2,myneta PC_NAME_myneta PC_Name,myneta Sno,myneta Candidate,myneta Party,myneta Criminal Case,myneta Education,myneta Education Points,myneta Total Assets,myneta Liabilities
+AN,Andaman & Nicobar Islands,U01,1,GEN,Andaman & Nicobar Islands,,29,Bishnu Pada Ray,BJP,1,Graduate,15,5658980,175115
+AP,Zahirabad,S01,5,GEN,Zahirabad,,542,B.B.Patil,TRS,0,Graduate,15,1023173039,83517670
+AP,Araku,S01,18,ST,Araku,,32,Kothapalli Geetha,Yuvajana Sramika Rythu Congress Party,0,Post Graduate,20,65147467,43261606
+AP,Khammam,S01,17,GEN,Khammam,,284,Ponguleti Srinivasa Reddy,Yuvajana Sramika Rythu Congress Party,0,12th Pass,12,346150516,1240000
+AP,Medak,S01,6,GEN,Medak,,345,Kalvakuntla Chandrashekar Rao,TRS,2,Graduate,15,151582464,78753620
+AP,Anakapalli,S01,22,GEN,Anakapalle,Anakapalle,24,Muttamsetti Srinivasa Rao,TDP,1,Illiterate,0,213294327,64899193
+AP,Bhongir,S01,14,GEN,Bhongir,,100,Dr. Narsaiah Boora,TRS,0,Post Graduate,20,202983225,13574088
+AP,Chevella,S01,10,GEN,Chevella,,125,Konda Vishweshwar Reddy,TRS,0,Post Graduate,20,5286230210,74111133
+AP,Srikakulam,S01,19,GEN,Srikakulam,,485,Rammohannaidu Kinjarapu,TDP,0,Post Graduate,20,84173423,0
+AP,Eluru,S01,27,GEN,Eluru,,167,Venkateswara Rao Maganti,TDP,2,10th Pass,10,129394729,55294433
+AP,Secunderabad,S01,8,GEN,Secunderabad,,460,Bandaru Dattatreya,BJP,3,Graduate,15,98255148,405469
+AP,Peddapalle,S01,2,SC,Peddapalle,,407,Balka Suman,TRS,1,Post Graduate,20,7351329,620770
+AP,Rajahmundry,S01,25,GEN,Rajahmundry,,427,Murali Mohan Maganti,TDP,1,12th Pass,12,180822216,12245000
+AP,Nalgonda,S01,13,GEN,Nalgonda,,374,Gutha Sukhender Reddy,INC,1,12th Pass,12,85907866,10103677
+AP,Narsapuram,S01,26,GEN,Narsapuram,,380,Gokaraju Ganga Raju,BJP,1,Graduate,15,2883567122,168501286
+AP,Nagarkurnool,S01,12,SC,Nagarkurnool,,368,Nandi Yellaiah,INC,0,12th Pass,12,7048969,0
+AP,Amlapuram,S01,24,SC,Amalapuram,Amalapuram,16,Pandula Ravindra Babu,TDP,0,Graduate Professional,17,27131000,3000000
+AP,Narasaraopet,S01,31,GEN,Narasaraopet,,379,Rayapati Sambasiva Rao,TDP,2,Graduate,15,595838093,56263516
+AP,Machilipatnam,S01,28,GEN,Machilipatnam,,318,Konakalla Narayana Rao,TDP,0,12th Pass,12,34850000,9800000
+AP,Guntur,S01,30,GEN,Guntur,,199,Jayadev Galla,TDP,0,Graduate,15,6830581361,202334283
+AP,Ongole,S01,33,GEN,Ongole,,392,Yarram Venkata Subbareddy,Yuvajana Sramika Rythu Congress Party,0,Post Graduate,20,735451548,240557614
+AP,Bapatla,S01,32,SC,Bapatla,,66,Malyadri Sriram,TDP,0,Post Graduate,20,45359744,0
+AP,Kurnool,S01,35,GEN,Kurnool,,306,Butta Renuka,Yuvajana Sramika Rythu Congress Party,1,10th Pass,10,2426240513,312279927
+AP,Karimnagar,S01,3,GEN,Karimnagar,,273,Vinod Kumar Boinapally,TRS,0,Graduate Professional,17,97275990,0
+AP,Nizamabad,S01,4,GEN,Nizamabad,,387,Kalvakuntla Kavitha,TRS,8,Graduate Professional,17,61955750,3213119
+AP,Vizianagaram,S01,20,GEN,Vizianagaram,,536,Ashok Gajapathi Raju Pusapati,TDP,0,10th Pass,10,39054905,
+AP,Kakinada,S01,23,GEN,Kakinada,,256,Thota Venkata Narasimham,TDP,0,Graduate,15,17495976,120000
+AP,Adilabad,S01,1,ST,Adilabad,,1,Godam Nagesh,TRS,0,Post Graduate,20,10378857,148784
+AP,Rajampet,S01,41,GEN,Rajampet,,428,P.V.Midhun Reddy,Yuvajana Sramika Rythu Congress Party,1,Post Graduate,20,225984036,8183862
+AP,Nellore,S01,39,GEN,Nellore,,384,Mekapati Rajamohan Reddy,Yuvajana Sramika Rythu Congress Party,2,Graduate Professional,17,361746068,0
+AP,Anantapur,S01,36,GEN,Anantapur,,27,Jutur Chinna Reddy Divakar Reddy,TDP,0,12th Pass,12,226481020,3265000
+AP,Kadapa,S01,38,GEN,Kadapa,,253,Avinash Reddy Yeduguri Sandinti,Yuvajana Sramika Rythu Congress Party,1,Post Graduate,20,70480623,5547296
+AP,Nandyal,S01,34,GEN,Nandyal,,378,S.P.Y Reddy,Yuvajana Sramika Rythu Congress Party,2,Graduate Professional,17,219578079,1077820
+AP,Mahabubabad,S01,16,ST,Mahabubabad,,323,Prof. Azmeera Seetaram Naik,TRS,0,Doctorate,25,8008000,4100000
+AP,Chittoor,S01,42,SC,Chittoor,,132,Naramalli Sivaprasad,TDP,0,Graduate Professional,17,14878003,0
+AP,Tirupati,S01,40,SC,Tirupati,,507,Varaprasad Rao Velagapalli,Yuvajana Sramika Rythu Congress Party,0,Doctorate,25,129128388,3132962
+AP,Hindupur,S01,37,GEN,Hindupur,,213,Kristappa Nimmala,TDP,2,Graduate,15,35793637,998480
+AP,Mahbubnagar,S01,11,GEN,Mahbubnagar,,327,A P Jithender Reddy,TRS,4,Graduate,15,140831576,1386969
+AP,Vijayawada,S01,29,GEN,Vijayawada,,532,Srinivas Kesineni,TDP,3,10th Pass,10,1284122669,715462989
+AP,Visakhapatnam,S01,21,GEN,Visakhapatnam,,535,Dr. Kambhampati Hari Babu,BJP,0,Doctorate,25,90103580,1854856
+AP,Warangal,S01,15,SC,Warangal,,537,Kadiyam Srihari,TRS,6,Post Graduate,20,13495000,
+AP,Hyderabad,S01,9,GEN,Hyderabad,,220,Asaduddin Owaisi,All India Majlis-E-Ittehadul Muslimeen,4,Graduate Professional,17,40611099,14000000
+AP,Malkajgiri,S01,7,GEN,Malkajgiri,,333,Ch.Malla Reddy,TDP,0,12th Pass,12,488525332,6328146
+AR,Arunachal West,S02,1,GEN,Arunachal West,,38,Kiren Rijiju,BJP,0,Graduate Professional,17,12539868,475000
+AR,Arunachal East,S02,2,GEN,Arunachal East,,37,Ninong Ering,INC,0,Graduate,15,88065000,0
+AS,Lakhimpur,S03,14,GEN,Lakhimpur,,310,Sarbananda Sonowal,BJP,0,Graduate Professional,17,14497515,0
+AS,Dibrugarh,S03,13,GEN,Dibrugarh,,159,Rameshwar Teli,BJP,0,10th Pass,10,977943,0
+AS,Jorhat,S03,12,GEN,Jorhat,,250,Kamakhya Prasad Tasa,BJP,0,Post Graduate,20,1694785,0
+AS,Tezpur,S03,9,GEN,Tezpur,,497,Ram Prasad Sarmah,BJP,0,Graduate Professional,17,6655300,0
+AS,Kaliabor,S03,11,GEN,Kaliabor,,258,Gourav Gogoi,INC,0,Post Graduate,20,5473199,1042133
+AS,Mangaldoi,S03,8,GEN,Mangaldoi,,338,Ramen Deka,BJP,0,Graduate,15,14782357,5400953
+AS,Nagaon,S03,10,GEN,Nowgong,Nowgong,391,Rajen Gohain,BJP,1,Graduate Professional,17,24736544,5328287
+AS,Autonomous District,S03,3,ST,Autonomous District,,44,Biren Singh Engti,INC,0,Post Graduate,20,35367390,0
+AS,Dhubri,S03,4,GEN,Dhubri,,156,Badruddin Ajmal,AIUDF,1,Post Graduate,20,432748134,0
+AS,Karimganj,S03,1,SC,Karimganj,,272,Radheshyam Biswas,AIUDF,0,12th Pass,12,7068281,0
+AS,Silchar,S03,2,GEN,Silchar,,473,Sushmita Dev,INC,1,Post Graduate,20,87495844,12008613
+AS,Kokrajhar,S03,5,ST,Kokrajhar,,292,Naba Kumar Sarania,IND,3,12th Pass,12,2155559,0
+AS,Guwahati,S03,7,GEN,Gauhati,Gauhati,185,Smt. Bijoya Chakraborty,BJP,0,Post Graduate,20,12574493,0
+AS,Barpeta,S03,6,GEN,Barpeta,,77,Siraj Uddin Ajmal,AIUDF,0,Graduate,15,670806607,0
+BR,Muzaffarpur,S04,15,GEN,Muzaffarpur,,363,Ajay Nishad,BJP,0,Graduate,15,145712654,989888
+BR,Valmiki Nagar,S04,1,GEN,Valmiki Nagar,,527,Satish Dubey,BJP,3,10th Pass,10,6061576,626789
+BR,Araria,S04,9,GEN,Araria,,35,Taslim Uddin,RJD,4,Literate,5,42368468,1026919
+BR,Gopalganj,S04,17,SC,Gopalganj,,195,Janak Ram,BJP,2,Post Graduate,20,10582664,1039000
+BR,Siwan,S04,18,GEN,Siwan,,479,Om Prakash Yadav,BJP,1,Graduate,15,2213023,1956467
+BR,Vaishali,S04,16,GEN,Vaishali,,526,Rama Kishore Singh,LJP,4,Graduate,15,21610218,3323006
+BR,Jhanjharpur,S04,7,GEN,Jhanjharpur,,245,Birendra Kumar Chaudhary,BJP,0,Post Graduate,20,5158792,0
+BR,Supaul,S04,8,GEN,Supaul,,490,Ranjeet Ranjan,INC,5,12th Pass,12,81242965,0
+BR,Pashchim Champaran,S04,2,GEN,Paschim Champaran,Paschim Champaran,401,Dr. Sanjay Jayaswal,BJP,2,Post Graduate,20,35941299,6197804
+BR,Madhubani,S04,6,GEN,Madhubani,,321,Hukum Deo Narayan Yadav,BJP,0,Graduate,15,77978890,0
+BR,Kishanganj,S04,10,GEN,Kishanganj,,290,Mohammad Asrarul Haque,INC,2,Post Graduate,20,4616629,0
+BR,Darbhanga,S04,14,GEN,Darbhanga,,144,Kirti Azad,BJP,4,Graduate,15,28531267,431860
+BR,Purnia,S04,12,GEN,Purnia,,418,Santosh Kumar,JD(U),3,12th Pass,12,22316594,1406515
+BR,Maharajganj,S04,19,GEN,Maharajganj,,325,Janardan Singh Sigriwal,BJP,4,Graduate,15,4795223,14000
+BR,Madhepura,S04,13,GEN,Madhepura,,320,Rajesh Ranjan Urf Pappu Yadav,RJD,24,Graduate,15,81242966,956306
+BR,Begusarai,S04,24,GEN,Begusarai,,84,Bhola Singh,BJP,0,Doctorate,25,25248102,0
+BR,Arrah,S04,32,GEN,Arrah,,36,Raj Kumar Singh,BJP,0,Graduate Professional,17,48403293,0
+BR,Sasaram,S04,34,SC,Sasaram,,457,Chhedi Paswan,BJP,0,Post Graduate,20,35776803,275000
+BR,Nawada,S04,39,GEN,Nawada,,383,Giriraj Singh,BJP,1,Graduate,15,50054771,0
+BR,Banka,S04,27,GEN,Banka,,62,Jaiprakash Narayan Yadav,RJD,2,Post Graduate,20,27846274,791539
+BR,Nalanda,S04,29,GEN,Nalanda,,373,Kaushlendra Kumar,JD(U),0,12th Pass,12,11812717,477000
+BR,Katihar,S04,11,GEN,Katihar,,277,Shah Tariq Anwar,NCP,1,Graduate,15,104600951,20454853
+BR,Samastipur,S04,23,SC,Samastipur,,450,Ram Chandra Paswan,LJP,3,10th Pass,10,13058612,0
+BR,Khagaria,S04,25,GEN,Khagaria,,282,Choudhary Mahboob Ali Kaiser,LJP,1,Graduate,15,66569502,0
+BR,Pataliputra,S04,31,GEN,Pataliputra,,402,Ram Kripal Yadav,BJP,1,Graduate,15,13989431,2100000
+BR,Buxar,S04,33,GEN,Buxar,,114,Ashwini Kumar Choubey,BJP,0,Graduate,15,22094499,1923552
+BR,Patna Sahib,S04,30,GEN,Patna Sahib,,406,Shatrughan Sinha,BJP,1,Graduate,15,1317405961,168760929
+BR,Bhagalpur,S04,26,GEN,Bhagalpur,,91,Shailesh Kumar Urph Bulo Mandal,RJD,1,12th Pass,12,20216734,0
+BR,Munger,S04,28,GEN,Munger,,360,Veena Devi,LJP,0,8th Pass,8,31162836,0
+BR,Purba Champaran,S04,3,GEN,Purvi Champaran,Purvi Champaran,420,Radha Mohan Singh,BJP,0,Graduate,15,22558073,4270360
+BR,Sheohar,S04,4,GEN,Sheohar,,463,Rama Devi,BJP,6,Graduate Professional,17,308591850,0
+BR,Sitamarhi,S04,5,GEN,Sitamarhi,,476,Ram Kumar Sharma,Rashtriya Lok Samta Party,0,Post Graduate,20,9265000,82000
+BR,Ujiapur,S04,22,GEN,Ujiarpur,Ujiarpur,519,Nityanand Rai,BJP,1,Graduate,15,146743540,3965423
+BR,Hajipur,S04,21,SC,Hajipur,,203,Ram Vilas Paswan,LJP,2,Post Graduate,20,9642023,0
+BR,Karakat,S04,35,GEN,Karakat,,270,Upendra Kushwaha,Rashtriya Lok Samta Party,4,Post Graduate,20,24829741,823834
+BR,Saran (Chhapra),S04,20,GEN,Saran,Saran,456,Rajiv Pratap Rudy,BJP,1,Post Graduate,20,62545997,1008658
+BR,Jamui,S04,40,SC,Jamui,,239,Chirag Kumar Paswan,LJP,0,12th Pass,12,10414470,4458954
+BR,Aurangabad,S04,37,GEN,Aurangabad,,43,Sushil Kumar Singh,BJP,5,Post Graduate,20,127845854,7321626
+BR,Gaya,S04,38,SC,Gaya,,187,Hari Manjhi,BJP,1,8th Pass,8,10184120,2000000
+BR,Jahanabad,S04,36,GEN,Jahanabad,,227,Dr. Arun Kumar,Rashtriya Lok Samta Party,1,Doctorate,25,38846631,1000000
+CG,Janjgir-Champa,S26,3,SC,Janjgir-Champa,,241,Smt. Kamla Patle,BJP,0,12th Pass,12,18224350,0
+CG,Raipur,S26,8,GEN,Raipur,,426,Ramesh Bais,BJP,0,12th Pass,12,73190135,274902
+CG,Surguja,S26,1,ST,Surguja,,493,Kamalbhan Singh,BJP,0,Post Graduate,20,24773173,2995985
+CG,Bilaspur,S26,5,GEN,Bilaspur,,107,Lakhanlal Sau S/O Kalyan Lal Sahu,BJP,0,Post Graduate,20,8661133,306357
+CG,Rajnandgaon,S26,6,GEN,Rajnandgaon,,432,Abhishek Singh,BJP,0,Graduate Professional,17,44093207,0
+CG,Durg,S26,7,GEN,Durg,,165,Tamradwaj Sahu,INC,0,12th Pass,12,21002226,1777720
+CG,Mahasamund,S26,9,GEN,Mahasamund,,326,Chandu Lal Sahu (Chandu Bhaiya) S/O Late Puneen Ram,BJP,0,Graduate Professional,17,20879652,2700000
+CG,Raigarh,S26,2,ST,Raigarh,,425,Vishnudev Sai,BJP,0,10th Pass,10,21576220,1819686
+CG,Kanker,S26,11,ST,Kanker,,264,Vikram Usendi,BJP,0,10th Pass,10,23376000,869000
+CG,Bastar,S26,10,ST,Bastar,,80,Dinesh Kashyap,BJP,1,Post Graduate,20,16108199,2191216
+CG,Korba,S26,4,GEN,Korba,,300,Dr. Banshilal Mahato,BJP,0,Graduate Professional,17,72303762,382905
+CH,Chandigarh,U02,1,GEN,Chandigarh,,118,Smt. Kirron Kher,BJP,0,Post Graduate,20,335343871,1886187
+DD,Daman & Diu,U04,1,GEN,Daman & Diu,,142,Patel Lalubhai Babubhai,BJP,0,8th Pass,8,144931238,1234039
+DL,West Delhi,U05,6,GEN,West Delhi,,540,Parvesh Sahib Singh,BJP,1,Post Graduate,20,107235461,26650000
+DL,North West Delhi,U05,5,SC,North West Delhi,,390,Udit Raj,BJP,1,Doctorate,25,44902363,0
+DL,Chandni Chowk,U05,1,GEN,Chandni Chowk,,119,Dr. Harsh Vardhan,BJP,2,Post Graduate,20,28229308,1780492
+DL,North East Delhi,U05,2,GEN,North East Delhi,,388,Manoj Tiwari,BJP,0,Post Graduate,20,199483924,34645630
+DL,South Delhi,U05,7,GEN,South Delhi,,482,Ramesh Bidhuri,BJP,4,Graduate Professional,17,147493056,0
+DL,East Delhi,U05,3,GEN,East Delhi,,166,Mahesh Giri,BJP,1,10th Pass,10,5216375,400000
+DL,New Delhi,U05,4,GEN,New Delhi,,385,Smt. Meenakshi Lekhi,BJP,0,Graduate Professional,17,349916470,3275562
+DN,Dadra & Nagar Haveli,U03,1,ST,Dadra & Nagar Haveli,,139,Natubhai G. Patel,BJP,5,5th Pass,5,154760217,62286836
+GA,South Goa,S05,2,GEN,South Goa,,483,Adv. Narendra Keshav Sawaikar,BJP,0,Graduate Professional,17,6260382,0
+GA,North Goa,S05,1,GEN,North Goa,,389,Shripad Yesso Naik,BJP,0,Graduate,15,37019154,837843
+GJ,Bardoli,S06,23,ST,Bardoli,,73,Parbhubhai Nagarbhai Vasava,BJP,1,Diploma,14,15909957,1353400
+GJ,Junagadh,S06,13,GEN,Junagadh,,251,Chudasama Rajeshbhai Naranbhai,BJP,1,12th Pass,12,7446059,1110690
+GJ,Surat,S06,24,GEN,Surat,,491,Jardosh Darshnaben Vikrambhai,BJP,0,Graduate,15,18038444,2020458
+GJ,Kheda,S06,17,GEN,Kheda,,287,Chauhan Devusinh Jesingbhai,BJP,0,12th Pass,12,9426376,1047919
+GJ,Ahmadabad (West),S06,8,SC,Ahmedabad West,Ahmedabad West,4,Dr. Solanki Kiritbhai Premjibhai,BJP,0,Post Graduate,20,34085266,208007
+GJ,Jamnagar,S06,12,GEN,Jamnagar,,238,Maadam Poonamben Hematbhai,BJP,0,Graduate,15,174372249,62824615
+GJ,Sabar Kantha,S06,5,GEN,Sabarkantha,Sabarkantha,445,Rathod Dipsinh Shankarsinh,BJP,0,8th Pass,8,20700176,417585
+GJ,Banas Kantha,S06,2,GEN,Banaskantha,Banaskantha,55,Chaudhry Haribhai Parthibhai,BJP,0,Graduate,15,15773564,0
+GJ,Patan,S06,3,GEN,Patan,,403,Vaghela Liladharbhai Khodaji,BJP,0,Graduate Professional,17,15384027,0
+GJ,Panch Mahals,S06,18,GEN,Panchmahal,Panchmahal,399,Chauhan Prabhatsinh Pratapsinh,BJP,3,10th Pass,10,10464000,0
+GJ,Dohad,S06,19,ST,Dahod,Dahod,140,Bhabhor Jasvantsinh Sumanbhai,BJP,0,Graduate Professional,17,19661231,1741547
+GJ,Vadodara,S06,20,GEN,Vadodara,,525,Narendra Modi,BJP,0,Post Graduate,20,15157582,0
+GJ,Anand,S06,16,GEN,Anand,,25,Patel Dilipbhai Manibhai,BJP,4,10th Pass,10,75998610,7632620
+GJ,Amreli,S06,14,GEN,Amreli,,21,Kachhadiya Naranbhai Bhikhabhai,BJP,2,12th Pass,12,34164801,4971590
+GJ,Ahmadabad (East),S06,7,GEN,Ahmedabad East,Ahmedabad East,3,Paresh Dahyalal Rawal,BJP,0,12th Pass,12,795211576,81472461
+GJ,Rajkot,S06,10,GEN,Rajkot,,430,Mohanbhai Kalyanjibhai Kundariya,BJP,0,8th Pass,8,39512950,2335530
+GJ,Surendranagar,S06,9,GEN,Surendranagar,,492,Fatepara Devajibhai Govindbhai,BJP,1,Literate,5,11685000,0
+GJ,Navsari,S06,25,GEN,Navsari,,382,Patil Chandrakant Raghunath,BJP,7,10th Pass,10,744761133,405888122
+GJ,Bharuch,S06,22,GEN,Bharuch,,94,Mansukhbhai Dhanjibhai Vasava,BJP,0,Post Graduate,20,6571062,639000
+GJ,Chhota Udaipur,S06,21,ST,Chhota Udaipur,,127,Rathwa Ramsingbhai Patalbhai,BJP,0,Post Graduate,20,39769675,9763903
+GJ,Porbandar,S06,11,GEN,Porbandar,,414,Radadiya Vithalbhai Hansrajbhai,BJP,10,Graduate,15,73003639,316000
+GJ,Valsad,S06,26,ST,Valsad,,528,Dr. K.C.Patel,BJP,0,Graduate Professional,17,131141867,2381344
+GJ,Gandhinagar,S06,6,GEN,Gandhinagar,,182,Lal Krishna Advani,BJP,1,Graduate Professional,17,75915276,0
+GJ,Mahesana,S06,4,GEN,Mahesana,,328,Patel Jayshreeben Kanubhai,BJP,0,10th Pass,10,13278493,1814057
+GJ,Bhavnagar,S06,15,GEN,Bhavnagar,,95,Shyal Bhartiben Dhirubhai,BJP,0,Graduate Professional,17,7748925,3072058
+HP,Hamirpur,S08,3,GEN,Hamirpur,,205,Kunwar Pushpendra Singh,BJP,1,Post Graduate,20,71265181,2825539
+HP,Kangra,S08,1,GEN,Kangra,,263,Shanta Kumar,BJP,0,Graduate Professional,17,19852104,0
+HP,Shimla,S08,4,SC,Shimla,,465,Virender Kashyap,BJP,0,Post Graduate,20,5228095,0
+HP,Mandi,S08,2,GEN,Mandi,,334,Ram Swaroop Sharma,BJP,0,10th Pass,10,10178871,571823
+HR,Ambala,S07,1,SC,Ambala,,17,Rattan Lal Kataria,BJP,0,Post Graduate,20,42150634,843229
+HR,Krukshetra,S07,2,GEN,Kurukshetra,Kurukshetra,307,Rajkumar Saini,BJP,0,Graduate,15,132880476,23262108
+HR,Sirsa,S07,3,SC,Sirsa,,475,Charanjeet Singh,INLD,0,10th Pass,10,8146887,3260000
+HR,Karnal,S07,5,GEN,Karnal,,274,Ashwini Kumar,BJP,6,Graduate,15,698638135,153937858
+HR,Sonipat,S07,6,GEN,Sonipat,,481,Ramesh Kaushik,BJP,0,Graduate Professional,17,142840716,0
+HR,Hisar,S07,4,GEN,Hisar,,215,Dushyant Chautala,INLD,0,Graduate,15,361326990,68744460
+HR,Rohtak,S07,7,GEN,Rohtak,,444,Deepender Singh,INC,0,Post Graduate,20,358749354,39310300
+HR,Bhiwani - Mahendragarh,S07,8,GEN,Bhiwani-Mahendragarh,Bhiwani-Mahendragarh,99,Dharambir,BJP,0,Graduate,15,50057200,4530000
+HR,Gurgaon,S07,9,GEN,Gurgaon,,201,Inderjit Singh,BJP,0,Graduate Professional,17,250698763,0
+HR,Faridabad,S07,10,GEN,Faridabad,,173,Krishan Pal,BJP,0,Graduate Professional,17,296440144,19707475
+JH,Jamshedpur,S27,9,GEN,Jamshedpur,,543,Bidyut Baran Mahato,BJP,3,12th Pass,12,1414063,
+JH,Singhbhum,S27,10,ST,Singhbhum,,474,Laxman Giluwa,BJP,4,12th Pass,12,8094301,108145
+JH,Rajmahal,S27,1,ST,Rajmahal,,431,Vijay Kumar Hansdak,JMM,1,5th Pass,5,6863306,0
+JH,Dumka,S27,2,ST,Dumka,,164,Shibu Soren,JMM,0,10th Pass,10,46760684,1479721
+JH,Godda,S27,3,GEN,Godda,,193,Nishikant Dubey,BJP,5,Post Graduate,20,155633719,0
+JH,Palamu,S27,13,SC,Palamau,Palamau,396,Vishnu Dayal Ram,BJP,0,Graduate,15,24753886,0
+JH,Hazaribagh,S27,14,GEN,Hazaribagh,,212,Jayant Sinha,BJP,0,Post Graduate,20,556754579,86380600
+JH,Dhanbad,S27,7,GEN,Dhanbad,,150,Pashupati Nath Singh,BJP,1,Graduate,15,24248150,0
+JH,Kodarma,S27,5,GEN,Kodarma,,291,Ravindra Kumar Ray,BJP,0,Doctorate,25,10564046,200000
+JH,Lohardaga,S27,12,ST,Lohardaga,,314,Sudarshan Bhagat,BJP,0,Graduate,15,9031009,178967
+JH,Khunti,S27,11,ST,Khunti,,289,Karia Munda,BJP,0,Post Graduate,20,7474796,0
+JH,Chatra,S27,4,GEN,Chatra,,121,Sunil Kumar Singh,BJP,0,Post Graduate,20,174744806,950052
+JH,Ranchi,S27,8,GEN,Ranchi,,438,Ramtahal Choudhary,BJP,0,10th Pass,10,10743950,0
+JH,Giridih,S27,6,GEN,Giridih,,192,Ravindra Kumar Pandey,BJP,0,Graduate,15,73376970,1970628
+JK,Leh (Ladakh),S09,4,GEN,Ladakh,Ladakh,309,Thupstan Chhewang,BJP,0,Graduate Professional,17,19852701,80000
+JK,Jammu,S09,6,GEN,Jammu,,237,Jugal Kishore,BJP,0,10th Pass,10,26824308,300000
+JK,Srinagar,S09,2,GEN,Srinagar,,486,Tariq Hameed Karra,JKPDP,0,Graduate Professional,17,984556436,1500000
+JK,Anantnag,S09,3,GEN,Anantnag,,28,Mehbooba Mufti,JKPDP,1,Graduate Professional,17,5200000,0
+JK,Baramula,S09,1,GEN,Baramulla,Baramulla,69,Muzaffar Hussain Baig,JKPDP,0,Post Graduate,20,200707183,11401285
+JK,Udhampur,S09,5,GEN,Udhampur,,517,Dr. Jitendra Singh,BJP,0,Graduate Professional,17,38464932,11881
+JK,,,-1,,,,,,,,,,,
+KA,Gulbarga,S10,5,SC,Gulbarga,,197,Mallikarjun Kharge,INC,0,Graduate Professional,17,102220880,7410154
+KA,Bijapur,S10,4,SC,Bijapur,,104,Ramesh Jigajinagi,BJP,2,Graduate,15,89429828,5305043
+KA,Chikkodi,S10,1,GEN,Chikkodi,,130,Prakash Hukkeri,INC,0,12th Pass,12,75717628,3635650
+KA,Raichur,S10,6,ST,Raichur,,422,B.V.Nayak,INC,0,Graduate Professional,17,73502466,0
+KA,Koppal,S10,8,GEN,Koppal,,298,Sanganna A. Karadi,BJP,1,10th Pass,10,12127000,6848000
+KA,Haveri,S10,10,GEN,Haveri,,211,Udasi Shivakumar Channabasappa,BJP,0,Graduate,15,576693538,54423645
+KA,Davanagere,S10,13,GEN,Davanagere,,147,G.M. Siddeshwara,BJP,0,10th Pass,10,232375703,17951455
+KA,Chikkaballapura,S10,27,GEN,Chikkballapur,Chikkballapur,129,M Veerappa Moily,INC,0,Graduate Professional,17,137366682,39433827
+KA,Udupi Chikmagalur,S10,15,GEN,Udupi Chikmagalur,,518,Shobha Karandlaje,BJP,0,Post Graduate,20,72089452,38119792
+KA,Tumkur,S10,19,GEN,Tumkur,,514,S.P.Muddahanumegowda,INC,0,Graduate Professional,17,30273812,0
+KA,Kolar,S10,28,SC,Kolar,,293,K H Muniyappa,INC,0,Graduate Professional,17,184663000,27863000
+KA,Bangalore Rural,S10,23,GEN,Bangalore Rural,,59,D.K.Suresh,INC,8,12th Pass,12,858713138,184854756
+KA,Dharwad,S10,11,GEN,Dharwad,,153,Pralhad Joshi,BJP,1,Graduate,15,41979658,6739989
+KA,Bangalore North,S10,24,GEN,Bangalore North,,58,D.V. Sadananda Gowda,BJP,0,Graduate Professional,17,98888874,37020152
+KA,Dakshina Kannada,S10,17,GEN,Dakshina Kannada,,141,Nalin Kumar Katil,BJP,1,10th Pass,10,8789001,1493367
+KA,Mysore,S10,21,GEN,Mysore,,364,Prathap Simha,BJP,0,Post Graduate,20,6321591,4399048
+KA,Chamrajnagar,S10,22,SC,Chamarajanagar,Chamarajanagar,116,R. Dhruvanarayana,INC,0,Post Graduate,20,31519950,2605818
+KA,Mandya,S10,20,GEN,Mandya,,337,C.S.Puttaraju,JD(S),0,12th Pass,12,45209196,11231000
+KA,Bellary,S10,9,ST,Bellary,,86,B Sreeramulu,BJP,8,Graduate,15,151392844,4050947
+KA,Chitradurga,S10,18,SC,Chitradurga,,131,B.N.Chandrappa,INC,0,Post Graduate,20,48303759,13800000
+KA,Bidar,S10,7,GEN,Bidar,,103,Bhagwanth,BJP,0,Graduate Professional,17,56559290,16829000
+KA,Uttara Kannada,S10,12,GEN,Uttara Kannada,,523,Anantkumar Hegde,BJP,0,12th Pass,12,32367360,15139611
+KA,Shimoga,S10,14,GEN,Shimoga,,466,B.S. Yeddyurappa,BJP,9,12th Pass,12,69746267,500000
+KA,Hassan,S10,16,GEN,Hassan,,208,H.D. Devegowda,JD(S),0,Diploma,14,42721242,8648283
+KA,Belgaum,S10,2,GEN,Belgaum,,85,Suresh Angadi,BJP,1,Graduate Professional,17,417003065,366283849
+KA,Bangalore South,S10,26,GEN,Bangalore South,,60,Ananth Kumar,BJP,0,Graduate Professional,17,45224706,2883233
+KA,Bangalore Central,S10,25,GEN,Bangalore Central,,57,P.C. Mohan,BJP,2,12th Pass,12,475796999,261111285
+KA,Bagalkot,S10,3,GEN,Bagalkot,,47,P.C. Gaddigoudar,BJP,0,Graduate Professional,17,36362500,9589199
+KL,Malappuram,S11,6,GEN,Malappuram,,330,E. Ahamed,IUML,0,Graduate Professional,17,11818952,0
+KL,Pathanamthitta,S11,17,GEN,Pathanamthitta,,404,Anto Antony,INC,0,Graduate,15,5410884,4211050
+KL,Mavelikkara,S11,16,SC,Mavelikkara,,342,Kodikunnil Suresh,INC,1,Graduate Professional,17,13251330,3439654
+KL,Thiruvananthapuram,S11,20,GEN,Thiruvananthapuram,,501,Dr. Shashi Tharoor,INC,0,Doctorate,25,230275186,0
+KL,Palakkad,S11,8,GEN,Palakkad,,395,M B Rajesh,CPI(M),11,Graduate Professional,17,4676316,700680
+KL,Thrissur,S11,10,GEN,Thrissur,,503,C N Jayadevan,CPI,3,Post Graduate,20,20041642,294000
+KL,Alathur,S11,9,SC,Alathur,,10,P.K.Biju,CPI(M),0,Post Graduate,20,3231047,341749
+KL,Kasaragod,S11,1,GEN,Kasaragod,,276,P Karunakaran,CPI(M),6,Post Graduate,20,5900345,0
+KL,Attingal,S11,19,GEN,Attingal,,41,A Sampath,CPI(M),1,Doctorate,25,17791149,1421392
+KL,Vadakara,S11,3,GEN,Vadakara,,524,Mullappally Ramachandran,INC,0,Post Graduate,20,9225000,2160000
+KL,Kozhikode,S11,5,GEN,Kozhikode,,303,M .K Raghavan,INC,0,Graduate,15,6164901,1558128
+KL,Kannur,S11,2,GEN,Kannur,,267,P K Sreemathi,CPI(M),8,"Pre-degree, Teacher's training",13,16939970,0
+KL,Chalakudy,S11,11,GEN,Chalakudy,,115,Innocent,IND,0,8th Pass,8,54474761,1303000
+KL,Idukki,S11,13,GEN,Idukki,,221,Adv.Joice George,IND,4,Post Graduate,20,17396207,9417720
+KL,Alappuzha,S11,15,GEN,Alappuzha,,9,K C Venugopal,INC,0,Post Graduate,20,12856075,456010
+KL,Kottayam,S11,14,GEN,Kottayam,,302,Jose K Mani,KC(M),0,Post Graduate,20,26236371,0
+KL,Kollam,S11,18,GEN,Kollam,,297,N.K.Premachandran,RSP,1,Graduate Professional,17,16228989,3114638
+KL,Ernakulam,S11,12,GEN,Ernakulam,,168,K.V. Thomas,INC,0,Post Graduate,20,11848550,522352
+KL,Wayanad,S11,4,GEN,Wayanad,,539,M I Shanavas,INC,0,Post Graduate,20,27122055,7711000
+KL,Ponnani,S11,7,GEN,Ponnani,,413,E. T. Mohammed Basheer,IUML,0,10th Pass,10,13216259,0
+MN,Inner Manipur,S14,1,GEN,Inner Manipur,,223,Dr. Thokchom Meinya,INC,0,Doctorate,25,3825200,0
+MN,Outer Manipur,S14,2,ST,Outer Manipur,,394,Thangso Baite,INC,0,Post Graduate,20,5947000,880000
+MP,Bhind,S12,2,SC,Bhind,,97,Bhagirath Prasad,BJP,0,Doctorate,25,21240286,3687610
+MP,Balaghat,S12,15,GEN,Balaghat,,51,Bodhsingh Bhagat,BJP,0,Graduate,15,24959436,1393732
+MP,Hoshangabad,S12,17,GEN,Hoshangabad,,217,Uday Pratap Singh,BJP,1,Graduate,15,133375092,3775714
+MP,Dhar,S12,25,ST,Dhar,,151,Savitri Thakur,BJP,0,10th Pass,10,9606464,1582845
+MP,Indore,S12,26,GEN,Indore,,222,Sumitra Mahajan,BJP,0,Post Graduate,20,18732234,3539000
+MP,Gwalior,S12,3,GEN,Gwalior,,202,Narendra Singh Tomar,BJP,1,Graduate,15,11412622,4531444
+MP,Sidhi,S12,11,GEN,Sidhi,,470,Riti Pathak,BJP,0,Post Graduate,20,33416561,0
+MP,Rajgarh,S12,20,GEN,Rajgarh,,429,Rodmal Nagar,BJP,0,Graduate,15,28569974,3586473
+MP,Sagar,S12,5,GEN,Sagar,,446,Laxmi Narayan Yadav,BJP,1,Graduate Professional,17,23962099,956348
+MP,Damoh,S12,7,GEN,Damoh,,143,Prahalad Singh Patel,BJP,0,Graduate Professional,17,39586235,12429302
+MP,Shahdol,S12,12,ST,Shahdol,,461,Dalpat Singh Paraste,BJP,0,Graduate Professional,17,5524870,0
+MP,Dewas,S12,21,SC,Dewas,,149,Manohar Untwal,BJP,0,12th Pass,12,6336490,1448086
+MP,Ujjain,S12,22,SC,Ujjain,,520,Chintamani Malviya,BJP,0,Doctorate,25,18888754,5483153
+MP,Bhopal,S12,19,GEN,Bhopal,,101,Alok Sanjar,BJP,0,Graduate Professional,17,14594066,300000
+MP,Vidisha,S12,18,GEN,Vidisha,,531,Sushma Swaraj,BJP,0,Graduate Professional,17,175516422,6500000
+MP,Ratlam,S12,24,ST,Ratlam,,439,Dileep Singh Bhuriya,BJP,0,10th Pass,10,12259882,0
+MP,Rewa,S12,10,GEN,Rewa,,442,Janardan Mishra,BJP,0,Graduate Professional,17,10156568,106977
+MP,Satna,S12,9,GEN,Satna,,459,Ganesh Singh,BJP,2,Post Graduate,20,37800000,0
+MP,Mandsaur,S12,23,GEN,Mandsaur,Mandsaur,336,Sudhir Gupta,BJP,0,Post Graduate,20,57429237,3058993
+MP,Guna,S12,4,GEN,Guna,,198,Jyotiraditya M. Scindia,INC,0,Post Graduate,20,330888751,795000
+MP,Chhindwara,S12,16,GEN,Chhindwara,,126,Kamal Nath,INC,0,Graduate,15,2069080434,51172087
+MP,Betul,S12,29,ST,Betul,,88,Jyoti Dhurve,BJP,2,Post Graduate,20,26232000,1000000
+MP,Khargone,S12,27,ST,Khargone,,286,Subhash Patel,BJP,0,Post Graduate,20,36138699,2300000
+MP,Jabalpur,S12,13,GEN,Jabalpur,,224,Rakesh Singh Urf Ghanshyam Singh,BJP,1,Graduate,15,26564889,0
+MP,Mandla,S12,14,ST,Mandla,,335,Faggan Singh Kulaste,BJP,2,Post Graduate,20,25738420,98311
+MP,Morena,S12,1,GEN,Morena,,353,Anoop Mishra,BJP,0,12th Pass,12,110523112,6878160
+MP,Tikamgarh,S12,6,SC,Tikamgarh,,504,Dr. Virendra Kumar,BJP,0,Doctorate,25,8764635,0
+MP,Khajuraho,S12,8,GEN,Khajuraho,,283,Nagendra Singh,BJP,0,Graduate,15,44538002,0
+MP,Khandwa,S12,28,GEN,Khandwa,,285,Nandkumar Singh Chouhan,BJP,0,Post Graduate,20,40188989,9561188
+ML,Tura,S15,2,ST,Tura,,515,Purno Agitok Sangma,NPP,0,Post Graduate,20,215134618,0
+ML,Shillong,S15,1,ST,Shillong,,464,Vincent H. Pala,INC,0,Graduate Professional,17,497108058,0
+MH,Buldana,S13,5,GEN,Buldhana,Buldhana,113,Jadhav Prataprao Ganpatrao,SHS,2,12th Pass,12,36033147,684092
+MH,Madha,S13,43,GEN,Madha,,319,Mohite Patil Vijaysinh Shankarrao,NCP,1,10th Pass,10,170253390,9774791
+MH,Satara,S13,45,GEN,Satara,,458,Shrimant Chh. Udayanraje Pratapsinha Bhonsale,NCP,23,12th Pass,12,606089208,312941
+MH,Jalgaon,S13,3,GEN,Jalgaon,,233,Patil Ashok Tapiram,BJP,0,Graduate,15,226180395,0
+MH,Akola,S13,6,GEN,Akola,,8,Dhotre Sanjay Shyamrao,BJP,3,Graduate Professional,17,48501735,6928458
+MH,Sangli,S13,44,GEN,Sangli,,453,Sanjaykaka Patil,BJP,0,10th Pass,10,108791027,19198050
+MH,Solapur,S13,42,SC,Solapur,,480,Sharad Bansode,BJP,1,Graduate Professional,17,60152887,7604375
+MH,Amravati,S13,7,SC,Amravati,,20,Adsul Anandrao Vithoba,SHS,1,Graduate,15,32596257,1587104
+MH,Ramtek,S13,9,SC,Ramtek,,436,Krupal Balaji Tumane,SHS,1,Graduate,15,46564362,216000
+MH,Nandurbar,S13,1,ST,Nandurbar,,377,Dr.Gavit Heena Vaijaykumar,BJP,0,Graduate Professional,17,131103963,7571753
+MH,Bhandara - Gondiya,S13,11,GEN,Bhandara-Gondiya,Bhandara-Gondiya,92,Nanabhau Falgunrao Patole,BJP,5,Graduate,15,12738190,0
+MH,Wardha,S13,8,GEN,Wardha,,538,Ramdas Chandrabhanji Tadas,BJP,5,10th Pass,10,33628998,1749314
+MH,Shirur,S13,36,GEN,Shirur,,468,Adhalrao Shivaji Dattatrey,SHS,10,Pre Degree,14,253880475,61810866
+MH,Beed,S13,39,GEN,Beed,,83,Munde Gopinathrao Pandurang,BJP,3,Graduate Professional,17,380072890,335729817
+MH,Maval,S13,33,GEN,Maval,,341,Barne Shrirang Chandu,SHS,2,8th Pass,8,665047926,11799786
+MH,Parbhani,S13,17,GEN,Parbhani,,400,Jadhav Sanjay (Bandu) Haribhau,SHS,7,10th Pass,10,31016711,5976851
+MH,Raigarh,S13,32,GEN,Raigarh,,425,Vishnudev Sai,BJP,0,10th Pass,10,21576220,1819686
+MH,Osmanabad,S13,40,GEN,Osmanabad,,393,Gaikwad Ravindra Vishwanath,SHS,8,Post Graduate,20,32852793,5962702
+MH,Hatkanangle,S13,48,GEN,Hatkanangle,,210,Raju Shetty,Swabhimani Paksha,12,10th Pass,10,9896221,1504152
+MH,Dhule,S13,2,GEN,Dhule,,157,Bhamare Subhash Ramrao,BJP,0,Post Graduate,20,125833320,660757
+MH,Garhchiroli - Chimur,S13,12,ST,Gadchiroli-Chimur,Gadchiroli-Chimur,181,Ashok Mahadeorao Nete,BJP,0,12th Pass,12,12125676,5830550
+MH,Raver,S13,4,GEN,Raver,,441,Khadase Raksha Nikhil,BJP,0,Graduate,15,144222841,0
+MH,Biwandi,S13,23,GEN,Bhiwandi,Bhiwandi,98,Kapil Moreshwar Patil,BJP,0,Graduate,15,363758831,10697367
+MH,Dindori,S13,20,ST,Dindori,,161,Chavan Harishchandra Deoram,BJP,1,Graduate,15,37240147,881137
+MH,Jalna,S13,18,GEN,Jalna,,234,Danve Raosaheb Dadarao,BJP,4,Graduate,15,184411862,8534130
+MH,Aurangabad,S13,19,GEN,Aurangabad,,43,Sushil Kumar Singh,BJP,5,Post Graduate,20,127845854,7321626
+MH,Chandrapur,S13,13,GEN,Chandrapur,,120,Ahir Hansraj Gangaram,BJP,11,10th Pass,10,15548000,99500
+MH,Nashik,S13,21,GEN,Nashik,,381,Godse Hement Tukaram,SHS,1,12th Pass,12,83611067,23559648
+MH,Shirdi,S13,38,SC,Shirdi,,467,Lokhande Sadashiv Kisan,SHS,1,10th Pass,10,38294539,1497168
+MH,Hingoli,S13,15,GEN,Hingoli,,214,Rajeev Shankarrao Satav,INC,0,Graduate Professional,17,49681499,584357
+MH,Ahmadnagar,S13,37,GEN,Ahmednagar,Ahmednagar,5,Gandhi Dilipkumar Mansukhlal,BJP,16,10th Pass,10,65316725,34176876
+MH,Palghar,S13,22,ST,Palghar,,397,Wanaga Chintaman Navasha,BJP,0,Graduate Professional,17,5809644,401000
+MH,Latur,S13,41,SC,Latur,,313,Gaikwad Sunil Baliram,BJP,0,Doctorate,25,17463251,0
+MH,Baramati,S13,35,GEN,Baramati,,68,Supriya Sule,NCP,0,Graduate,15,1139090851,0
+MH,Ratnagiri - Sindhudurg,S13,46,GEN,Ratnagiri Sindhudurg,Ratnagiri Sindhudurg,440,Vinayak Bhaurao Raut,SHS,5,Post Graduate,20,44568629,2370842
+MH,Kolhapur,S13,47,GEN,Kolhapur,,294,Dhananjay Bhimrao Mahadik,NCP,1,Graduate,15,448882000,71333000
+MH,Thane,S13,25,GEN,Thane,,498,Vichare Rajan Baburao,SHS,13,10th Pass,10,102091612,13054217
+MH,Mumbai North,S13,26,GEN,Mumbai North,,354,Gopal Chinayya Shetty,BJP,10,5th Pass,5,95617889,0
+MH,Mumbai North-West,S13,27,GEN,Mumbai North West,Mumbai North West,357,Gajanan Chandrakant Kirtikar,SHS,0,Graduate,15,58352000,2257000
+MH,Mumbai North-East,S13,28,GEN,Mumbai North East,Mumbai North East,356,Kirit Somaiya,BJP,10,Doctorate,25,72156258,6593325
+MH,Mumbai North-Central,S13,29,GEN,Mumbai North Central,Mumbai North Central,355,Poonam Mahajan Alias Poonam Vajendla Rao,BJP,0,Diploma,14,1080867626,414479088
+MH,Mumbai South,S13,31,GEN,Mumbai South,,358,Sawant Arvind Ganpat,SHS,1,Graduate,15,13067446,0
+MH,Mumbai South-Central,S13,30,GEN,Mumbai South Central,Mumbai South Central,359,Shewale Rahul Ramesh,SHS,1,Diploma,14,13304397,10502345
+MH,Kalyan,S13,24,GEN,Kalyan,,260,Dr.Shrikant Eknath Shinde,SHS,0,Graduate Professional,17,998000,0
+MH,Pune,S13,34,GEN,Pune,,416,Anil Shirole,BJP,2,Graduate,15,227615279,4781007
+MH,Nanded,S13,16,GEN,Nanded,,376,Shri Chavan Ashokrao Shankarrao,INC,0,Post Graduate,20,388758910,30513286
+MH,Yavatmal - Washim,S13,14,GEN,Yavatmal-Washim,Yavatmal-Washim,541,Gawali Bhavana Pundlikrao,SHS,4,Graduate,15,60886040,7368967
+MH,Nagpur,S13,10,GEN,Nagpur,,371,Gadkari Nitin Jairam,BJP,4,Graduate Professional,17,153704475,19004037
+MZ,Mizoram,S16,1,ST,Mizoram,,350,C. L. Ruala,INC,0,Graduate,15,25733421,0
+NL,Nagaland,S17,1,GEN,Nagaland,,366,Neiphiu Rio,NPF,0,Graduate,15,315834264,0
+OD,Bhadrak,S18,7,SC,Bhadrak,,90,Arjun Charan Sethi,BJD,0,Post Graduate,20,6730000,2424000
+OD,Jajapur,S18,8,SC,Jajpur,Jajpur,230,Rita Tarai,BJD,0,12th Pass,12,1622003,0
+OD,Sambalpur,S18,3,GEN,Sambalpur,,451,Nagendra Kumar Pradhan,BJD,0,Graduate Professional,17,12796623,1461565
+OD,Baleshwar,S18,6,GEN,Balasore,Balasore,52,Rabindra Kumar Jena,BJD,0,Post Graduate,20,570139716,55893020
+OD,Kendujhar,S18,4,ST,Keonjhar,Keonjhar,280,Sakuntala Laguri,BJD,0,10th Pass,10,101531625,0
+OD,Mayurbhanj,S18,5,ST,Mayurbhanj,,344,Rama Chandra Hansdah,BJD,0,Graduate,15,3630888,0
+OD,Sundargarh,S18,2,ST,Sundargarh,,489,Jual Oram,BJP,1,Diploma,14,24202170,0
+OD,Bargarh,S18,1,GEN,Bargarh,,75,Prabhas Kumar Singh,BJD,0,Doctorate,25,5786971,670000
+OD,Dhenkanal,S18,9,GEN,Dhenkanal,,155,Tathagata Satpathy,BJD,7,Graduate,15,35434099,0
+OD,Bolangir,S18,10,GEN,Bolangir,,110,Kalikesh Narayan Singh Deo,BJD,2,Graduate,15,87955818,24410449
+OD,Kalahandi,S18,11,GEN,Kalahandi,,257,Arka Keshari Deo,BJD,0,Graduate,15,69822063,831688
+OD,Kandhamal,S18,13,GEN,Kandhamal,,262,Hemendra Chandra Singh,BJD,2,Graduate,15,503907437,4786551
+OD,Kendrapara,S18,15,GEN,Kendrapara,,279,Sri Baijayant Panda,BJD,0,Graduate Professional,17,312432726,300000
+OD,Cuttack,S18,14,GEN,Cuttack,,138,Bhartruhari Mahatab,BJD,0,Post Graduate,20,88834098,0
+OD,Bhubaneswar,S18,18,GEN,Bhubaneswar,,102,"Prasanna Kumar Patasani,",BJD,0,Post Graduate,20,13557443,9590067
+OD,Aska,S18,19,GEN,Aska,,40,Ladu Kishore Swain,BJD,0,Graduate,15,3488390,25000
+OD,Jagatsinghpur,S18,16,SC,Jagatsinghpur,,226,Kulamani Samal,BJD,0,Graduate Professional,17,25158570,0
+OD,Nabarangapur,S18,12,ST,Nabarangpur,Nabarangpur,365,Balabhadra Majhi,BJD,0,Graduate,15,52977088,705404
+OD,Koraput,S18,21,ST,Koraput,,299,Jhina Hikaka,BJD,0,Post Graduate,20,8800000,0
+OD,Puri,S18,17,GEN,Puri,,417,Pinaki Mishra,BJD,0,Graduate Professional,17,1370991203,19975839
+OD,Berhampur.,S18,20,GEN,Berhampur,Berhampur,87,Sidhant Mohapatra,BJD,0,Graduate,15,16462430,1183828
+PB,Jalandhar,S19,4,SC,Jalandhar,,231,Santokh Singh Chaudhary,INC,0,Graduate Professional,17,104040531,6194323
+PB,Hoshiarpur,S19,5,SC,Hoshiarpur,,218,Vijay Sampla,BJP,0,10th Pass,10,15164322,4020543
+PB,Fatehgarh Sahib,S19,8,SC,Fatehgarh Sahib,,176,Harinder Singh Khalsa,AAP,0,Post Graduate,20,35588128,6700000
+PB,Firozpur,S19,10,GEN,Firozpur,,180,Sher Singh Ghubaya,SAD,0,10th Pass,10,96121057,5133876
+PB,Patiala,S19,13,GEN,Patiala,,405,Dr.Dharam Vira Gandhi,AAP,0,Graduate Professional,17,45115421,0
+PB,Bathinda,S19,11,GEN,Bathinda,,82,Harsimrat Kaur Badal,SAD,0,10th Pass,10,1081664910,412634299
+PB,Gurdaspur,S19,1,GEN,Gurdaspur,,200,Vinod Khanna,BJP,0,Graduate,15,669343376,12695306
+PB,Amritsar,S19,2,GEN,Amritsar,,22,Captain Amarinder Singh,INC,3,Graduate,15,863564071,4853456
+PB,Khadoor Sahib,S19,3,GEN,Khadoor Sahib,,281,Ranjit Singh Brahmpura,SAD,0,8th Pass,8,177814755,4200000
+PB,Anandpur Sahib,S19,6,GEN,Anandpur Sahib,,26,Prem Singh Chandumajra,SAD,0,Post Graduate,20,141599902,2248200
+PB,Sangrur,S19,12,GEN,Sangrur,,454,Bhagwant Mann,AAP,0,12th Pass,12,43057512,16281200
+PB,Ludhiana,S19,7,GEN,Ludhiana,,316,Ravneet Singh Bittu,INC,0,12th Pass,12,31509170,192000
+PB,Faridkot,S19,9,SC,Faridkot,,174,Prof. Sadhu Singh,AAP,0,Post Graduate,20,5879516,70000
+PY,Puducherry,U07,1,GEN,Pondicherry,Pondicherry,412,R. Radhakrishnan,All India N.R. Congress,0,Post Graduate,20,77724418,7658530
+RJ,Churu,S20,3,GEN,Churu,,134,Rahul Kaswan,BJP,0,Graduate,15,25721266,5386104
+RJ,Bikaner,S20,2,SC,Bikaner,,106,Arjun Ram Meghwal,BJP,0,Post Graduate,20,18142863,1216408
+RJ,Jhunjhunun,S20,4,GEN,Jhunjhunu,Jhunjhunu,248,Santosh Ahlawat,BJP,0,Post Graduate,20,35897048,5704000
+RJ,Alwar,S20,8,GEN,Alwar,,15,Mahant Chand Nath Yogi,BJP,0,Graduate,15,199653,0
+RJ,Jodhpur,S20,16,GEN,Jodhpur,,249,Gajendrasingh Shekhawat,BJP,0,Post Graduate,20,143491494,92198588
+RJ,Sikar,S20,5,GEN,Sikar,,471,Sumedha Nand Saraswati,BJP,0,MA,16,34311,0
+RJ,Nagaur,S20,14,GEN,Nagaur,,369,C R Choudhary,BJP,0,Post Graduate,20,17921949,0
+RJ,Tonk - Sawai Madhopur,S20,12,GEN,Tonk-Sawai Madhopur,Tonk-Sawai Madhopur,511,Sukhbir Singh Jaunapuria,BJP,0,12th Pass,12,714124612,0
+RJ,Bharatpur,S20,9,SC,Bharatpur,,93,Bahadur Singh,BJP,0,Literate,5,19142363,1333100
+RJ,Barmer,S20,17,GEN,Barmer,,76,Col. Sona Ram,BJP,1,Graduate Professional,17,174678454,5584331
+RJ,Ajmer,S20,13,GEN,Ajmer,,6,Sanwar Lal Jat,BJP,0,Doctorate,25,18064656,0
+RJ,Karauli - Dhaulpur,S20,10,SC,Karauli-Dholpur,Karauli-Dholpur,271,Manoj Rajoria,BJP,0,Post Graduate,20,28636113,3277324
+RJ,Jhalawar - Baran,S20,25,GEN,Jhalawar-Baran,Jhalawar-Baran,244,Dushyant,BJP,0,Post Graduate,20,239006838,2798782
+RJ,Rajsamand,S20,22,GEN,Rajsamand,,433,Hari Om Singh Rathore,BJP,0,Graduate,15,188310824,2728752
+RJ,Jalore,S20,18,GEN,Jalore,,235,Devji Patel,BJP,0,10th Pass,10,51846777,12780726
+RJ,Bhilwara,S20,23,GEN,Bhilwara,,96,Subhash Chandra Baheria,BJP,0,Graduate,15,142870042,8665902
+RJ,Kota,S20,24,GEN,Kota,,301,Om Birla,BJP,2,Post Graduate,20,25870497,997366
+RJ,Pali,S20,15,GEN,Pali,,398,P P Choudhary,BJP,0,Graduate Professional,17,353503467,7892216
+RJ,Ganganagar,S20,1,SC,Ganganagar,,183,Nihalchand,BJP,0,Graduate,15,10861172,1611557
+RJ,Dausa,S20,11,ST,Dausa,,146,Harish Chandra,BJP,0,Graduate,15,60394789,45000
+RJ,Chittaurgarh,S20,21,GEN,Chittorgarh,Chittorgarh,133,Chandra Prakash,BJP,0,Graduate,15,14134693,687284
+RJ,Jaipur,S20,7,GEN,Jaipur,,228,Ramcharan Bohara,BJP,0,12th Pass,12,135809546,23871000
+RJ,Banswara,S20,20,ST,Banswara,,65,Manshankar Ninama,BJP,0,8th Pass,8,4040285,870146
+RJ,Udaipur,S20,19,ST,Udaipur,,516,Arjunlal Meena,BJP,0,Post Graduate,20,17049951,8195866
+RJ,Jaipur Rural,S20,6,GEN,Jaipur Rural,,229,Rajyavardhan Singh Rathore,BJP,0,Graduate,15,83734044,117065
+SK,Sikkim,S21,1,GEN,Sikkim,,472,Prem Das Rai,SDF,0,Post Graduate,20,32389223,0
+TN,Erode,S22,17,GEN,Erode,,169,Selvakumara Chinnayan S,AIADMK,0,Post Graduate,20,47459708,0
+TN,Tenkasi,S22,37,SC,Tenkasi,,496,Vasanthi.M,AIADMK,0,Post Graduate,20,24014922,0
+TN,Tirunelveli,S22,38,GEN,Tirunelveli,,506,Prabakaran.K.R.P,AIADMK,0,Graduate Professional,17,2764500,0
+TN,Kanniyakumari,S22,39,GEN,Kanniyakumari,,266,Radhakrishnan P.,BJP,0,Graduate Professional,17,40963269,0
+TN,Coimbatore,S22,20,GEN,Coimbatore,,135,"Nagarajan, P.",AIADMK,0,Graduate Professional,17,34306545,2235538
+TN,Mayiladuthurai,S22,28,GEN,Mayiladuthurai,,343,Bharathi Mohan R.K,AIADMK,1,12th Pass,12,7378589,969756
+TN,Perambalur,S22,25,GEN,Perambalur,,408,R.P.Marutharajaa,AIADMK,0,Post Graduate,20,24570213,0
+TN,Dindigul,S22,22,GEN,Dindigul,,160,Udhaya Kumar .M,AIADMK,0,Post Graduate,20,27810000,2800000
+TN,Arakkonam,S22,7,GEN,Arakkonam,,31,Hari G,AIADMK,4,Post Graduate,20,32966706,0
+TN,Chennai South,S22,3,GEN,Chennai South,,124,Dr. J. Jayavardhan,AIADMK,0,Graduate Professional,17,33959072,10981100
+TN,Krishnagiri,S22,9,GEN,Krishnagiri,,304,Ashok Kumar.K,AIADMK,3,10th Pass,10,1176436,0
+TN,Arani,S22,12,GEN,Arani,,34,V.Elumalai,AIADMK,0,Graduate Professional,17,70492462,25000
+TN,Tiruvannamalai,S22,11,GEN,Tiruvannamalai,,510,Vanaroja R,AIADMK,0,Post Graduate,20,3700000,0
+TN,Sriperumbudur,S22,5,GEN,Sriperumbudur,,487,"Ramachandran, K.N. Thiru",AIADMK,0,Post Graduate,20,936721057,80806268
+TN,Vellore,S22,8,GEN,Vellore,,530,"Senguttuvan, B.",AIADMK,0,Post Graduate,20,9197355,440478
+TN,Kancheepuram,S22,6,SC,Kancheepuram,,261,Maragatham K,AIADMK,0,12th Pass,12,18949050,4468600
+TN,Kallakurichi,S22,14,GEN,Kallakurichi,,259,K. Kamaraj,AIADMK,0,Post Graduate,20,35459256,544099
+TN,Nilgiris,S22,19,SC,Nilgiris,,386,"Gopalakrishnan, C.",AIADMK,0,Post Graduate,20,10941189,1224754
+TN,Chidambaram,S22,27,SC,Chidambaram,,128,M.Chandrakasi,AIADMK,0,Graduate,15,7243646,2020472
+TN,Chennai North,S22,2,GEN,Chennai North,,123,Venkatesh Babu .T.G,AIADMK,0,Post Graduate,20,37038275,804032
+TN,Chennai Central,S22,4,GEN,Chennai Central,,122,S.R. Vijayakumar,AIADMK,0,Graduate Professional,17,13401510,350483
+TN,Thoothukkudi,S22,36,GEN,Thoothukkudi,,502,Jeyasingh Thiyagaraj Natterjee.J,AIADMK,0,Post Graduate,20,9822294,0
+TN,Nagappattinam,S22,29,SC,Nagapattinam,Nagapattinam,367,Gopal. Dr. K,AIADMK,0,Graduate Professional,17,19074709,13629120
+TN,Tiruvallur,S22,1,SC,Tiruvallur,,509,Venugopal. P. Dr.,AIADMK,0,Graduate Professional,17,28643502,1768538
+TN,Viluppuram,S22,13,SC,Viluppuram,,533,S. Rajendran,AIADMK,0,Graduate,15,6200000,2371331
+TN,Cuddalore,S22,26,GEN,Cuddalore,,137,A.Arunmozhithevan,AIADMK,9,Graduate Professional,17,15765250,0
+TN,Shivaganga,S22,31,GEN,Sivaganga,Sivaganga,478,Pr Senthilnathan,AIADMK,0,Graduate Professional,17,49050835,7459581
+TN,Theni,S22,33,GEN,Theni,,500,"Parthipan, R.",AIADMK,0,Graduate,15,22047681,869650
+TN,Ramanathapuram,S22,35,GEN,Ramanathapuram,,434,Anwhar Raajhaa.A,AIADMK,0,Graduate,15,33582876,2700000
+TN,Namakkal,S22,16,GEN,Namakkal,,375,Sundaram P.R,AIADMK,0,Graduate,15,126539914,92677412
+TN,Thanjavur,S22,30,GEN,Thanjavur,,499,Parasuraman.K,AIADMK,0,12th Pass,12,146049347,27954352
+TN,Tiruchirappalli,S22,24,GEN,Tiruchirappalli,,505,P.Kumar S/O Palanivel,AIADMK,0,Graduate Professional,17,18522597,1917891
+TN,Pollachi,S22,21,GEN,Pollachi,,411,Mahendran.C,AIADMK,0,Post Graduate,20,231430367,18128825
+TN,Karur,S22,23,GEN,Karur,,275,Thambidurai.M,AIADMK,2,Doctorate,25,132457262,51481886
+TN,Dharmapuri,S22,10,GEN,Dharmapuri,,152,Anbumani Ramadoss,PMK,8,Graduate Professional,17,314378451,41941065
+TN,Madurai,S22,32,GEN,Madurai,,322,R.Gopalakrishnan,AIADMK,0,Graduate,15,72503060,7406366
+TN,Virudunagar,S22,34,GEN,Virudhunagar,Virudhunagar,534,Radhakrishnan,AIADMK,0,10th Pass,10,43736485,5273447
+TN,Tiruppur,S22,18,GEN,Tiruppur,,508,V.Sathyabama,AIADMK,2,Post Graduate,20,28108573,2475755
+TN,Salem,S22,15,GEN,Salem,,448,Pannerselvam.V,AIADMK,0,Graduate Professional,17,32268097,253282
+TR,Tripura East,S23,2,ST,Tripura East,,512,Jitendra Choudhury,CPI(M),0,12th Pass,12,11322979,2030773
+TR,Tripura West,S23,1,GEN,Tripura West,,513,Sankar Prasad Datta,CPI(M),1,Post Graduate,20,1320900,0
+UK,Almora,S28,3,SC,Almora,,14,Ajay Tamta,BJP,0,12th Pass,12,6366653,2757846
+UK,Hardwar,S28,5,GEN,Hardwar,,207,Ramesh Pokhariyal Nishank,BJP,1,Doctorate,25,17917274,1860684
+UK,Tehri Garhwal,S28,1,GEN,Tehri Garhwal,,495,Mala Rajya Laxmi Shah,BJP,0,12th Pass,12,1662109875,14900000
+UK,Garhwal,S28,2,GEN,Garhwal,,184,(Maj Gen (Retd.) ) Bhuwan Chandra Khanduri (Avsm),BJP,0,Graduate Professional,17,44357368,0
+UK,Nainital - Udhamsingh Nagar,S28,4,GEN,Nainital-Udhamsingh Nagar,Nainital-Udhamsingh Nagar,372,Bhagat Singh Koshyari,BJP,0,Post Graduate,20,5562704,0
+UP,Saharanpur,S24,1,GEN,Saharanpur,,447,Raghav Lakhanpal,BJP,0,Post Graduate,20,35406431,0
+UP,Kairana,S24,2,GEN,Kairana,,254,Hukum Singh,BJP,2,Graduate Professional,17,29078847,2941671
+UP,Nagina,S24,5,SC,Nagina,,370,Yashwant Singh,BJP,0,Post Graduate,20,34806740,0
+UP,Muzaffarnagar,S24,3,GEN,Muzaffarnagar,,362,Dr. Sanjeev Kumar Balyan,BJP,1,Doctorate,25,10794222,3090803
+UP,Baghpat,S24,11,GEN,Baghpat,,48,Dr. Satyapal Singh,BJP,0,Doctorate,25,67402076,352000
+UP,Amroha,S24,9,GEN,Amroha,,23,Kanwar Singh Tanwar,BJP,0,5th Pass,5,1788430770,4036151
+UP,Sambhal,S24,8,GEN,Sambhal,,452,Satya Pal Singh,BJP,0,Post Graduate,20,19904379,0
+UP,Meerut,S24,10,GEN,Meerut,,347,Rajendra Agarwal,BJP,2,Post Graduate,20,8803517,3074600
+UP,Lalganj,S24,68,SC,Lalganj,,312,Neelam,BJP,1,Post Graduate,20,33863562,2631312
+UP,Jalaun,S24,45,GEN,Jalaun,,232,Bhanu Pratap Singh,BJP,0,Post Graduate,20,5774068,650000
+UP,Rampur,S24,7,GEN,Rampur,,435,Dr. Nepal Singh,BJP,0,Doctorate,25,27136042,1614820
+UP,Ghaziabad,S24,12,GEN,Ghaziabad,,189,Vijay Kumar Singh,BJP,2,Doctorate,25,41137044,2026774
+UP,Pilibhit,S24,26,GEN,Pilibhit,,410,Maneka Sanjay Gandhi,BJP,1,12th Pass,12,374132826,219202
+UP,Bulandshahr,S24,14,SC,Bulandshahr,,112,Dr. Bhola Singh,BJP,0,Graduate,15,12577537,0
+UP,Kheri,S24,28,GEN,Kheri,,288,Ajay Kumar,BJP,2,Graduate Professional,17,26505977,10000000
+UP,Bareilly,S24,25,GEN,Bareilly,,74,Santosh Gangwar,BJP,0,Graduate Professional,17,38602862,1777215
+UP,Aonla,S24,24,GEN,Aonla,,30,Dharmendra Kumar,BJP,0,10th Pass,10,5364652,0
+UP,Budaun,S24,23,GEN,Badaun,Badaun,46,Dharmandra Yadav,SP,0,Post Graduate,20,24987715,8950291
+UP,Shahjahanpur,S24,27,SC,Shahjahanpur,,462,Krishna Raj,BJP,0,Post Graduate,20,16506411,3612812
+UP,Bahraich,S24,56,SC,Bahraich,,50,Savitri Bai Foole,BJP,8,Graduate,15,1121491,538145
+UP,Aligarh,S24,15,GEN,Aligarh,,11,Satish Kumar,BJP,1,10th Pass,10,52180006,754800
+UP,Dhaurahra,S24,29,GEN,Dhaurahra,,154,Rekha,BJP,0,12th Pass,12,10435468,2375000
+UP,Etah,S24,22,GEN,Etah,,170,Rajvir Singh,BJP,0,Graduate Professional,17,251921157,46898091
+UP,Mathura,S24,17,GEN,Mathura,,339,Deol Hema Malini Dharmendra,BJP,0,Doctorate,25,1782015620,231234174
+UP,Farrukhabad,S24,40,GEN,Farrukhabad,,175,Mukesh Rajput,BJP,0,Graduate,15,26178100,151603
+UP,Hardoi,S24,31,SC,Hardoi,,206,Anshul Verma,BJP,0,Post Graduate,20,30385000,0
+UP,Hathras,S24,16,SC,Hathras,,209,Rajesh Kumar,BJP,0,Graduate Professional,17,5651457,0
+UP,Domriaganj,S24,60,GEN,Domariyaganj,Domariyaganj,162,Jagdambika Pal,BJP,0,Post Graduate,20,17822082,4981555
+UP,Sitapur,S24,30,GEN,Sitapur,,477,Rajesh Kumar Singh,BJP,0,Post Graduate,20,41418622,1265000
+UP,Firozabad,S24,20,GEN,Firozabad,,179,Akshay Yadav,SP,0,Graduate,15,100883304,59377
+UP,Maharajganj,S24,63,GEN,Maharajganj,,325,Janardan Singh Sigriwal,BJP,4,Graduate,15,4795223,14000
+UP,Mainpuri,S24,21,GEN,Mainpuri,,329,Mulayam Singh Yadav,SP,0,Post Graduate,20,159671544,0
+UP,Kaisarganj,S24,57,GEN,Kaiserganj,Kaiserganj,255,Brij Bhusan Sharan Singh,BJP,2,Graduate Professional,17,61696767,11556027
+UP,Gonda,S24,59,GEN,Gonda,,194,Kirti Vardhan Singh,BJP,0,Post Graduate,20,74738429,9275782
+UP,Misrikh,S24,32,SC,Misrikh,,349,Anju Bala,BJP,0,Post Graduate,20,37618214,1200000
+UP,Barabanki,S24,53,SC,Barabanki,,67,Priyanka Singh Rawat,BJP,0,Post Graduate,20,13175500,1450000
+UP,Kushi Nagar,S24,65,GEN,Kushi Nagar,,308,Rajesh Pandey Urf Guddu,BJP,0,Graduate,15,110407014,1107357
+UP,Fatehpur Sikri,S24,19,GEN,Fatehpur Sikri,,178,Babulal,BJP,3,12th Pass,12,73028848,16390000
+UP,Azamgarh,S24,69,GEN,Azamgarh,,45,Mulayam Singh Yadav,SP,0,Post Graduate,20,159671544,0
+UP,Bansgaon,S24,67,SC,Bansgaon,,64,Kamlesh Paswan,BJP,0,Graduate,15,101640625,14568500
+UP,Amethi,S24,37,GEN,Amethi,,19,Rahul Gandhi,INC,0,Post Graduate,20,94006549,1800000
+UP,Akbarpur,S24,44,SC,Akbarpur,,7,Devendra Singh Urf Bhole Singh,BJP,0,10th Pass,10,28546617,559965
+UP,Rae Bareli,S24,36,GEN,Rae Bareli,,421,Sonia Gandhi,INC,0,English Course,14,92895288,0
+UP,Mohanlalganj,S24,34,SC,Mohanlalganj,,351,Kaushal Kishore,BJP,2,12th Pass,12,21128221,0
+UP,Deoria,S24,66,GEN,Deoria,,148,Kalraj Mishra,BJP,0,Post Graduate,20,55048193,0
+UP,Sant Kabir Nagar,S24,62,GEN,Sant Kabir Nagar,,455,Sharad Tripathi,BJP,0,Post Graduate,20,3697671,71800
+UP,Faizabad,S24,54,GEN,Faizabad,,172,Lallu Singh,BJP,1,Post Graduate,20,15127861,3640964
+UP,Etawah,S24,41,SC,Etawah,,171,Ashok Kumar Doharey,BJP,0,Graduate,15,12252688,0
+UP,Sultanpur,S24,38,GEN,Sultanpur,,488,Feroze Varun Gandhi,BJP,0,Post Graduate,20,357318699,18119000
+UP,Salempur,S24,71,GEN,Salempur,,449,Ravindra Kushawaha,BJP,0,12th Pass,12,7134477,0
+UP,Ghosi,S24,70,GEN,Ghosi,,191,Harinarayan Rajbhar,BJP,0,Literate,5,23403964,0
+UP,Chandauli,S24,76,GEN,Chandauli,,117,Mahendra Nath,BJP,0,Doctorate,25,26489505,1114000
+UP,Allahabad,S24,52,GEN,Allahabad,,13,Shyama Charan Gupta,BJP,0,Graduate Professional,17,472851707,0
+UP,Mirzapur,S24,79,GEN,Mirzapur,,348,Anupriya Singh Patel,Apna Dal,2,Post Graduate,20,26858156,1805603
+UP,Robertsganj,S24,80,SC,Robertsganj,,443,Chhote Lal,BJP,0,5th Pass,5,3687361,55313
+UP,Fatehpur,S24,49,GEN,Fatehpur,,177,Sadhavi Niranjan Jyoti,BJP,1,12th Pass,12,3763779,176616
+UP,Jaunpur,S24,73,GEN,Jaunpur,,242,Krishna Pratap,BJP,0,Doctorate,25,40656909,4673939
+UP,Pratapgarh,S24,39,GEN,Pratapgarh,,415,Kuwar Harivansh Singh,Apna Dal,5,Graduate,15,383137665,149404112
+UP,Hamirpur,S24,47,GEN,Hamirpur,,205,Kunwar Pushpendra Singh,BJP,1,Post Graduate,20,71265181,2825539
+UP,Kaushambi,S24,50,SC,Kaushambi,,278,Vinod Kumar,BJP,0,Graduate,15,27091681,10932227
+UP,Ballia,S24,72,GEN,Ballia,,53,Bharat Singh,BJP,3,Graduate,15,21130089,1102553
+UP,Jhansi,S24,46,GEN,Jhansi,,246,Uma Bharti,BJP,13,5th Pass,5,14376218,0
+UP,Ghazipur,S24,75,GEN,Ghazipur,,190,Manoj Sinha,BJP,0,Graduate Professional,17,23376901,118700
+UP,Machhlishahr,S24,74,SC,Machhlishahr,,317,Ram Charitra Nishad,BJP,0,12th Pass,12,8641278,0
+UP,Phulpur,S24,51,GEN,Phulpur,,409,Keshav Prasad,BJP,11,Graduate,15,93244143,24381051
+UP,Sant Ravi Das Nagar (Bhadohi),S24,78,GEN,Bhadohi,Bhadohi,89,Virendra Singh,BJP,0,Graduate,15,11531458,791186
+UP,Ambedkar Nagar,S24,55,GEN,Ambedkar Nagar,,18,Hariom,BJP,0,Post Graduate,20,15318114,0
+UP,Banda,S24,48,GEN,Banda,,56,Bhairon Prasad Mishra,BJP,3,12th Pass,12,50034910,600000
+UP,Kanpur,S24,43,GEN,Kanpur,,268,Dr.Murli Manohar Joshi,BJP,1,Doctorate,25,78410008,0
+UP,Unnao,S24,33,GEN,Unnao,,522,Swami Sachchidanand Hari Sakshi,BJP,8,Doctorate,25,32137597,0
+UP,Kannauj,S24,42,GEN,Kannauj,,265,Dimple Yadav,SP,0,Graduate,15,280516418,6917710
+UP,Lucknow,S24,35,GEN,Lucknow,,315,Raj Nath Singh,BJP,0,Post Graduate,20,29240729,0
+UP,Varanasi,S24,77,GEN,Varanasi,,529,Narendra Modi,BJP,0,Post Graduate,20,16591582,0
+UP,Gorakhpur,S24,64,GEN,Gorakhpur,,196,Adityanath,BJP,3,Graduate,15,7217674,0
+UP,Basti,S24,61,GEN,Basti,,81,Harish Chandra,BJP,2,Post Graduate,20,5350882,860185
+UP,Shrawasti,S24,58,GEN,Shrawasti,,469,Daddan Mishra,BJP,0,Post Graduate,20,20065527,228304
+UP,Agra,S24,18,SC,Agra,,2,Dr. Ramshankar Katheria,BJP,21,Doctorate,25,14634885,4035000
+UP,Gautam Buddha Nagar,S24,13,GEN,Gautam Budhha Nagar,Gautam Budhha Nagar,186,Mahesh Sharma,BJP,0,Graduate Professional,17,473797545,40905738
+UP,Bijnor,S24,4,GEN,Bijnor,,105,Kunwar Bhartendra,BJP,2,Post Graduate,20,24840646,0
+UP,Moradabad,S24,6,GEN,Moradabad,,352,Kunwar Sarvesh Kumar,BJP,4,10th Pass,10,72866898,600000
+WB,Darjiling,S25,4,GEN,Darjeeling,Darjeeling,145,Surendrajeet Singh Ahluwalia,BJP,0,Graduate Professional,17,23377223,443035
+WB,Arambag,S25,29,SC,Arambag,,33,Aparupa Poddar (Afrin Ali),AITC,0,Post Graduate,20,3271869,200000
+WB,Barasat,S25,17,GEN,Barasat,,70,Dr. Kakali Ghoshdostidar,AITC,0,Graduate Professional,17,31254311,1168220
+WB,Medinipur,S25,34,GEN,Medinipur,,346,Sandhya Roy,AITC,0,Literate,5,31031095,0
+WB,Tamluk,S25,30,GEN,Tamluk,,494,Suvendu Adhikari,AITC,2,Post Graduate,20,6480767,0
+WB,Murshidabad,S25,11,GEN,Murshidabad,,361,Badaruddoza Khan,CPI(M),0,Graduate Professional,17,2758610,0
+WB,Krishnanagar,S25,12,GEN,Krishnanagar,,305,Tapas Paul,AITC,4,Graduate,15,27829669,0
+WB,Birbhum,S25,42,GEN,Birbhum,,108,Satabdi Roy(Banerjee),AITC,0,Graduate,15,54972174,5478944
+WB,Bolpur,S25,41,SC,Bolpur,,111,Anupam Hazra,AITC,0,Doctorate,25,4866883,0
+WB,Barddhaman - Durgapur,S25,39,GEN,Bardhaman-Durgapur,Bardhaman-Durgapur,72,Mamtaz Sanghamita,AITC,0,Post Graduate,20,107680000,0
+WB,Puruliya,S25,35,GEN,Purulia,Purulia,419,Mriganka Mahato,AITC,0,Graduate Professional,17,8895210,0
+WB,Barddhaman Purba,S25,38,SC,Bardhaman Purba,Bardhaman Purba,71,Sunil Kumar Mondal,AITC,0,Graduate Professional,17,11841000,1420000
+WB,Bankura,S25,36,GEN,Bankura,,63,Sreemati Dev Varma (Moon Moon Sen),AITC,0,Post Graduate,20,15314000,1013000
+WB,Asansol,S25,40,GEN,Asansol,,39,Babul Supriya Boral (Babul Supriyo),BJP,0,Graduate,15,75289537,14748456
+WB,Ranaghat,S25,13,SC,Ranaghat,,437,Tapas Mandal,AITC,0,Doctorate,25,8169115,2383416
+WB,Bishnupur,S25,37,SC,Bishnupur,,109,Saumitra Khan,AITC,1,12th Pass,12,1197255,0
+WB,Jangipur,S25,9,GEN,Jangipur,,240,Abhijit Mukherjee,INC,0,Graduate Professional,17,63014502,15160000
+WB,Balurghat,S25,6,GEN,Balurghat,,54,Arpita Ghosh,AITC,0,Graduate,15,544790,0
+WB,Maldah Uttar,S25,7,GEN,Maldaha Uttar,Maldaha Uttar,332,Mausam Noor,INC,0,Graduate Professional,17,9778222,28534
+WB,Kolkata Uttar,S25,24,GEN,Kolkata Uttar,,296,Sudip Bandyopadhyay,AITC,1,Graduate,15,22086278,450000
+WB,Jhargram,S25,33,ST,Jhargram,,247,Uma Saren,AITC,0,Graduate Professional,17,499646,0
+WB,Kolkata Dakshin,S25,23,GEN,Kolkata Dakshin,,295,Subrata Bakshi,AITC,0,Graduate Professional,17,10265428,168891
+WB,Uluberiya,S25,26,GEN,Uluberia,Uluberia,521,Sultan Ahmed,AITC,0,Graduate,15,22792936,10878739
+WB,Mathurapur,S25,20,SC,Mathurapur,,340,Choudhury Mohan Jatua,AITC,0,Post Graduate,20,4857752,0
+WB,Jaynagar,S25,19,SC,Jaynagar,,243,Pratima Mondal,AITC,0,Post Graduate,20,10614252,0
+WB,Diamond Harbour,S25,21,GEN,Diamond Harbour,,158,Abhishek Banerjee,AITC,0,Post Graduate,20,15199272,0
+WB,Kanthi,S25,31,GEN,Kanthi,,269,Sisir Kumar Adhikari,AITC,1,12th Pass,12,19498381,0
+WB,Basirhat,S25,18,GEN,Basirhat,,79,Idris Ali,AITC,9,Graduate Professional,17,9800277,0
+WB,Bangaon,S25,14,SC,Bangaon,,61,Kapil Krishna Thakur,AITC,0,Graduate,15,9667890,0
+WB,Koch Bihar,S25,1,SC,Coochbehar,Coochbehar,136,Renuka Sinha,AITC,0,Graduate Professional,17,13017282,0
+WB,Alipurduars,S25,2,ST,Alipurduars,,12,Dasrath Tirkey,AITC,0,Graduate,15,3550353,293909
+WB,Jalpaiguri,S25,3,SC,Jalpaiguri,,236,Bijoy Chandra Barman,AITC,0,Post Graduate,20,9396430,797019
+WB,Barakpur,S25,15,GEN,Barrackpur,Barrackpur,78,Dinesh Trivedi,AITC,0,Post Graduate,20,53582340,15661349
+WB,Haora,S25,25,GEN,Howrah,Howrah,219,Prasun Banerjee,AITC,0,Graduate,15,10041098,0
+WB,Jadavpur,S25,22,GEN,Jadavpur,,225,Sugata Bose,AITC,0,Doctorate,25,46315770,0
+WB,Hugli,S25,28,GEN,Hooghly,Hooghly,216,Ratna De,AITC,0,Graduate Professional,17,18617757,0
+WB,Shrirampur,S25,27,GEN,Sreerampur,Sreerampur,484,Kalyan Banerjee,AITC,1,Graduate Professional,17,88512676,8582543
+WB,Baharampur,S25,10,GEN,Baharampur,,49,Adhir Ranjan Chowdhury,INC,16,10th Pass,10,81465854,0
+WB,Maldah Dakshin,S25,8,GEN,Maldaha Dakshin,Maldaha Dakshin,331,Abu Hasem Kahn Chowdhury,INC,0,Doctorate,25,11560825,654320
+WB,Raiganj,S25,5,GEN,Raiganj,,424,Md. Salim,CPI(M),0,Post Graduate,20,8318013,0
+WB,Ghatal,S25,32,GEN,Ghatal,,188,Deepak Adhikari (Dev),AITC,0,10th Pass,10,152447159,17493227
+WB,Dum Dum,S25,16,GEN,Dum Dum,,163,Saugata Roy,AITC,0,Post Graduate,20,19452010,2500000
+GJ,Kachchh,S06,1,SC,Kachchh,,252,Chavda Vinod Lakhmashi,BJP,0,Graduate Professional,17,5618643,411255
+LD,Lakshadweep,U06,1,ST,Lakshadweep,,311,Mohammed Faizal.P.P,NCP,3,Post Graduate,20,538119,0
