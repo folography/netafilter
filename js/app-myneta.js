@@ -59,7 +59,6 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/planemad/ciix3a6g900tkalkidus93oy3', //stylesheet location
   hash: true
 });
-mapLocate('reset');
 
 //Supress Tile errors
 map.off('tile.error', map.onError);
