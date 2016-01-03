@@ -68,7 +68,7 @@ map.addControl(new mapboxgl.Navigation());
 
 // Define a layer collection for easy styling
 var mapLayerCollection = {
-  'myneta-loksabha': ['myneta-loksabha fill-0', 'myneta-loksabha fill-1', 'myneta-loksabha fill-2', 'myneta-loksabha fill-3', 'myneta-loksabha fill-4', 'myneta-loksabha fill-5', 'myneta-loksabha fill-6', 'myneta-loksabha fill-7'],
+  'myneta-loksabha': ['myneta-loksabha fill-0', 'myneta-loksabha fill-1', 'myneta-loksabha fill-2', 'myneta-loksabha fill-3', 'myneta-loksabha fill-4', 'myneta-loksabha fill-5', 'myneta-loksabha fill-6', 'myneta-loksabha fill-7', 'myneta-loksabha mask'],
   'education': ['myneta-loksabha-edupoints-0', 'myneta-loksabha-edupoints-5to12', 'myneta-loksabha-edupoints-13to17', 'myneta-loksabha-edupoints-20', 'myneta-loksabha-edupoints-25'],
   'assets': ['Net-assets-upto10lac', 'Net-assets-10to50lac', 'Net-assets-50lacto1Cr', 'Net-assets-1Crto10Cr', 'Net-assets-10Crto100Cr', 'Net-assets-100Cr+'],
   'cartodem': ['chennai-cartodem'],

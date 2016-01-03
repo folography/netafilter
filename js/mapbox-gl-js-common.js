@@ -1,6 +1,7 @@
 // Common map functions for Mapbox GL JS
 
 var defaultStyle = {};
+var defaultOpacity = {};
 
 // Highlight a layer collection
 function mapHighlight(item) {
@@ -23,6 +24,7 @@ function mapHighlight(item) {
     if (map.getLayer(obj).type == 'circle')
       prop = 'circle-color';
 
+    // Backup the value before changing it
     var propObj = {};
     propObj[prop] = map.getPaintProperty(obj, prop);
 
@@ -52,11 +54,10 @@ function mapHighlightReset() {
         prop = 'circle-color';
 
       // Revert to default style if known
-      try{
-      if (defaultStyle[obj][prop])
-        map.setPaintProperty(obj, prop, defaultStyle[obj][prop]);
-      }
-      catch(e){}
+      try {
+        if (defaultStyle[obj][prop])
+          map.setPaintProperty(obj, prop, defaultStyle[obj][prop]);
+      } catch (e) {}
 
     }
   }
@@ -83,12 +84,21 @@ function mapToggle(item) {
       prop = 'line-opacity';
     if (map.getLayer(obj).type == 'circle')
       prop = 'circle-opacity';
-    try {
-      map.setPaintProperty(obj, prop, !map.getPaintProperty(obj, prop));
-    } catch (e) {
+
+    // Apply original opacity if existing is 0, else make a backup and set to 0
+    if (!map.getPaintProperty(obj, prop)) {
+      try {
+        map.setPaintProperty(obj, prop, defaultOpacity[obj][prop]);
+      } catch (e) {
+        // The original must have been 0
+      }
+    } else {
+      var propObj = {};
+      propObj[prop] = map.getPaintProperty(obj, prop);
+
+      defaultOpacity[obj] = propObj;
       map.setPaintProperty(obj, prop, 0);
     }
-
   }
 
 };
@@ -98,5 +108,5 @@ function mapToggle(item) {
 function mapLocate(location) {
   map.setPitch(mapLocation[location].pitch);
   map.flyTo(mapLocation[location]);
-  if(location == "reset"){}
+  if (location == "reset") {}
 }
