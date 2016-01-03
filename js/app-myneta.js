@@ -53,10 +53,10 @@ var mapLocation = {
 
 
 // Simple map
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWRpdHlhZGlwYW5rYXIiLCJhIjoiVHJuZl9ScyJ9.p0DPbggaxwE7-UDr6hK5tQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
 var map = new mapboxgl.Map({
   container: 'map', // container id
-  style: 'mapbox://styles/adityadipankar/ciiwqp8xk00kh2lkn990gphfa', //stylesheet location
+  style: 'mapbox://styles/planemad/ciix3a6g900tkalkidus93oy3', //stylesheet location
   hash: true
 });
 mapLocate('reset');

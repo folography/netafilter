@@ -1,26 +1,21 @@
-html {
-  background-image: none;
-  background-repeat: no-repeat;
-}
-
-body {
-  background: none;
-}
-
 h1 {
-  font-size: 3em;
+  font-size: 1em;
   margin: 0;
+  line-height: 1em;
 }
 
 #map {
   position: absolute;
-  top: 80px;
+  top:0;
   bottom: 0;
   width: 100%;
 }
 
+.dark a{
+  color:rgba(255,255,255,.7);
+}
 #sidebar {
-  background-color: rgba(40, 53, 61, 0.94);
+  background-color: rgba(40, 53, 61, 1);
   overflow: hidden;
 }
 
