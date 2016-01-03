@@ -23,27 +23,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
   <!-- Content -->
-  <div class="masthead col12 clearfix fill-blue dark">
-    <div class="limiter clearfix">
-      <nav class="col12 text-right pad2y contain animate clearfix noprint">
-        <h2><a class="fl" href="/">myneta</a></h2>
 
-        <div class="text-right z10 strong small primary hide-mobile">
-          <div class="inline align-top">
-            <div class="dropdown inline pad1y fl contain" id=""> <a href="/products/" class="contain primary-nav-button fl pad1x pad0y round ">Products</a></div>
-            <div class="dropdown inline pad1y fl contain" id=""> <a href="/industries/" class="contain primary-nav-button fl pad1x pad0y round">Industries</a></div>
-            <div class="dropdown inline pad1y fl contain" id=""> <a href="/developers/" class="contain primary-nav-button fl pad1x pad0y round ">Developers</a></div>
-          </div>
-        </div>
-
-        <div class='pill'>
-          <a href='#' class='button'>My Netas</a>
-          <a href='#' class='button'>Overall</a>
-          <a href='#' class='button'>Compare</a>
-        </div>
-      </nav>
-    </div>
-  </div>
 
   <div id='map'></div>
 
@@ -53,7 +33,11 @@
     <h2><a href='.'>My dear netaji</a></h2>
     <p>Visavising neatjis. All the data is <a href="https://github.com/osm-in/flood-map">open</a>.</p>
 
-
+    <div class='rounded-toggle inline'>
+      <a class='active' href='#'>Map</a>
+      <a href='#'>Statistics</a>
+      <a href='#'>About</a>
+    </div>
     <div data-map='legend'>
 
       <h5>Layers</h5>
@@ -83,10 +67,6 @@
   </div>
 
   <span id='map-query'></span>
-
-  <div class="pad2 col8 space-bottom2 dark" style="position: absolute; z-index: 1000; bottom: 0; right: 0">
-    <div id="copy" class="pad2 fill-darken3 round prose prose-big col12" style="display: block;">Help planners and city authorities understand the flooding problem by contributing to this map. <a href="https://github.com/osm-in/flood-map">Learn more</a>.</div>
-  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/mapbox-gl-js-common.js"></script>

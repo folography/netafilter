@@ -69,8 +69,8 @@ map.addControl(new mapboxgl.Navigation());
 
 // Define a layer collection for easy styling
 var mapLayerCollection = {
-  'water': ['water', 'waterway-river-canal', 'waterway-small'],
-  'road-bridges': ['bridge-main', 'bridge-street', 'bridge-trunk', 'bridge-motorway'],
+  'education': ['myneta-loksabha-edupoints-0', 'myneta-loksabha-edupoints-5to12', 'myneta-loksabha-edupoints-13to17','myneta-loksabha-edupoints-20','myneta-loksabha-edupoints-25'],
+  'assets': ['Net-assets-upto10lac', 'Net-assets-10to50lac', 'Net-assets-50lacto1Cr', 'Net-assets-1Crto10Cr', 'Net-assets-10Crto100Cr', 'Net-assets-100Cr+'],
   'cartodem': ['chennai-cartodem'],
   'buildings': ['building'],
   'road-subways': ['tunnel-motorway', 'tunnel-trunk', 'tunnel-main', 'tunnel-street'],
