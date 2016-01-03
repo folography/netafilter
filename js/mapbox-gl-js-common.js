@@ -2,6 +2,7 @@
 
 var defaultStyle = {};
 var defaultOpacity = {};
+var defaultFilter = {};
 
 // Highlight a layer collection
 function mapHighlight(item) {
@@ -102,6 +103,11 @@ function mapToggle(item) {
   }
 
 };
+
+// Change the filter values of set of layers
+function mapSetFilter(){
+
+}
 
 //Location functions
 // Set pitch and fly to location
