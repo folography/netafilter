@@ -1,8 +1,16 @@
-h1 {
-  font-size: 1em;
+h1,h1.fancy {
+  font-size: 1.3em;
   margin: 0;
-  line-height: 1em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
 }
+
+.tagline{
+  letter-spacing:inherit;
+  display: inline-block;
+  color:rgba(255,255,255,.5);
+}
+
 
 #map {
   position: absolute;
