@@ -121,10 +121,9 @@ map.on('style.load', function(e) {
         party: features[0].properties['myneta Party'],
         cases: features[0].properties['myneta Criminal Case'],
         qualification: features[0].properties['myneta Education'],
-        assets: features[0].properties['myneta Total Assets'],
-        liabilities: features[0].properties['myneta Liabilities']
+        assets: features[0].properties['myneta Total Assets'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+        liabilities: features[0].properties['myneta Liabilities'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       });
-      //$('#map-query').html(JSON.stringify(features[0].properties));
     });
   });
 
