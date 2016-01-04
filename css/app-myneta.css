@@ -53,7 +53,7 @@ h1,h1.fancy {
 }
 
 /* Map tooltip */
-#map-query {
+#map-tooltip {
   position: absolute;
   left: 30%;
   bottom: 1em;

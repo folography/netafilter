@@ -99,59 +99,74 @@ var mapLayerCollection = {
 
 map.on('style.load', function(e) {
 
-      var selectedRoadsSource = new mapboxgl.GeoJSONSource({});
+  var selectedRoadsSource = new mapboxgl.GeoJSONSource({});
 
-      //Live query
+  //Map tooltip
+  var tooltip = new Ractive({
+    el: '#map-tooltip',
+    template: '#myneta-template',
+    data: {}
+  });
 
-      map.on('mousemove', function(e) {
-          map.featuresAt(e.point, {
-              layer: ['myneta-loksabha fill-0'],
-              radius: 4
-            }, function(err, features) {
-              if (err) throw err;
-              $('#map-query').html(JSON.stringify(features[0].properties));
-            });
-          });
+  map.on('mousemove', function(e) {
+    map.featuresAt(e.point, {
+      layer: ['myneta-loksabha fill-0'],
+      radius: 4
+    }, function(err, features) {
+      if (err) throw err;
 
-        //Popups on click
-        // map.on('click', function(e) {
-        //   map.featuresAt(e.point, {
-        //     radius: 10,
-        //     layer: ['chennai-relief-camps', 'chennai-relief-camps-22nov'],
-        //     includeGeometry: true
-        //   }, function(err, features) {
-        //     if (err) throw err;
-        //
-        //     if (features.length > 0) {
-        //       var popupHTML = '<h5>' + features[0].properties.Name + '</h5><p>' + $('[data-map-layer=' + features[0].layer.id + ']').html() + '</p>';
-        //       var popup = new mapboxgl.Popup()
-        //         .setLngLat(features[0].geometry.coordinates)
-        //         .setHTML(popupHTML)
-        //         .addTo(map);
-        //     }
-        //   });
-        // });
-
-        // Update map legend from styles
-        $('[data-map-layer]').each(function() {
-          // Get the color of the feature from the map
-          var obj = $(this).attr('data-map-layer');
-
-          try {
-            var color = map.getPaintProperty(obj, 'circle-color');
-            // Set the legend color
-            $(this).prepend('<div class="map-legend-circle" style="background:"' + array2rgb(color) + '></div>');
-          } catch (e) {
-            return;
-          }
-        });
-
+      tooltip.set({
+        candidate: features[0].properties['myneta Candidate'],
+        constituency: features[0].properties['PC_NAME2'],
+        party: features[0].properties['myneta Party'],
+        cases: features[0].properties['myneta Criminal Case'],
+        qualification: features[0].properties['myneta Education'],
+        assets: features[0].properties['myneta Total Assets'],
+        liabilities: features[0].properties['myneta Liabilities']
       });
+      //$('#map-query').html(JSON.stringify(features[0].properties));
+    });
+  });
 
+  //Popups on click
+  // map.on('click', function(e) {
+  //   map.featuresAt(e.point, {
+  //     radius: 10,
+  //     layer: ['chennai-relief-camps', 'chennai-relief-camps-22nov'],
+  //     includeGeometry: true
+  //   }, function(err, features) {
+  //     if (err) throw err;
+  //
+  //     if (features.length > 0) {
+  //       var popupHTML = '<h5>' + features[0].properties.Name + '</h5><p>' + $('[data-map-layer=' + features[0].layer.id + ']').html() + '</p>';
+  //       var popup = new mapboxgl.Popup()
+  //         .setLngLat(features[0].geometry.coordinates)
+  //         .setHTML(popupHTML)
+  //         .addTo(map);
+  //     }
+  //   });
+  // });
 
-    function array2rgb(color) {
-      // Combine and return the values
-      return 'rgba(' + color.map(function(x) {
-        return x * 255;
-      }).join() + ')';
+  // Update map legend from styles
+  $('[data-map-layer]').each(function() {
+    // Get the color of the feature from the map
+    var obj = $(this).attr('data-map-layer');
+
+    try {
+      var color = map.getPaintProperty(obj, 'circle-color');
+      // Set the legend color
+      $(this).prepend('<div class="map-legend-circle" style="background:"' + array2rgb(color) + '></div>');
+    } catch (e) {
+      return;
     }
+  });
+
+});
+
+
+function array2rgb(color) {
+  // Combine and return the values
+  return 'rgba(' + color.map(function(x) {
+    return x * 255;
+  }).join() + ')';
+}

@@ -16,7 +16,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/app-myneta.css">
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-  <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
 </head>
 
 <body>
@@ -85,43 +85,46 @@
   </div>
 
 
-  <div id='map-query'>
+  <div id='map-tooltip'>
+  </div>
+
+  <script id='myneta-template' type='text/ractive'>
     <table width=100%>
       <tr>
-          <div class='bjpcolor partyCircle'></div>
-          <div class='candidateName'>Manoj Rajoria</div>
-          <div class='constituencyName'>Karauli-Dhaulpur</div>
+        <div class='{{party}} partyCircle'></div>
+        <div class='candidateName'>{{candidate}}</div>
+        <div class='constituencyName'>{{constituency}}</div>
         <!-- <td>
-          <div class='label'>Political Party</div>
-          <div class='politicalParty value'>BJP</div>
-        </td> -->
+        <div class='label'>Political Party</div>
+        <div class='politicalParty value'>{{party}}</div>
+      </td> -->
       </tr>
 
       <tr>
         <td>
           <div class='label'>No. of Criminal Cases</div>
-          <div class='criminalCases value'>0</div>
+          <div class='criminalCases value'>{{cases}}</div>
         </td>
         <td>
           <div class='label'>Educational qualification</div>
-          <div class='education value'>Post Graduate</div>
+          <div class='education value'>{{qualification}}</div>
         </td>
       </tr>
 
       <tr>
         <td>
           <div class='label'>Net Assets (in Rs)</div>
-          <div class='netAssets value'>2,86,36,113</div>
+          <div class='netAssets value'>{{assets}}</div>
         </td>
         <td>
           <div class='label'>Liabilities (in Rs)</div>
-          <div class='liabilities value'>32,77,324</div>
+          <div class='liabilities value'>{{liabilities}}</div>
         </td>
       </tr>
 
     </table>
     <!-- <div class='educationPoints'>20</div> -->
-  </div>
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/mapbox-gl-js-common.js"></script>
