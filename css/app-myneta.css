@@ -85,7 +85,7 @@ h1,h1.fancy {
 td{
   padding: 7px 0px;
 }
-.partycircle{
+.partyCircle{
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -93,6 +93,6 @@ td{
   float: left;
   margin-right: 10px;
 }
-.bjpColor{
+.BJP{
   background-color:#dd9900;
 }
