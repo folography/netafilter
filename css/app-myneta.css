@@ -69,6 +69,7 @@ h1,h1.fancy {
 .candidateName{
   font-size: 21px;
   font-weight: 800;
+  line-height: 1.3em;
 }
 .constituencyName{
   font-size: 15px;
