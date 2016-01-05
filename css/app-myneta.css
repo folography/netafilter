@@ -84,8 +84,10 @@ h1,h1.fancy {
   font-weight: 800;
 }
 #map-tooltip td{
-  padding: 7px 0px;
+  padding: 7px 14px 7px 0;
+  border: none;
 }
+
 .party{
   float:left;
   width: 50px;
