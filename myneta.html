@@ -97,7 +97,13 @@
   </div>
 
   <script id='myneta-template' type='text/ractive'>
+    {{#if (typeof id === 'undefined') }}
+      <p>
+        Hover over a constituency for details
+      </p>
+    {{else}}
     <table width=100%>
+
       <tr>
         <td colspan=2>
           <div class='dot micro fl {{party}} party'>
@@ -133,6 +139,7 @@
       </tr>
 
     </table>
+    {{/if}}
     <!-- <div class='educationPoints'>20</div> -->
   </script>
 
