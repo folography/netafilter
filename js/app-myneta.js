@@ -63,12 +63,9 @@ var map = new mapboxgl.Map({
 //Supress Tile errors
 map.off('tile.error', map.onError);
 
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.Navigation());
-
 // Define a layer collection for easy styling
 var mapLayerCollection = {
-  'myneta-loksabha': ['myneta-loksabha fill-0', 'myneta-loksabha fill-1', 'myneta-loksabha fill-2', 'myneta-loksabha fill-3', 'myneta-loksabha fill-4', 'myneta-loksabha fill-5', 'myneta-loksabha fill-6', 'myneta-loksabha fill-7', 'myneta-loksabha mask'],
+  'myneta-loksabha': ['myneta-loksabha fill-0', 'myneta-loksabha fill-1', 'myneta-loksabha fill-2', 'myneta-loksabha fill-3', 'myneta-loksabha fill-4', 'myneta-loksabha fill-5', 'myneta-loksabha fill-6', 'myneta-loksabha fill-7', 'myneta-loksabha mask', 'myneta-loksabha selected'],
   'education': ['myneta-loksabha-edupoints-0', 'myneta-loksabha-edupoints-5to12', 'myneta-loksabha-edupoints-13to17', 'myneta-loksabha-edupoints-20', 'myneta-loksabha-edupoints-25'],
   'assets': ['Net-assets-upto10lac', 'Net-assets-10to50lac', 'Net-assets-50lacto1Cr', 'Net-assets-1Crto10Cr', 'Net-assets-10Crto100Cr', 'Net-assets-100Cr+'],
   'myneta-loksabha mask': ['myneta-loksabha mask'],
@@ -105,19 +102,9 @@ map.on('style.load', function(e) {
   var tooltip = new Ractive({
     el: '#map-tooltip',
     template: '#myneta-template',
-    data: {}
-  });
-
-  map.on('mousemove', function(e) {
-    map.featuresAt(e.point, {
-      layer: ['myneta-loksabha fill-0'],
-      radius: 4
-    }, function(err, features) {
-      if (err) throw err;
-
-      console.log(features[0].properties);
-
-      tooltip.set({
+    data: {},
+    setFeatures: function(features){
+      this.set({
         id: features[0].properties['myneta Sno'],
         candidate: features[0].properties['myneta Candidate'],
         constituency: features[0].properties['PC_NAME2'],
@@ -129,6 +116,37 @@ map.on('style.load', function(e) {
         assets: (features[0].properties['myneta Total Assets']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
         liabilities: (features[0].properties['myneta Liabilities']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore'
       });
+    }
+  });
+
+  var selectedConstituency = '';
+  map.on('click', function(e){
+    map.featuresAt(e.point, {
+      layer: ['myneta-loksabha fill-0'],
+      radius: 4,
+      includeGeometry: true
+    }, function(err, features) {
+      // Reset the tooltip if a different constituency is selected
+      if (selectedConstituency !== features[0].properties['PC_NAME2']) {
+        tooltip.setFeatures(features);
+        selectedConstituency = features[0].properties['PC_NAME2'];
+      } else {
+        // Selected constituency was unselected.
+        selectedConstituency = '';
+      }
+      map.setFilter('myneta-loksabha selected', ['==', 'PC_NAME2', selectedConstituency]);
+    });
+  });
+
+  map.on('mousemove', function(e) {
+    map.featuresAt(e.point, {
+      layer: ['myneta-loksabha fill-0'],
+      radius: 4
+    }, function(err, features) {
+      // Reset tooltip only if no constituency is currently selected.
+      if (selectedConstituency === '') {
+        tooltip.setFeatures(features);
+      }
     });
   });
 
