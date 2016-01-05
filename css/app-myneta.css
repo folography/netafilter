@@ -61,8 +61,10 @@ h1,h1.fancy {
   /* box-shadow: 0px 0px 5px rgba(0,0,0,0.8); */
   border-radius: 4px;
   padding: 14px 14px 4px 14px;
-  max-width: 370px;
   border: 1px solid black;
+}
+#map-tooltip tr:first-child{
+  border-bottom: 1px solid #999;
 }
 .candidateName{
   font-size: 21px;
@@ -72,7 +74,6 @@ h1,h1.fancy {
   font-size: 15px;
   color: #666;
   margin-bottom: 5px;
-  border-bottom: 1px solid #999;
   padding-bottom: 16px;
 }
 .label{
@@ -82,16 +83,20 @@ h1,h1.fancy {
   font-size: 16px;
   font-weight: 800;
 }
-td{
+#map-tooltip td{
   padding: 7px 0px;
 }
-.partyCircle{
+.party{
+  float:left;
   width: 50px;
   height: 50px;
-  border-radius: 50px;
-  background-color: inherit;
-  float: left;
+  border-radius: 50%;
+  background-color: #eee;;
   margin-right: 10px;
+  text-align:center;
+  vertical-align: middle;
+  font-size: 8px;
+  line-height: 8px;
 }
 .BJP{
   background-color:#dd9900;

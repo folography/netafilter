@@ -92,13 +92,13 @@
   <script id='myneta-template' type='text/ractive'>
     <table width=100%>
       <tr>
-        <div class='{{party}} partyCircle'></div>
-        <div class='candidateName'>{{candidate}}</div>
-        <div class='constituencyName'>{{constituency}}</div>
-        <!-- <td>
-        <div class='label'>Political Party</div>
-        <div class='politicalParty value'>{{party}}</div>
-      </td> -->
+      <td colspan=2>
+        <div class='{{party}} party'>{{party}}</div>
+        <div class='fl'>
+          <div class='candidateName'>{{candidate}}</div>
+          <div class='constituencyName'>{{constituency}}</div>
+        </div>
+        </td>
       </tr>
 
       <tr>
