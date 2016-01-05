@@ -7,8 +7,8 @@ var defaultFilter = {};
 // Highlight a layer collection
 function mapHighlight(item) {
 
-  var collectionName = $(item).attr('data-map-layer');
-  var color = $(item).attr('data-map-layer-highlight');
+  var collectionName = $(item).data('map-layer');
+  var color = $(item).data('map-layer-highlight');
 
   // Loop through collection and store defaults before changing them
   for (var i = 0; i < mapLayerCollection[collectionName].length; i++) {
@@ -68,7 +68,7 @@ function mapHighlightReset() {
 // Toggle visibility of a layer collection using opacity
 function mapToggle(item) {
 
-  var collectionName = $(item).attr('data-map-layer');
+  var collectionName = $(item).data('map-layer');
 
   // Loop through collection and toggle visibility
   for (var i = 0; i < mapLayerCollection[collectionName].length; i++) {
