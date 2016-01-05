@@ -105,8 +105,10 @@ function mapToggle(item) {
 };
 
 // Change the filter values of set of layers
-function mapSetFilter(){
-
+function mapFilter(item){
+  var layer = $(item).data('map-layer');
+  var filter = $(item).data('map-layer-filter');
+  map.setFilter(layer, filter);
 }
 
 //Location functions

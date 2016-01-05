@@ -63,19 +63,23 @@
           </li>
         </ul>
 
-        <h3><a class="active" href="#" data-map-layer='myneta-loksabha mask' onclick="mapToggle(this)">Party Filter</a></h3>
+        <h3>Poltical Party</h3>
 
         <ul class="keyline-top space-bottom1">
           <li>
-            <a data-map-layer='myneta-loksabha mask' data-map-layer-field='myneta Party' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
+            <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["==", "myneta Party", "-1"]' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
+              All</a>
+          </li>
+          <li>
+            <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "BJP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
               BJP</a>
           </li>
           <li>
-            <a data-map-layer='myneta-loksabha mask' data-map-layer-field='myneta Party' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
+            <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "INC"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
               INC</a>
           </li>
           <li>
-            <a data-map-layer='myneta-loksabha mask' data-map-layer-field='myneta Party' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
+            <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "AAP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
               AAP</a>
           </li>
         </ul>
