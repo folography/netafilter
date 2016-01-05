@@ -124,8 +124,8 @@ map.on('style.load', function(e) {
         party: features[0].properties['myneta Party'],
         cases: features[0].properties['myneta Criminal Case'],
         qualification: features[0].properties['myneta Education'],
-        assets: (features[0].properties['myneta Total Assets']/100000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
-        liabilities: features[0].properties['myneta Liabilities'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        assets: (features[0].properties['myneta Total Assets']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
+        liabilities: (features[0].properties['myneta liabilities']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore'
       });
     });
   });
