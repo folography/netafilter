@@ -125,7 +125,7 @@ map.on('style.load', function(e) {
         cases: features[0].properties['myneta Criminal Case'],
         qualification: features[0].properties['myneta Education'],
         assets: (features[0].properties['myneta Total Assets']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
-        liabilities: (features[0].properties['myneta Liabilities']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore' 
+        liabilities: (features[0].properties['myneta Liabilities']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore'
       });
     });
   });
