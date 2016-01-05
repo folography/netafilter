@@ -33,9 +33,11 @@
       <h1 class='fancy'>myneta
         <span class='tagline'>MP Info</span>
       </h1>
+
+
       <p>Find out about your representative in the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a>. All the data is <a href="https://github.com/folography/visavis/tree/gh-pages/data">open</a>.</p>
 
-      <div class='rounded-toggle inline'>
+      <div class='rounded-toggle inline space-bottom2'>
         <a class='active' href='#'>Map</a>
         <a href='#'>Statistics</a>
         <a href='#'>About</a>
@@ -43,42 +45,39 @@
 
       <div data-map='legend'>
 
-        <h5>Data <a href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">(hide)</a></h5>
+        <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">Parliamentary Constituencies</a></h3>
 
-        <div class="space-bottom1">
-          <ul>
-            <li>
-              <a data-map-layer='myneta-loksabha data' data-map-layer-field='myneta Education Points' href="#" class="truncate strong bloxk small" onclick='mapSetFilter(this);'>
+
+        <ul class="keyline-top space-bottom1">
+          <li>
+            <a data-map-layer='myneta-loksabha data' data-map-layer-field='myneta Education Points' href="#" class="truncate strong bloxk small active" onclick='mapSetFilter(this);'>
           Educational Qualification
         </a>
-            </li>
-            <li>
-              <a data-map-layer='assets' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
+          </li>
+          <li>
+            <a data-map-layer='assets' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
           Declared Assets
         </a>
-            </li>
-            <li>
-              <a data-map-layer='criminal' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
+          </li>
+          <li>
+            <a data-map-layer='criminal' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
           Criminal Cases
         </a>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
 
-        <h5>Party Filter</h5>
+        <h3><a class="active" href="#" data-map-layer='myneta-loksabha mask' onclick="mapToggle(this)">Party Filter</a></h3>
 
-        <div class="space-bottom1">
-          <ul>
-            <li>
-              <a data-map-layer='myneta-loksabha mask' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
+        <ul class="keyline-top space-bottom1">
+          <li>
+            <a data-map-layer='myneta-loksabha mask' data-map-layer-field='myneta Party' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
           BJP
         </a>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
 
       </div>
-      <a href='https://github.com/folography/visavis/issues' class='button short stroke quiet icon alert'>Site under development</a>
+      <a href='https://github.com/folography/visavis/issues' class='button short stroke quiet icon alert'>Site has issues..</a>
 
     </div>
 
@@ -92,12 +91,14 @@
   <script id='myneta-template' type='text/ractive'>
     <table width=100%>
       <tr>
-      <td colspan=2>
-        <div class='dot micro fl {{party}} party'><span>{{party}}</span></div>
-        <div class='fl'>
-          <div class='candidateName'>{{candidate}}</div>
-          <div class='constituencyName'>{{constituency}} ({{state}}) - {{category}}</div>
-        </div>
+        <td colspan=2>
+          <div class='dot micro fl {{party}} party'>
+            <span>{{party}}</span>
+          </div>
+          <div class='fl'>
+            <div class='candidateName'>{{candidate}}</div>
+            <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
+          </div>
         </td>
       </tr>
 
