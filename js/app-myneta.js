@@ -121,6 +121,8 @@ map.on('style.load', function(e) {
         id: features[0].properties['myneta Sno'],
         candidate: features[0].properties['myneta Candidate'],
         constituency: features[0].properties['PC_NAME2'],
+        state: features[0].properties['ST_NAME'],
+        category: features[0].properties['Res'],
         party: features[0].properties['myneta Party'],
         cases: features[0].properties['myneta Criminal Case'],
         qualification: features[0].properties['myneta Education'],
