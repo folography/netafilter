@@ -34,17 +34,27 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
+
+    // CSV data parser
+    // http://learnjsdata.com/read_data.html
+    var dataMP = d3.csv("data/myneta-loksabha.csv")
+      .get(function(error, rows) {
+        console.log(rows);
+      });
+
+    // Create scatterChart
+    // http://nvd3.org/examples/scatter.html
     nv.addGraph(function() {
       var chart = nv.models.scatterChart()
-        .showDistX(true) //showDist, when true, will display those little distribution lines on the axis.
-        .showDistY(true)
-        .duration(350)
-        .color(d3.scale.category10().range());
+        // .showDistX(true) //showDist, when true, will display those little distribution lines on the axis.
+        // .showDistY(true)
+        .duration(100)
+        .color(d3.scale.category20().range());
 
-      //Configure how the tooltip looks.
-      chart.tooltipContent(function(key) {
-        return '<h3>' + key + '</h3>';
-      });
+      chart.tooltip.contentGenerator(function(obj) {
+          console.log(obj);
+          return '<h3>Group ' + obj.point.series + '</h3>'
+        })
 
       //Axis settings
       chart.xAxis.tickFormat(d3.format('.02f'));
@@ -54,6 +64,8 @@
       //  chart.scatter.onlyCircles(false);
 
       var myData = randomData(4, 40);
+
+
       d3.select('#chart svg')
         .datum(myData)
         .call(chart);
@@ -62,6 +74,8 @@
 
       return chart;
     });
+
+
 
     /**************************************
      * Simple test data generator
