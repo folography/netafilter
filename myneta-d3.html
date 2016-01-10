@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="css/main.css">
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <script src="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.min.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css">
+  <script src="js/vendor/nv.d3.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="js/vendor/nv.d3.css">
   <style>
 
   </style>
@@ -31,68 +31,79 @@
     <svg style="width:800px;  height:500px">
     </svg>
   </div>
+  <div id='chart2'>
+    <svg style="width:800px;  height:500px">
+    </svg>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
-    var data;
-
-    // CSV data parser
-    // http://learnjsdata.com/read_data.html
+    // Load data
     d3.csv("data/myneta-loksabha.csv", function(data) {
-        // Parse strings to integers
-        data.forEach(function(d) {
-          d['myneta Education Points']= +d['myneta Education Points'];
-          d['myneta Total Assets']= +d['myneta Total Assets'];
-        });
-        window.data = data;
-        console.log(data[0]);
+
+      var scatterData = [{
+        key: "PC_CODE",
+        values: []
+      }]
+
+      // Parse strings to integers http://learnjsdata.com/read_data.html
+      data.forEach(function(d) {
+        d['myneta Education Points'] = +d['myneta Education Points']
+        d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
+        d['myneta Criminal Case'] = +d['myneta Criminal Case']
+
+        // Push to the plot dataset http://bl.ocks.org/phil-pedruco/7243857
+        scatterData[0].key = d["PC_CODE"];
+        scatterData[0].values.push(d)
       });
+
+      // DEBUG
+      window.data = scatterData;
+      console.log(data[0]);
+
+    });
 
     // Create scatterChart
     // http://nvd3.org/examples/scatter.html
-    // nv.addGraph(function() {
-    //   var chart = nv.models.scatterChart()
-    //     // .showDistX(true) //showDist, when true, will display those little distribution lines on the axis.
-    //     // .showDistY(true)
-    //     .duration(100)
-    //     .x(function(d) {
-    //       return +d['myneta Education Points'];
-    //     })
-    //     .y(function(d) {
-    //       return +d['myneta Total Assets'];
-    //     })
-    //     .pointSize(function(d) {
-    //       return 2;
-    //     })
-    //     .color(d3.scale.category20().range());
-    //
-    //   chart.tooltip.contentGenerator(function(obj) {
-    //     console.log(obj);
-    //     return '<h3>Group ' + obj.point.series + '</h3>'
-    //   })
-    //
-    //   //Axis settings
-    //   chart.xAxis.tickFormat(d3.format('.02f'));
-    //   chart.yAxis.tickFormat(d3.format('.02f'));
-    //
-    //   //We want to show shapes other than circles.
-    //   //  chart.scatter.onlyCircles(false);
-    //
-    //   var myData = randomData(4, 40);
-    //
-    //   console.log(data);
-    //
-    //   d3.select('#chart svg')
-    //     // .datum(myData)
-    //     .datum(data)
-    //     .call(chart);
-    //
-    //
-    //
-    //   nv.utils.windowResize(chart.update);
-    //
-    //   return chart;
-    // });
+    nv.addGraph(function() {
+      var chart = nv.models.scatterChart()
+        .showDistX(true)
+        .showDistY(true)
+        .duration(100)
+        .x(function(d) {
+          return d['myneta Education Points'];
+        })
+        .y(function(d) {
+          return d['myneta Total Assets'];
+        })
+        .pointSize(function(d) {
+          return d['myneta Criminal Case'];
+        })
+        // .color(d3.scale.category20().range());
+        .color(d3.scale.category20().range());
+
+      chart.tooltip.contentGenerator(function(obj) {
+        console.log(obj);
+        return '<h3>Group ' + obj.point.series + '</h3>'
+      })
+
+      //Axis settings
+      chart.xAxis.tickFormat(d3.format('.02f'));
+      chart.yAxis.tickFormat(d3.format('.02f'));
+
+
+      console.log(data);
+
+      d3.select('#chart svg')
+        // .datum(myData)
+        .datum(data)
+        .call(chart);
+
+
+      nv.utils.windowResize(chart.update);
+
+      return chart;
+    });
 
 
 
@@ -123,7 +134,6 @@
     //
     //   return data;
     // }
-
   </script>
 </body>
 
