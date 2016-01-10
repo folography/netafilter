@@ -31,35 +31,31 @@
     <svg style="width:800px;  height:500px">
     </svg>
   </div>
-  <div id='chart2'>
-    <svg style="width:800px;  height:500px">
-    </svg>
-  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
     // Load data
     d3.csv("data/myneta-loksabha.csv", function(data) {
 
-      var scatterData = [{
-        key: "PC_CODE",
-        values: []
-      }]
+      var scatterData = d3.nest()
+        .key(function(d) {
+          return d['ST_NAME'];
+        })
+        .entries(data);
+
 
       // Parse strings to integers http://learnjsdata.com/read_data.html
-      data.forEach(function(d) {
+      data.forEach(function(d, i) {
+
         d['myneta Education Points'] = +d['myneta Education Points']
         d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
         d['myneta Criminal Case'] = +d['myneta Criminal Case']
 
-        // Push to the plot dataset http://bl.ocks.org/phil-pedruco/7243857
-        scatterData[0].key = d["PC_CODE"];
-        scatterData[0].values.push(d)
       });
 
       // DEBUG
       window.data = scatterData;
-      console.log(data[0]);
+      console.log(window.data);
 
     });
 
@@ -80,19 +76,18 @@
           return d['myneta Criminal Case'];
         })
         // .color(d3.scale.category20().range());
-        .color(d3.scale.category20().range());
+        .color(d3.scale.category20().range())
+        .pointScale(d3.scale.linear().range([1,50]));
 
       chart.tooltip.contentGenerator(function(obj) {
         console.log(obj);
-        return '<h3>Group ' + obj.point.series + '</h3>'
-      })
+        return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4>'
+      }).headerEnabled(true)
 
       //Axis settings
       chart.xAxis.tickFormat(d3.format('.02f'));
       chart.yAxis.tickFormat(d3.format('.02f'));
 
-
-      console.log(data);
 
       d3.select('#chart svg')
         // .datum(myData)
