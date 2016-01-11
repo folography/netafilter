@@ -3,8 +3,8 @@
 
 {% include header.html %}
 
-<body>
-  {% include old-browser.html %}
+<body {% if page.map %}class='map'{% endif %}>
+  {% include broswerupgrade.html %}
 
   {{ content }}
 </body>
