@@ -9,7 +9,6 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -91,7 +90,7 @@
 
       d3.select('#chart svg')
         // .datum(myData)
-        .datum(data)
+        .datum(window.data)
         .call(chart);
 
 
