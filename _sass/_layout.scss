@@ -1,9 +1,36 @@
-h1,
-h1.fancy {
-  font-size: 1.3em;
-  line-height: 1.1em;
-  margin-bottom: 0.5em;
+.background{
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+
+  &::after{
+  content: "";
+  background:url("../img/background.jpg") top right;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
+
+}
+
+// Page specific overrides
+
+.map{
+  h1,
+  h1.fancy {
+    font-size: 1.3em;
+    line-height: 1.1em;
+    margin-bottom: 0.5em;
+  }
+
+}
+
+// Common Styles
 .tagline {
   letter-spacing: inherit;
   display: inline-block;
@@ -56,10 +83,18 @@ h1.fancy {
   border-radius: 4px;
   padding: 12px;
   border: 1px solid black;
+
+  tr:first-child {
+    border-bottom: 1px solid #999;
+  }
+
+  td {
+    padding: 7px 14px 7px 0;
+    border: none;
+  }
+
 }
-#map-tooltip tr:first-child {
-  border-bottom: 1px solid #999;
-}
+
 .candidateName {
   font-size: 21px;
   font-weight: 800;
@@ -78,10 +113,7 @@ h1.fancy {
   font-size: 16px;
   font-weight: 800;
 }
-#map-tooltip td {
-  padding: 7px 14px 7px 0;
-  border: none;
-}
+
 .party {
   width: 50px;
   height: 50px;

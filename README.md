@@ -1,5 +1,5 @@
-# Visavis
-Interactive visualisations of the data available from the Indian government. **[Live Site](http://folography.github.io/visavis/)**
+# Netafilter
+A tool to filter our netas using data available from the Indian government. **[netafilter.in](http://folography.github.io/netafilter/)**
 
 ### Contributing
 Site is built using [Jekyll](http://jekyllrb.com/). Clone the repository and run `jekyll serve` from the directory to test your changes.
