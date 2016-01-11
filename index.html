@@ -63,11 +63,6 @@ title: Netafilter - Map
         </li>
       </ul>
 
-      <div id='chart'>
-        <svg style="width:100%;  height:400px">
-        </svg>
-      </div>
-
     </div>
     <a href='https://github.com/folography/visavis/issues' class='button short stroke quiet icon alert'>Site has issues..</a>
 
@@ -162,73 +157,5 @@ title: Netafilter - Map
 
   });
 
-  // Create scatterChart
-  // http://nvd3.org/examples/scatter.html
-  nv.addGraph(function() {
-    var chart = nv.models.scatterChart()
-      .showDistX(true)
-      .showDistY(true)
-      .duration(100)
-      .x(function(d) {
-        return d['myneta Education Points'];
-      })
-      .y(function(d) {
-        return d['myneta Total Assets'];
-      })
-      .pointSize(function(d) {
-        return d['myneta Criminal Case'];
-      })
-      // .color(d3.scale.category20().range());
-      .color(d3.scale.category20().range())
-      .pointScale(d3.scale.linear().range(100));
 
-    chart.tooltip.contentGenerator(function(obj) {
-      console.log(obj);
-      return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4>'
-    }).headerEnabled(true)
-
-    //Axis settings
-    chart.xAxis.tickFormat(d3.format('.02f'));
-    chart.yAxis.tickFormat(d3.format('.02f'));
-
-
-    // d3.select('#chart svg')
-    //   .datum(data)
-    //   .call(chart);
-
-
-    nv.utils.windowResize(chart.update);
-
-    return chart;
-  });
-
-
-
-  // /**************************************
-  //  * Simple test data generator
-  //  */
-  // function randomData(groups, points) { //# groups,# points per group
-  //   var data = [],
-  //     shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
-  //     random = d3.random.normal();
-  //
-  //   for (i = 0; i < groups; i++) {
-  //     data.push({
-  //       key: 'Group ' + i,
-  //       values: []
-  //     });
-  //
-  //     for (j = 0; j < points; j++) {
-  //       data[i].values.push({
-  //         x: random(),
-  //         y: random(),
-  //         size: Math.random() //Configure the size of each scatter point
-  //           ,
-  //         shape: (Math.random() > 0.95) ? shapes[j % 6] : "circle" //Configure the shape of each scatter point.
-  //       });
-  //     }
-  //   }
-  //
-  //   return data;
-  // }
 </script>
