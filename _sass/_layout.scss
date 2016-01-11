@@ -1,45 +1,40 @@
-h1,h1.fancy {
+h1,
+h1.fancy {
   font-size: 1.3em;
   line-height: 1.1em;
   margin-bottom: 0.5em;
 }
-
-.tagline{
-  letter-spacing:inherit;
+.tagline {
+  letter-spacing: inherit;
   display: inline-block;
-  color:rgba(255,255,255,.5);
+  color: rgba(255,255,255,.5);
 }
-
-
 #map {
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   width: 100%;
 }
-
-.dark a{
-  color:rgba(255,255,255,.7);
+.dark a {
+  color: rgba(255,255,255,.7);
 }
 #sidebar {
   background-color: rgba(40, 53, 61, 1);
   overflow: hidden;
 }
-
 @media only screen and (max-width: 620px) {
   #sidebar {
     display: none;
   }
 }
-
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) #map {
-  position: relative;
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+  #map {
+    position: relative;
+  }
 }
-
 #feature-count {
   color: rgba(199, 16, 181, 255);
 }
-
 .map-legend-circle {
   width: 10px;
   height: 10px;
@@ -62,38 +57,37 @@ h1,h1.fancy {
   padding: 12px;
   border: 1px solid black;
 }
-#map-tooltip tr:first-child{
+#map-tooltip tr:first-child {
   border-bottom: 1px solid #999;
 }
-.candidateName{
+.candidateName {
   font-size: 21px;
   font-weight: 800;
   line-height: 1.3em;
 }
-.constituencyName{
+.constituencyName {
   font-size: 15px;
   color: #666;
   margin-bottom: 5px;
   padding-bottom: 16px;
 }
-.label{
+.label {
   font-size: 12px;
 }
-.value{
+.value {
   font-size: 16px;
   font-weight: 800;
 }
-#map-tooltip td{
+#map-tooltip td {
   padding: 7px 14px 7px 0;
   border: none;
 }
-
-.party{
+.party {
   width: 50px;
   height: 50px;
-  background-color: #eee;;
+  background-color: #eee;
   margin-right: 10px;
-  text-align:center;
+  text-align: center;
   line-height: 48px;
 }
 .party span {
@@ -101,6 +95,6 @@ h1,h1.fancy {
   vertical-align: middle;
   line-height: normal;
 }
-.BJP{
-  background-color:#dd9900;
+.BJP {
+  background-color: #dd9900;
 }
