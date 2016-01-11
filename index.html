@@ -1,5 +1,5 @@
 ---
-layout: map
+layout: default
 title: Netafilter - Map
 ---
 
@@ -75,6 +75,8 @@ title: Netafilter - Map
 <div id='map-tooltip'>
 </div>
 
+<!-- Escape ractive handlebars from Jekyll parsing -->
+{% raw %}
 <script id='myneta-template' type='text/ractive'>
   {{#if (typeof id === 'undefined') }}
   <p>
@@ -120,6 +122,7 @@ title: Netafilter - Map
   </table>
   {{/if}}
 </script>
+{% endraw %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/mapbox-gl-js-common.js"></script>
