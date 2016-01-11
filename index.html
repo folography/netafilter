@@ -192,10 +192,9 @@ title: Netafilter - Map
     chart.yAxis.tickFormat(d3.format('.02f'));
 
 
-    d3.select('#chart svg')
-      // .datum(myData)
-      .datum(data)
-      .call(chart);
+    // d3.select('#chart svg')
+    //   .datum(data)
+    //   .call(chart);
 
 
     nv.utils.windowResize(chart.update);
