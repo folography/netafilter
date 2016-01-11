@@ -4,11 +4,12 @@ chart: true
 title: Netafilter - Chart
 ---
 
-<h1>
-  Neta ji, how do you do?</h1>
-<div id='chart'>
-  <svg style="width:800px;  height:500px">
-  </svg>
+<h1>Neta ji, how do you do?</h1>
+
+<h2>Educated and rich</h2>
+
+<svg id='educated' style="height:400px;"></svg>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -20,6 +21,7 @@ title: Netafilter - Chart
       .key(function(d) {
         return d['ST_NAME'];
       })
+      .sortKeys(d3.ascending)
       .entries(data);
 
 
@@ -42,7 +44,6 @@ title: Netafilter - Chart
   // http://nvd3.org/examples/scatter.html
   nv.addGraph(function() {
     var chart = nv.models.scatterChart()
-      .showDistX(true)
       .showDistY(true)
       .duration(100)
       .x(function(d) {
@@ -56,7 +57,7 @@ title: Netafilter - Chart
       })
       // .color(d3.scale.category20().range());
       .color(d3.scale.category20().range())
-      .pointScale(d3.scale.linear().range(100));
+      .width(800);
 
     chart.tooltip.contentGenerator(function(obj) {
       console.log(obj);
@@ -64,11 +65,11 @@ title: Netafilter - Chart
     }).headerEnabled(true)
 
     //Axis settings
-    chart.xAxis.tickFormat(d3.format('.02f'));
-    chart.yAxis.tickFormat(d3.format('.02f'));
+    chart.xAxis.axisLabel('Education (years)').tickFormat(d3.format('d'));
+    chart.yAxis.axisLabel('Assets (Rs. crore)').tickFormat(d3.format('d'));
 
 
-    d3.select('#chart svg')
+    d3.select('#educated')
       // .datum(myData)
       .datum(window.data)
       .call(chart);
