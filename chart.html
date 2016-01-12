@@ -7,17 +7,18 @@ title: Netafilter - Chart
 <h1>Neta ji, how do you do?</h1>
 
 <h2>Educated and rich</h2>
-
 <svg id='educated' style="height:400px;"></svg>
 
-</div>
+<h2>Party assets and liabilities</h2>
+<svg id='assets' style="height:400px;"></svg>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
   // Load data
   d3.csv("data/myneta-loksabha.csv", function(data) {
 
-    var scatterData = d3.nest()
+    var chartData = d3.nest()
       .key(function(d) {
         return d['ST_NAME'];
       })
@@ -35,7 +36,7 @@ title: Netafilter - Chart
     });
 
     // DEBUG
-    window.data = scatterData;
+    window.data = chartData;
     console.log(window.data);
 
   });

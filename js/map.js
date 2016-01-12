@@ -60,6 +60,9 @@ var map = new mapboxgl.Map({
   hash: true
 });
 
+// Add geocoder https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md
+map.addControl(new mapboxgl.Geocoder({'position':'top-right','container':'map-search'}));
+
 //Supress Tile errors
 map.off('tile.error', map.onError);
 
