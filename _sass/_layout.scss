@@ -70,22 +70,33 @@
 }
 
 /* Map tooltip */
-#map-tooltip {
+#map-control{
+
   position: absolute;
   right: 0.6em;
   top: 0.6em;
-  background-color: white;
-  /* box-shadow: 0px 0px 5px rgba(0,0,0,0.8); */
-  border-radius: 4px;
-  padding: 12px;
-  border: 1px solid black;
-  tr:first-child {
-    border-bottom: 1px solid #999;
+
+  #map-search{
+    float: right;
   }
-  td {
-    padding: 7px 14px 7px 0;
-    border: none;
+  #map-tooltip {
+    margin-top: 0.6em;
+    float: right;
+    clear:right;
+    background-color: white;
+    /* box-shadow: 0px 0px 5px rgba(0,0,0,0.8); */
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid black;
+    tr:first-child {
+      border-bottom: 1px solid #999;
+    }
+    td {
+      padding: 7px 14px 7px 0;
+      border: none;
+    }
   }
+
 }
 .candidateName {
   font-size: 21px;
