@@ -62,7 +62,7 @@ title: Netafilter - Chart
 
     chart.tooltip.contentGenerator(function(obj) {
       console.log(obj);
-      return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4>'
+      return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4><p>'+obj.point['myneta Criminal Case']+' criminal cases</p>'
     }).headerEnabled(true)
 
     //Axis settings
