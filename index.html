@@ -27,21 +27,23 @@ title: Netafilter - Map
 
       <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">Parliamentary Constituencies</a></h3>
 
-
-      <ul class="keyline-top space-bottom1">
-        <li>
-          <a data-map-layer='myneta-loksabha data' data-map-layer-field='myneta Education Points' href="#" class="truncate strong bloxk small active" onclick='mapSetFilter(this);'>
-              Educational Qualification</a>
-        </li>
-        <li>
-          <a data-map-layer='assets' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
-              Declared Assets</a>
-        </li>
-        <li>
-          <a data-map-layer='criminal' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
-              Criminal Cases</a>
-        </li>
-      </ul>
+      {% raw %}
+        <div id="netafilters"></div>
+        <script id='netafilters-template' type='text/ractive'>
+          <ul class="keyline-top space-bottom1">
+            {{#netafilters}}
+              <li>
+                <input type="checkbox" value="0">
+                <label>{{label}}</label>
+                {{filters}}
+                  <input type="checkbox" value="0">
+                  <label>{{label}}</label>
+                {{/}}
+              </li>
+            {{/}}
+          </ul>
+        </script>
+      {% endraw %}
 
       <h3>Poltical Party</h3>
 
@@ -132,7 +134,7 @@ title: Netafilter - Map
 <link rel="stylesheet" href="js/vendor/nv.d3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/mapbox-gl-js-common.js"></script>
-<script type="text/javascript" src="/js/map.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
 
 <script>
   // Load data
