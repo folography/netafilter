@@ -44,7 +44,14 @@
 #sidebar {
   background-color: rgba(40, 53, 61, 1);
   overflow: hidden;
+
+  // Dim labels when unchecked
+  form input[type=checkbox]:not(:checked)+label{
+    opacity: 0.5;
+  }
 }
+
+// Hide sidebar on mobile
 @media only screen and (max-width: 620px) {
   #sidebar {
     display: none;
@@ -55,9 +62,9 @@
     position: relative;
   }
 }
-#feature-count {
-  color: rgba(199, 16, 181, 255);
-}
+
+// Map legend
+
 .map-legend-circle {
   width: 10px;
   height: 10px;
