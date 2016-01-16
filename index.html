@@ -133,32 +133,3 @@ title: Netafilter - Map
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/mapbox-gl-js-common.js"></script>
 <script type="text/javascript" src="/js/map.js"></script>
-
-<script>
-  // Load data
-  d3.csv("data/myneta-loksabha.csv", function(data) {
-
-    var scatterData = d3.nest()
-      .key(function(d) {
-        return d['ST_NAME'];
-      })
-      .entries(data);
-
-
-    // Parse strings to integers http://learnjsdata.com/read_data.html
-    data.forEach(function(d, i) {
-
-      d['myneta Education Points'] = +d['myneta Education Points']
-      d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
-      d['myneta Criminal Case'] = +d['myneta Criminal Case']
-
-    });
-
-    // DEBUG
-    window.data = scatterData;
-    console.log(window.data);
-
-  });
-
-
-</script>

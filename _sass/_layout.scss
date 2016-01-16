@@ -24,14 +24,15 @@
     line-height: 1.1em;
     margin-bottom: 0.5em;
   }
+  .tagline {
+    letter-spacing: inherit;
+    display: inline-block;
+    color: rgba(255,255,255,.5);
+  }
 }
 
 // Common Styles
-.tagline {
-  letter-spacing: inherit;
-  display: inline-block;
-  color: rgba(255,255,255,.5);
-}
+
 #map {
   position: absolute;
   top: 0;
