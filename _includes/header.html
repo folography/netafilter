@@ -6,7 +6,6 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}" />
 
   {% if page.map %}
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.js'></script>
@@ -24,7 +23,6 @@
 
   <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ " /css/main.css " | prepend: site.baseurl }}">
-  <script src="{{ " /js/vendor/modernizr-2.8.3.min.js " | prepend: site.baseurl }}"></script>
   <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
 
 </head>
