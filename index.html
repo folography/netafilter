@@ -36,6 +36,8 @@ title: Netafilter - Map
             {{/}}
           </form>
           {{#partial filterlist}}
+            <input id='{{label}}' type="radio" {{#if selected}}checked{{/if}} on-change="filterChange:{{layer}},{{mapFilter}}">
+            <label  for='{{label}}'>{{label}}</label>
             <ul class="keyline-top space-bottom1">
               {{#filters}}
                 {{>filternode}}
@@ -44,8 +46,8 @@ title: Netafilter - Map
           {{/partial}}
           {{#partial filternode}}
             <li>
-              <input id='{{label}}' type="checkbox" on-change="filterChange:{{layer}},{{mapFilter}}">
-              <label  for='{{label}}'>{{label}}</label>
+              <input id='{{label}}' type="checkbox" {{#if selected}}checked{{/if}} on-change="filterChange:{{layer}},{{mapFilter}}">
+              <label  for='{{label}}' style="border-left: 5px solid {{color}}">{{label}}</label>
               <span class='dot'></span>
               {{#if typeof this.filters !== 'undefined'}}
                 {{>filterlist}}
@@ -55,34 +57,8 @@ title: Netafilter - Map
 
         </script>
       {% endraw %}
-
-      <h3>Poltical Party</h3>
-
-      <ul class="keyline-top space-bottom1">
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["==", "myneta Party", "-1"]' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
-              All</a>
-        </li>
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "BJP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
-              BJP</a>
-        </li>
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "INC"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
-              INC</a>
-        </li>
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "AAP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
-              AAP</a>
-        </li>
-      </ul>
-
     </div>
-    <a href='https://github.com/folography/visavis/issues' class='button short stroke quiet icon alert'>Site has issues..</a>
-
   </div>
-
-
 </div>
 
 <div id='map-control'>
