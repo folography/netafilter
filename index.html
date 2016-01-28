@@ -36,17 +36,19 @@ title: Netafilter - Map
             {{/}}
           </form>
           {{#partial filterlist}}
-            <input id='{{label}}' type="radio" {{#if selected}}checked{{/if}} on-change="filterChange:{{layer}},{{mapFilter}}">
+            <input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
             <label  for='{{label}}'>{{label}}</label>
             <ul class="keyline-top space-bottom1">
-              {{#filters}}
-                {{>filternode}}
+              {{# {parent: layer}}}
+                {{#filters}}
+                  {{> filternode {parent: parent}}}
+                {{/}}
               {{/}}
             </ul>
           {{/partial}}
           {{#partial filternode}}
             <li>
-              <input id='{{label}}' type="checkbox" {{#if selected}}checked{{/if}} on-change="filterChange:{{layer}},{{mapFilter}}">
+              <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{/if}} on-change="changeSubfilter:{{layer}},{{mapFilter}}">
               <label  for='{{label}}' style="border-left: 5px solid {{color}}">{{label}}</label>
               <span class='dot'></span>
               {{#if typeof this.filters !== 'undefined'}}

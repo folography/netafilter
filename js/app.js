@@ -6,90 +6,124 @@ window.NetaFilter.filterModel = [{
     fieldName: 'myneta Education Points',
     layer: 'education',
     mapFilter: [["<=", "myneta Education Points", 25]],
-    selected: true,
     filters:[{ color: 'rgb(250, 0, 0)',
         label: 'Illiterate',
-        layer: 'illiterate',
-        mapFilter: [["==", "myneta Education Points", 0]],
-        selected: true
+        layer: 'education-illiterate',
+        mapFilter: [["==", "myneta Education Points", 0]]
       },
       { color: 'rgb(250, 100, 28)',
         label: '8th pass',
-        layer: '8th-pass',
-        mapFilter: [["<=", "myneta Education Points", 9], [">", "myneta Education Points", 0]],
-        selected: true
+        layer: 'education-8th-pass',
+        mapFilter: [["<=", "myneta Education Points", 9], [">", "myneta Education Points", 0]]
       },
       { color: 'rgb(255, 174, 0)',
         label: '10th pass',
-        layer: '10th-pass',
-        mapFilter: [[">=", "myneta Education Points", 10], ["<=", "myneta Education Points", 12]],
-        selected: true
+        layer: 'education-10th-pass',
+        mapFilter: [[">=", "myneta Education Points", 10], ["<=", "myneta Education Points", 12]]
       },
       { color: 'rgb(255, 255, 0)',
         label: 'Graduate',
-        layer: 'graduate',
-        mapFilter: [[">=", "myneta Education Points", 13], ["<=", "myneta Education Points", 15]],
-        selected: true
+        layer: 'education-graduate',
+        mapFilter: [[">=", "myneta Education Points", 13], ["<=", "myneta Education Points", 15]]
       },
       { color: 'rgb(250, 255, 0)',
         label: 'Graduate Professional',
-        layer: 'graduate-professional',
-        mapFilter: [[">=", "myneta Education Points", 16], ["<=", "myneta Education Points", 17]],
-        selected: true
+        layer: 'education-graduate-professional',
+        mapFilter: [[">=", "myneta Education Points", 16], ["<=", "myneta Education Points", 17]]
       },
       { color: 'rgb(179, 255, 0)',
         label: 'Post Graduate',
-        layer: 'post-graduate',
-        mapFilter: [[">=", "myneta Education Points", 18], ["<=", "myneta Education Points", 20]],
-        selected: true
+        layer: 'education-post-graduate',
+        mapFilter: [[">=", "myneta Education Points", 18], ["<=", "myneta Education Points", 20]]
       },
       { color: 'rgb(60, 232, 60)',
         label: 'PhD',
-        layer: 'phd',
-        mapFilter: [[">", "myneta Education Points", 20], ["<=", "myneta Education Points", 25]],
-        selected: true
+        layer: 'education-phd',
+        mapFilter: [[">", "myneta Education Points", 20], ["<=", "myneta Education Points", 25]]
       }
     ]
   },
-  // { 
-  //   label: 'Assets',
-  //   fieldName: 'myneta Total Assets',
-  //   layer: 'assets',
-  //   mapFilter: [["<=", "myneta Total Assets", 10000000000]],
-  //   filters:[
-  //     { color: '#ff0000',
-  //       label: '< 1 Crore',
-  //       layer: 'lt-1cr',
-  //       mapFilter: [["<=", "myneta Total Assets", 10000000]]
-  //     },
-  //     { color: '#ff641c',
-  //       label: '< 3 Crore',
-  //       layer: 'lt-3cr',
-  //       mapFilter: [[">", "myneta Total Assets", 30000000], ["<=", "myneta Total Assets", 30000000]]
-  //     }
-  //   ]
-  // }
+  { 
+    label: 'Assets',
+    fieldName: 'myneta Total Assets',
+    layer: 'assets',
+    color: '#f2f2f2',
+    mapFilter: [["<=", "myneta Total Assets", 10000000000]],
+    filters:[
+      { color: 'rgb(250, 0, 0)',
+        label: '< 1 Crore',
+        layer: 'assets-lt-1cr',
+        mapFilter: [["<=", "myneta Total Assets", 10000000]]
+      },
+      { color: 'rgb(255, 174, 0)',
+        label: '< 3 Crore',
+        layer: 'assets-lt-3cr',
+        mapFilter: [[">", "myneta Total Assets", 10000000], ["<=", "myneta Total Assets", 30000000]]
+      },
+      { color: 'rgb(60, 232, 60)',
+        label: '> 3 Crore',
+        layer: 'assets-gt-3cr',
+        mapFilter: [[">", "myneta Total Assets", 30000000]]
+      }
+    ]
+  },
+  { 
+    label: 'Criminal Cases',
+    fieldName: 'myneta Criminal Case',
+    layer: 'criminal-cases',
+    color: '#f2f2f2',
+    mapFilter: [[">=", "myneta Criminal Case", 0]],
+    filters:[
+      { color: 'rgb(60, 232, 60)',
+        label: '0',
+        layer: 'criminal-cases-zero',
+        mapFilter: [["==", "myneta Criminal Case", 0]]
+      },
+      { color: 'rgb(255, 174, 0)',
+        label: '< 3',
+        layer: 'criminal-cases-lt-3',
+        mapFilter: [[">", "myneta Criminal Case", 0], ["<=", "myneta Criminal Case", 3]]
+      },
+      { color: 'rgb(250, 0, 0)',
+        label: '> 3',
+        layer: 'criminal-cases-gt-3',
+        mapFilter: [[">", "myneta Criminal Case", 3]]
+      }
+    ]
+  }
 ];
 
 
 window.NetaFilter.filterView = {
-  init: function(filters){
+  init: function(filters, selectedLayer){
     var self = this;
     this.ractive = new Ractive({
       el: '#netafilters',
       template: '#netafilters-template',
       data: {
-        filters: filters
+        filters: filters,
+        selectedLayer: selectedLayer
       }
     });
-    this.ractive.on('filterChange', function(e, layer, mapFilter, selected){
+    this.ractive.on('changeFilter', function(e, layer, mapFilter){
+      self.ractive.get('filters').forEach(function(parentFilter){
+        if (parentFilter.layer === self.ractive.get('selectedLayer') || parentFilter.layer === layer) {
+          window.NetaFilter.mapView.toggleVisibility(parentFilter.layer);
+          parentFilter.filters.forEach(function(filter){
+            window.NetaFilter.mapView.toggleVisibility(filter.layer);
+          });
+        }
+      });
+      self.ractive.set('selectedLayer', layer);
+    });
+    this.ractive.on('changeSubfilter', function(e, layer, mapFilter){
       window.NetaFilter.mapView.toggleVisibility(layer);
-    })
+    });
   }
 };
 
 window.NetaFilter.mapView = {
-  init: function(filters){
+  init: function(filters, selectedLayer){
     var self = this;
     
     mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
@@ -109,13 +143,14 @@ window.NetaFilter.mapView = {
 
         var treeToLayer = function(tree){
           var parentLayer;
+          var isSelected;
           tree.forEach(function(node){
             parentLayer = node.layer;
             self.map.on('style.load', function () {
-              self.createLayer({name: node.layer, mapFilter: node.mapFilter, color: node.color, selected: node.selected});
+              self.createLayer({name: node.layer, mapFilter: node.mapFilter, color: node.color, selected: node.layer === selectedLayer});
               if (typeof node.filters === 'object') {
                 node.filters.forEach(function(subnode){
-                  self.createLayer({name: subnode.layer, mapFilter: subnode.mapFilter, color: subnode.color, selected: subnode.selected});
+                  self.createLayer({name: subnode.layer, mapFilter: subnode.mapFilter, color: subnode.color, selected: node.layer === selectedLayer});
                 })
               }
             });
@@ -200,6 +235,7 @@ window.NetaFilter.mapView = {
     });
   },
   createLayer: function(config){
+    console.log(config.selected);
     this.map.addLayer({
      "id": config.name,
      "type": "fill",
@@ -223,5 +259,5 @@ window.NetaFilter.mapView = {
   }
 };
 
-window.NetaFilter.filterView.init(window.NetaFilter.filterModel);
-window.NetaFilter.mapView.init(window.NetaFilter.filterModel);
+window.NetaFilter.filterView.init(window.NetaFilter.filterModel, 'education');
+window.NetaFilter.mapView.init(window.NetaFilter.filterModel, 'education');
