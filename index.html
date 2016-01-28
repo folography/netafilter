@@ -27,49 +27,40 @@ title: Netafilter - Map
 
       <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">Parliamentary Constituencies</a></h3>
 
+      {% raw %}
+        <div id="netafilters"></div>
+        <script id='netafilters-template' type='text/ractive'>
+          <form method="GET">
+            {{#filters}}
+              {{>filterlist}}
+            {{/}}
+          </form>
+          {{#partial filterlist}}
+            <input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
+            <label  for='{{label}}'>{{label}}</label>
+            <ul class="keyline-top space-bottom1">
+              {{# {parent: layer}}}
+                {{#filters}}
+                  {{> filternode {parent: parent}}}
+                {{/}}
+              {{/}}
+            </ul>
+          {{/partial}}
+          {{#partial filternode}}
+            <li>
+              <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
+              <label  for='{{label}}' style="border-left: 5px solid {{color}}">{{label}}</label>
+              <span class='dot'></span>
+              {{#if typeof this.filters !== 'undefined'}}
+                {{>filterlist}}
+              {{/if}}
+            </li>
+          {{/partial}}
 
-      <ul class="keyline-top space-bottom1">
-        <li>
-          <a data-map-layer='myneta-loksabha data' data-map-layer-field='myneta Education Points' href="#" class="truncate strong bloxk small active" onclick='mapSetFilter(this);'>
-              Educational Qualification</a>
-        </li>
-        <li>
-          <a data-map-layer='assets' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
-              Declared Assets</a>
-        </li>
-        <li>
-          <a data-map-layer='criminal' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
-              Criminal Cases</a>
-        </li>
-      </ul>
-
-      <h3>Poltical Party</h3>
-
-      <ul class="keyline-top space-bottom1">
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["==", "myneta Party", "-1"]' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
-              All</a>
-        </li>
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "BJP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
-              BJP</a>
-        </li>
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "INC"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
-              INC</a>
-        </li>
-        <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "AAP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
-              AAP</a>
-        </li>
-      </ul>
-
+        </script>
+      {% endraw %}
     </div>
-    <a href='https://github.com/folography/visavis/issues' class='button short stroke quiet icon alert'>Site has issues..</a>
-
   </div>
-
-
 </div>
 
 <div id='map-control'>
@@ -132,4 +123,34 @@ title: Netafilter - Map
 <link rel="stylesheet" href="js/vendor/nv.d3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/mapbox-gl-js-common.js"></script>
-<script type="text/javascript" src="/js/map.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
+
+<script>
+  // Load data
+  d3.csv("data/myneta-loksabha.csv", function(data) {
+
+    var scatterData = d3.nest()
+      .key(function(d) {
+        return d['ST_NAME'];
+      })
+      .entries(data);
+
+
+    // Parse strings to integers http://learnjsdata.com/read_data.html
+    data.forEach(function(d, i) {
+
+      d['myneta Education Points'] = +d['myneta Education Points']
+      d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
+      d['myneta Criminal Case'] = +d['myneta Criminal Case']
+
+    });
+
+    // DEBUG
+    window.data = scatterData;
+    console.log(window.data);
+
+  });
+
+
+</script>
+>>>>>>> restructure
