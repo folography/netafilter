@@ -1,83 +1,95 @@
 ---
 layout: default
 chart: true
-title: Netafilter - Chart
+title: Netafilter - Charts
+description: Explore Candidate data using
 ---
 
 <h1>Neta ji, how do you do?</h1>
 
-<h2>Educated and rich</h2>
-<svg id='educated' style="height:400px;"></svg>
+<h2>Education vs declared assets</h2>
+<svg id='chart1' style="height:400px;"></svg>
 
-<h2>Party assets and liabilities</h2>
-<svg id='assets' style="height:400px;"></svg>
+<h2>Criminal cases vs declared assets</h2>
+<svg id='chart2' style="height:400px;"></svg>
+
+<h2>Party vs criminal cases</h2>
+<svg id='chart3' style="height:400px;"></svg>
+
+<h2>Stae vs criminal cases</h2>
+<svg id='chart4' style="height:400px;"></svg>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
-  // Load data
+
+window.chart = [];
+
+//
+// Chart 1: Scatter chart of candidate education vs assets
+nv.addGraph(function() {
+  chart[1] = nv.models.scatterChart()
+    .showDistY(true)
+    .duration(100)
+    .x(function(d) {
+      return d['myneta Education Points'];
+    })
+    .y(function(d) {
+      return d['myneta Total Assets'];
+    })
+    .pointSize(function(d) {
+      return d['myneta Criminal Case'];
+    })
+    // .color(d3.scale.category20().range());
+    .color(d3.scale.category20().range())
+    .width(800);
+
+  // Chart formatting
+  chart[1].tooltip.contentGenerator(function(obj) {
+    console.log(obj);
+    return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4><p>' + obj.point['myneta Criminal Case'] + ' criminal cases</p>'
+  }).headerEnabled(true)
+  chart[1].xAxis.axisLabel('Education (years)').tickFormat(d3.format('d'))
+  chart[1].yAxis.axisLabel('Assets (Rs. crore)').tickFormat(d3.format('d'));
+
+  // Resize charts
+  nv.utils.windowResize(chart[1].update);
+
+  // Attach chart to the page
+  d3.select('#chart1')
+    .datum(mynetaData)
+    .call(chart[1]);
+
+  return chart;
+
+});
+
+  var mynetaData;
+
   d3.csv("data/myneta-loksabha.csv", function(data) {
 
-    var chartData = d3.nest()
+    // Data cleanup: parse strings to integers http://learnjsdata.com/read_data.html
+    data.forEach(function(d, i) {
+      d['myneta Education Points'] = +d['myneta Education Points']
+      d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
+      d['myneta Criminal Case'] = +d['myneta Criminal Case']
+    });
+
+    // Group data by state
+    mynetaData = d3.nest()
       .key(function(d) {
         return d['ST_NAME'];
       })
       .sortKeys(d3.ascending)
       .entries(data);
 
-
-    // Parse strings to integers http://learnjsdata.com/read_data.html
-    data.forEach(function(d, i) {
-
-      d['myneta Education Points'] = +d['myneta Education Points']
-      d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
-      d['myneta Criminal Case'] = +d['myneta Criminal Case']
-
-    });
-
     // DEBUG
-    window.data = chartData;
+    window.data = mynetaData;
     console.log(window.data);
 
+
+
   });
 
-  // Create scatterChart
-  // http://nvd3.org/examples/scatter.html
-  nv.addGraph(function() {
-    var chart = nv.models.scatterChart()
-      .showDistY(true)
-      .duration(100)
-      .x(function(d) {
-        return d['myneta Education Points'];
-      })
-      .y(function(d) {
-        return d['myneta Total Assets'];
-      })
-      .pointSize(function(d) {
-        return d['myneta Criminal Case'];
-      })
-      // .color(d3.scale.category20().range());
-      .color(d3.scale.category20().range())
-      .width(800);
 
-    chart.tooltip.contentGenerator(function(obj) {
-      console.log(obj);
-      return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4><p>'+obj.point['myneta Criminal Case']+' criminal cases</p>'
-    }).headerEnabled(true)
-
-    //Axis settings
-    chart.xAxis.axisLabel('Education (years)').tickFormat(d3.format('d'));
-    chart.yAxis.axisLabel('Assets (Rs. crore)').tickFormat(d3.format('d'));
-
-
-    d3.select('#educated')
-      // .datum(myData)
-      .datum(window.data)
-      .call(chart);
-
-
-    nv.utils.windowResize(chart.update);
-
-    return chart;
-  });
 </script>
