@@ -45,7 +45,37 @@
 #sidebar {
   background-color: rgba(40, 53, 61, 1);
   overflow: hidden;
+
+  // Dim labels when unchecked
+  form input[type=checkbox]:not(:checked){
+
+    opacity: 0.5;
+
+    &~label,&~span{
+      opacity: 0.5;
+    }
+
+  }
+
+
+  ul ul input{
+    display: none;
+  }
+
+  ul ul .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #aaa;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    float: left;
+    margin: 5px 7px 0 0;
+  }
 }
+
+// Hide sidebar on mobile
 @media only screen and (max-width: 620px) {
   #sidebar {
     display: none;
@@ -56,19 +86,8 @@
     position: relative;
   }
 }
-#feature-count {
-  color: rgba(199, 16, 181, 255);
-}
-.map-legend-circle {
-  width: 10px;
-  height: 10px;
-  background: red;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  float: left;
-  margin: 5px 7px 0 0;
-}
+
+
 
 /* Map tooltip */
 #map-control{
