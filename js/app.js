@@ -116,8 +116,10 @@ window.NetaFilter.filterView = {
       });
       self.ractive.set('selectedLayer', layer);
     });
-    this.ractive.on('changeSubfilter', function(e, layer, mapFilter){
-      window.NetaFilter.mapView.toggleVisibility(layer);
+    this.ractive.on('changeSubfilter', function(e, parentLayer, layer, mapFilter){
+      if (parentLayer === self.ractive.get('selectedLayer')) {
+        window.NetaFilter.mapView.toggleVisibility(layer);
+      }
     });
   }
 };
@@ -204,7 +206,6 @@ window.NetaFilter.mapView = {
               includeGeometry: true
             }, function(err, features) {
               // Reset the tooltip if a different constituency is selected
-              console.log(features);
               if (selectedConstituency !== features[0].properties['PC_NAME2']) {
                 tooltip.setFeatures(features);
                 selectedConstituency = features[0].properties['PC_NAME2'];
@@ -235,7 +236,6 @@ window.NetaFilter.mapView = {
     });
   },
   createLayer: function(config){
-    console.log(config.selected);
     this.map.addLayer({
      "id": config.name,
      "type": "fill",

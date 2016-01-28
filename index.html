@@ -48,7 +48,7 @@ title: Netafilter - Map
           {{/partial}}
           {{#partial filternode}}
             <li>
-              <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{/if}} on-change="changeSubfilter:{{layer}},{{mapFilter}}">
+              <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
               <label  for='{{label}}' style="border-left: 5px solid {{color}}">{{label}}</label>
               <span class='dot'></span>
               {{#if typeof this.filters !== 'undefined'}}
