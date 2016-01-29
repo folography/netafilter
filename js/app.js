@@ -43,7 +43,7 @@ window.NetaFilter.filterModel = [{
       }
     ]
   },
-  { 
+  {
     label: 'Assets',
     fieldName: 'myneta Total Assets',
     layer: 'assets',
@@ -67,7 +67,7 @@ window.NetaFilter.filterModel = [{
       }
     ]
   },
-  { 
+  {
     label: 'Criminal Cases',
     fieldName: 'myneta Criminal Case',
     layer: 'criminal-cases',
@@ -127,7 +127,7 @@ window.NetaFilter.filterView = {
 window.NetaFilter.mapView = {
   init: function(filters, selectedLayer){
     var self = this;
-    
+
     mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
     self.map = new mapboxgl.Map({
       container: 'map', // container id
@@ -181,7 +181,7 @@ window.NetaFilter.mapView = {
               });
             }
           });
-          
+
           var selectedConstituency = '';
           var selectedLayer = self.map.addLayer({
            "id": "selected-constituency",

@@ -42,38 +42,63 @@
 .dark a {
   color: rgba(255,255,255,.7);
 }
+
 #sidebar {
   background-color: rgba(40, 53, 61, 1);
   overflow: hidden;
 
+  li{
+
+    .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #aaa;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        float: left;
+        margin: 5px 7px 0 0;
+      }
+
+      .bar {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background: #aaa;
+          float: left;
+          margin: 5px 7px 0 0;
+        }
+
+    }
+
+  }
   // Dim labels when unchecked
-  form input[type=checkbox]:not(:checked){
+  form input{
+    display: none;
+    opacity:0.5;
 
-    opacity: 0.5;
+    /* Inactive category */
+    &[type=radio]:not(:checked){
+      &~label,&~span{
+        opacity:0.5;
+      }
 
-    &~label,&~span{
-      opacity: 0.5;
+      li{
+        display:none;
+      }
+      
+      [type=checkbox]:not(:checked){
+        display: none;
+        &~label,&~span{
+
+        }
+      }
+
     }
 
   }
 
-
-  ul ul input{
-    display: none;
-  }
-
-  ul ul .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #aaa;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    float: left;
-    margin: 5px 7px 0 0;
-  }
-}
 
 // Hide sidebar on mobile
 @media only screen and (max-width: 620px) {
@@ -118,6 +143,8 @@
   }
 
 }
+
+/* Hover data */
 .candidateName {
   font-size: 21px;
   font-weight: 800;
