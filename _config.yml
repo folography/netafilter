@@ -4,7 +4,8 @@ email: hey@ocsid.in
 description: > # this means to ignore newlines until "baseurl:"
  Indian MP, MLA, Councillor statistics, information and comparisons based on open data from the government.
  Netafilter can easily filter your polticial candidate based on education, assets, criminal cases, party and constituency from the affidavit information
-baseurl: "" # the subpath of your site, e.g. /blog/
+# baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/.well-known/acme-challenge" # the subpath of your site, e.g. /blog/
 url: "http://netafilter.in" # the base hostname & protocol for your site
 twitter_username: ocsid
 github_username:  ocsid
