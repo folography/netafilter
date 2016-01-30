@@ -47,6 +47,16 @@
   overflow: hidden;
 
   // Dim labels when unchecked
+  fieldset{
+    font-weight: bold;
+    margin: 0;
+    label{
+      display: inline-block;
+    }
+  }
+  form dl label{
+    padding-left: 0.5em;
+  }
   form input[type=checkbox]:not(:checked){
 
     opacity: 0.5;
