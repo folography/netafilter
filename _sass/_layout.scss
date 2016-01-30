@@ -48,17 +48,38 @@
 
   // Dim labels when unchecked
   fieldset{
-    font-weight: bold;
     margin: 0;
+    cursor: pointer;
     label{
+
       display: inline-block;
+      font-size: 14px;
     }
   }
-  form dl label{
-    padding-left: 0.5em;
-  }
-  form input[type=checkbox]:not(:checked){
+  form dl{
+    cursor: pointer;
 
+    label{
+      cursor: pointer;
+      padding-left: 0.5em;
+    }
+  }
+
+  form fieldset {
+
+    input[type=checkbox]{
+
+    }
+
+    :not(:checked){
+      &~label,&~span{
+        opacity: 0.5;
+      }
+    }
+
+  }
+
+  form input[type=checkbox]:not(:checked){
     opacity: 0.5;
 
     &~label,&~span{

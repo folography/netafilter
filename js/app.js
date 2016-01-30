@@ -43,51 +43,83 @@ window.NetaFilter.filterModel = [{
       }
     ]
   },
-  { 
+  {
     label: 'Assets',
     fieldName: 'myneta Total Assets',
     layer: 'assets',
     color: '#f2f2f2',
     mapFilter: [["<=", "myneta Total Assets", 10000000000]],
     filters:[
-      { color: 'rgb(250, 0, 0)',
+      { color: '#f1eef6',
         label: '< 1 Crore',
         layer: 'assets-lt-1cr',
         mapFilter: [["<=", "myneta Total Assets", 10000000]]
       },
-      { color: 'rgb(255, 174, 0)',
-        label: '< 3 Crore',
+      { color: '#d4b9da',
+        label: '> 1 Crore',
         layer: 'assets-lt-3cr',
         mapFilter: [[">", "myneta Total Assets", 10000000], ["<=", "myneta Total Assets", 30000000]]
       },
-      { color: 'rgb(60, 232, 60)',
+      { color: '#c994c7',
         label: '> 3 Crore',
-        layer: 'assets-gt-3cr',
-        mapFilter: [[">", "myneta Total Assets", 30000000]]
+        layer: 'assets-gt-10cr',
+        mapFilter: [[">", "myneta Total Assets", 30000000], ["<=", "myneta Total Assets", 100000000]]
+      },
+      { color: '#df65b0',
+        label: '> 10 Crore',
+        layer: 'assets-gt-20cr',
+        mapFilter: [[">", "myneta Total Assets", 100000000], ["<=", "myneta Total Assets", 200000000]]
+      },
+      { color: '#e7298a',
+        label: '> 20 Crore',
+        layer: 'assets-gt-50cr',
+        mapFilter: [[">", "myneta Total Assets", 200000000], ["<=", "myneta Total Assets", 500000000]]
+      },
+      { color: '#ce1256',
+        label: '> 50 Crore',
+        layer: 'assets-gt-100cr',
+        mapFilter: [[">", "myneta Total Assets", 500000000], ["<=", "myneta Total Assets", 1000000000]]
+      },
+      { color: '#91003f',
+        label: '> 100 Crore',
+        layer: 'assets-gt-200cr',
+        mapFilter: [[">", "myneta Total Assets", 1000000000]]
       }
     ]
   },
-  { 
+  {
     label: 'Criminal Cases',
     fieldName: 'myneta Criminal Case',
     layer: 'criminal-cases',
     color: '#f2f2f2',
     mapFilter: [[">=", "myneta Criminal Case", 0]],
     filters:[
-      { color: 'rgb(60, 232, 60)',
+      { color: '#ddffb3',
         label: '0',
-        layer: 'criminal-cases-zero',
+        layer: 'criminal-cases-0',
         mapFilter: [["==", "myneta Criminal Case", 0]]
       },
-      { color: 'rgb(255, 174, 0)',
+      { color: '#ffffb2',
+        label: '< 2',
+        layer: 'criminal-cases-lt-2',
+        mapFilter: [[">", "myneta Criminal Case", 0], ["<=", "myneta Criminal Case", 2]]
+      },{ color: '#fed976',
         label: '< 3',
-        layer: 'criminal-cases-lt-3',
-        mapFilter: [[">", "myneta Criminal Case", 0], ["<=", "myneta Criminal Case", 3]]
+        layer: 'criminal-cases-lt-5',
+        mapFilter: [[">", "myneta Criminal Case", 2], ["<=", "myneta Criminal Case", 5]]
+      },{ color: '#feb24c',
+        label: '< 3',
+        layer: 'criminal-cases-lt-10',
+        mapFilter: [[">", "myneta Criminal Case", 5], ["<=", "myneta Criminal Case", 10]]
+      },{ color: '#fc4e2a',
+        label: '< 3',
+        layer: 'criminal-cases-lt-20',
+        mapFilter: [[">", "myneta Criminal Case", 10], ["<=", "myneta Criminal Case", 20]]
       },
-      { color: 'rgb(250, 0, 0)',
+      { color: '#b10026',
         label: '> 3',
-        layer: 'criminal-cases-gt-3',
-        mapFilter: [[">", "myneta Criminal Case", 3]]
+        layer: 'criminal-cases-gt-20',
+        mapFilter: [[">", "myneta Criminal Case", 20]]
       }
     ]
   }
@@ -127,7 +159,7 @@ window.NetaFilter.filterView = {
 window.NetaFilter.mapView = {
   init: function(filters, selectedLayer){
     var self = this;
-    
+
     mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
     self.map = new mapboxgl.Map({
       container: 'map', // container id
@@ -181,7 +213,7 @@ window.NetaFilter.mapView = {
               });
             }
           });
-          
+
           var selectedConstituency = '';
           var selectedLayer = self.map.addLayer({
            "id": "selected-constituency",
