@@ -48,9 +48,9 @@ description: Explore candidate information on interactive maps
             </ul>
           {{/partial}}
           {{#partial filternode}}
-            <li>
+            <li style="border-left: 5px solid {{color}}">
               <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
-              <label  for='{{label}}' style="border-left: 5px solid {{color}}">{{label}}</label>
+              <label  for='{{label}}'>{{label}}</label>
               <span class='dot'></span>
               {{#if typeof this.filters !== 'undefined'}}
                 {{>filterlist}}
@@ -154,4 +154,3 @@ description: Explore candidate information on interactive maps
 
 
 </script>
->>>>>>> restructure
