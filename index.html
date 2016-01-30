@@ -37,25 +37,25 @@ description: Explore candidate information on interactive maps
             {{/}}
           </form>
           {{#partial filterlist}}
-            <input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
-            <label  for='{{label}}'>{{label}}</label>
-            <ul class="keyline-top space-bottom1">
+            <fieldset><input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
+            <label  for='{{label}}'>{{label}}</label></fieldset>
+            <dl class="keyline-top space-bottom1">
               {{# {parent: layer}}}
                 {{#filters}}
                   {{> filternode {parent: parent}}}
                 {{/}}
               {{/}}
-            </ul>
+            </dl>
           {{/partial}}
           {{#partial filternode}}
-            <li>
+            <dt>
               <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
               <span class='dot' style="background-color:{{color}}"></span>
               <label  for='{{label}}'>{{label}}</label>
               {{#if typeof this.filters !== 'undefined'}}
                 {{>filterlist}}
               {{/if}}
-            </li>
+            </dt>
           {{/partial}}
 
         </script>
