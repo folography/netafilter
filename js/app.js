@@ -99,27 +99,31 @@ window.NetaFilter.filterModel = [{
         layer: 'criminal-cases-0',
         mapFilter: [["==", "myneta Criminal Case", 0]]
       },
-      { color: '#ffffb2',
-        label: '< 2',
+      { color: '#fed976',
+        label: '< 1',
         layer: 'criminal-cases-lt-2',
-        mapFilter: [[">", "myneta Criminal Case", 0], ["<=", "myneta Criminal Case", 2]]
-      },{ color: '#fed976',
-        label: '< 3',
-        layer: 'criminal-cases-lt-5',
-        mapFilter: [[">", "myneta Criminal Case", 2], ["<=", "myneta Criminal Case", 5]]
+        mapFilter: [[">", "myneta Criminal Case", 0], ["<=", "myneta Criminal Case", 1]]
       },{ color: '#feb24c',
         label: '< 3',
+        layer: 'criminal-cases-lt-5',
+        mapFilter: [[">", "myneta Criminal Case", 1], ["<=", "myneta Criminal Case", 3]]
+      },{ color: '#fd8d3c',
+        label: '< 3',
         layer: 'criminal-cases-lt-10',
-        mapFilter: [[">", "myneta Criminal Case", 5], ["<=", "myneta Criminal Case", 10]]
+        mapFilter: [[">", "myneta Criminal Case", 3], ["<=", "myneta Criminal Case", 6]]
       },{ color: '#fc4e2a',
         label: '< 3',
+        layer: 'criminal-cases-lt-15',
+        mapFilter: [[">", "myneta Criminal Case", 6], ["<=", "myneta Criminal Case", 12]]
+      },{ color: '#e31a1c',
+        label: '< 3',
         layer: 'criminal-cases-lt-20',
-        mapFilter: [[">", "myneta Criminal Case", 10], ["<=", "myneta Criminal Case", 20]]
+        mapFilter: [[">", "myneta Criminal Case", 12], ["<=", "myneta Criminal Case", 18]]
       },
       { color: '#b10026',
         label: '> 3',
         layer: 'criminal-cases-gt-20',
-        mapFilter: [[">", "myneta Criminal Case", 20]]
+        mapFilter: [[">", "myneta Criminal Case", 18]]
       }
     ]
   }
