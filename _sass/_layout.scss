@@ -1,0 +1,202 @@
+.background {
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  &::after {
+    content: "";
+    background: url(../img/background.jpg) top right;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+// Page specific overrides
+.map {
+  h1,
+  h1.fancy {
+    font-size: 1.3em;
+    line-height: 1.1em;
+    margin-bottom: 0.5em;
+  }
+  .tagline {
+    letter-spacing: inherit;
+    display: inline-block;
+    color: rgba(255,255,255,.5);
+  }
+}
+
+// Common Styles
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.dark a {
+  color: rgba(255,255,255,.7);
+}
+
+#sidebar {
+  background-color: rgba(40, 53, 61, 1);
+  overflow: hidden;
+
+  // Dim labels when unchecked
+  fieldset{
+    margin: 0;
+    cursor: pointer;
+    label{
+      display: inline-block;
+      font-size: 14px;
+    }
+
+  }
+
+  form dl{
+    cursor: pointer;
+
+    .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #aaa;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        float: left;
+        margin: 5px 7px 0 0;
+      }
+
+      .bar {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background: #aaa;
+          float: left;
+          margin: 5px 7px 0 0;
+        }
+
+    label{
+      cursor: pointer;
+      padding-left: 0.5em;
+    }
+  }
+
+  form fieldset {
+
+    input[type=checkbox]{
+
+    }
+
+    :not(:checked){
+      &~label,&~span{
+        opacity: 0.5;
+      }
+    }
+
+  }
+
+  form input[type=checkbox]:not(:checked){
+    opacity: 0.5;
+
+      li{
+        display:none;
+      }
+
+      [type=checkbox]:not(:checked){
+        display: none;
+        &~label,&~span{
+
+        }
+      }
+
+    }
+
+  }
+
+
+// Hide sidebar on mobile
+@media only screen and (max-width: 620px) {
+  #sidebar {
+    display: none;
+  }
+}
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+  #map {
+    position: relative;
+  }
+}
+
+
+
+/* Map tooltip */
+#map-control{
+
+  position: absolute;
+  right: 0.6em;
+  top: 0.6em;
+
+  #map-search{
+    float: right;
+  }
+  #map-tooltip {
+    margin-top: 0.6em;
+    float: right;
+    clear:right;
+    background-color: white;
+    /* box-shadow: 0px 0px 5px rgba(0,0,0,0.8); */
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid black;
+    tr:first-child {
+      border-bottom: 1px solid #999;
+    }
+    td {
+      padding: 7px 14px 7px 0;
+      border: none;
+    }
+  }
+
+}
+
+/* Hover data */
+.candidateName {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.3em;
+}
+.constituencyName {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 5px;
+  padding-bottom: 16px;
+}
+.label {
+  font-size: 12px;
+}
+.value {
+  font-size: 16px;
+  font-weight: 800;
+}
+.party {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 48px;
+}
+.party span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.BJP {
+  background-color: #dd9900;
+}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+{% include header.html %}
+
+<body {% if page.map %}class='map'{% endif %}>
+  {% include broswerupgrade.html %}
+
+  {{ content }}
+</body>
+
+</html>

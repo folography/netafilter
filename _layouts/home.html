@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+{% include header.html %}
+
+<body {% if page.map %}class='map' {% endif %}>
+
+  {% include broswerupgrade.html %}
+
+  <div id='background' style='background:url("../img/background.jpg") top right'>
+    <div class='limiter'>
+
+      <h1 class='fancy'>Netafilter</h1>
+
+      <p>A project to understand how our elected representatives are doing using open data.</p>
+
+      {{ content }}
+
+    </div>
+  </div>
+
+</body>
+</html>

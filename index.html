@@ -1,54 +1,156 @@
-<!doctype html>
-<html class="no-js" lang="">
+---
+layout: default
+map: true
+title: Netafilter Map
+description: Explore candidate information on interactive maps
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Visavis</title>
-    <meta name="description" content="">
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
+<div class='col12 clearfix'>
 
-<body>
+  <div id='map' class=''></div>
 
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <div id='sidebar' class='col3 pad2 dark fill-navy pin-left'>
 
-    <!-- Content -->
-    <div class='limiter'>
+    <h1 class='fancy'><a href='http://netafilter.in'>Netafilter
+        <span class='tagline'>MP Info</span></a>
+    </h1>
 
-      <h1 class='fancy'>Visavis</h1>
 
-      <div class='col12 clearfix space-bottom4'>
+    <p>Find out about your elected Member of Parliament in the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a>. <a class='icon github' href="https://github.com/folography/visavis/tree/gh-pages/data">source</a></p>
 
-        <div class='col6 pad2 prose dark fill-navy keyline-right'>
-            <h2>Myneta</h3>
-            <p>My neta is best neta</p>
-            <a class='button stroke' href='myneta.html'>View</a>
-        </div>
-
-        <div class='col6 pad2 prose dark fill-navy keyline-right'>
-            <h2>Myneta Scatterplot</h3>
-            <p>My neta is best neta</p>
-            <a class='button stroke' href='myneta-d3.html'>View</a>
-        </div>
-
-      </div>
-
-      <div class='col12 clearfix'>
-        <p>Visavising matters <a class='icon github button short' href='https://github.com/folography/visavis'>Fork me</a></p>
-      </div>
+    <div class='rounded-toggle inline space-bottom2'>
+      <a class='active' href='#'>Map</a>
+      <a href='chart.html'>Charts</a>
+      <a href='about.html'>About</a>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')
-    </script>
-</body>
+    <div data-map='legend'>
 
-</html>
+      <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3>
+
+      {% raw %}
+        <div id="netafilters"></div>
+        <script id='netafilters-template' type='text/ractive'>
+          <form method="GET">
+            {{#filters}}
+              {{>filterlist}}
+            {{/}}
+          </form>
+          {{#partial filterlist}}
+            <fieldset><input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
+            <label  for='{{label}}'>{{label}}</label></fieldset>
+            <dl class="keyline-top space-bottom1">
+              {{# {parent: layer}}}
+                {{#filters}}
+                  {{> filternode {parent: parent}}}
+                {{/}}
+              {{/}}
+            </dl>
+          {{/partial}}
+          {{#partial filternode}}
+            <dt>
+              <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
+              <span class='dot' style="background-color:{{color}}"></span>
+              <label  for='{{label}}'>{{label}}</label>
+              {{#if typeof this.filters !== 'undefined'}}
+                {{>filterlist}}
+              {{/if}}
+            </dt>
+          {{/partial}}
+
+        </script>
+      {% endraw %}
+    </div>
+  </div>
+</div>
+
+<div id='map-control'>
+  <div id='map-search'>
+  </div>
+  <div id='map-tooltip'>
+  </div>
+</div>
+<!-- Escape ractive handlebars from Jekyll parsing -->
+{% raw %}
+<script id='myneta-template' type='text/ractive'>
+  {{#if (typeof id === 'undefined') }}
+  <p>
+    Select a constituency for details
+  </p>
+  {{else}}
+  <table width=100%>
+
+    <tr>
+      <td colspan=2>
+        <div class='dot micro fl {{party}} party'>
+          <span>{{party}}</span>
+        </div>
+        <div class='fl'>
+          <div class='candidateName'>{{candidate}}</div>
+          <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class='label'>No. of Criminal Cases</div>
+        <div class='criminalCases value'>{{cases}}</div>
+      </td>
+      <td>
+        <div class='label'>Educational qualification</div>
+        <div class='education value'>{{qualification}}</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class='label'>Net Assets (in Rs)</div>
+        <div class='netAssets value'>{{assets}}</div>
+      </td>
+      <td>
+        <div class='label'>Liabilities (in Rs)</div>
+        <div class='liabilities value'>{{liabilities}}</div>
+      </td>
+    </tr>
+
+  </table>
+  {{/if}}
+</script>
+{% endraw %}
+
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="js/vendor/nv.d3.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="js/vendor/nv.d3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/mapbox-gl-js-common.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
+
+<script>
+  // Load data
+  d3.csv("data/myneta-loksabha.csv", function(data) {
+
+    var scatterData = d3.nest()
+      .key(function(d) {
+        return d['ST_NAME'];
+      })
+      .entries(data);
+
+
+    // Parse strings to integers http://learnjsdata.com/read_data.html
+    data.forEach(function(d, i) {
+
+      d['myneta Education Points'] = +d['myneta Education Points']
+      d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
+      d['myneta Criminal Case'] = +d['myneta Criminal Case']
+
+    });
+
+    // DEBUG
+    window.data = scatterData;
+    console.log(window.data);
+
+  });
+
+
+</script>

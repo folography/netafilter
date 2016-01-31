@@ -1,0 +1,13 @@
+<footer>
+  <ul>
+    <li>{{ site.title }}</li>
+    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    {% if site.github_username %}
+    <li>
+      <a href="https://github.com/{{ site.github_username }}">
+        <span>{{ site.github_username }}</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</footer>

@@ -1,0 +1,29 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  {% if page.map %}
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v0.0.0/mapbox-gl-geocoder.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v0.0.0/mapbox-gl-geocoder.css' type='text/css' />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
+  {% endif %}
+
+  {% if page.chart %}
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="js/vendor/nv.d3.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="js/vendor/nv.d3.css">
+  {% endif %}
+
+  <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ " /css/main.css " | prepend: site.baseurl }}">
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.5/redux.js"></script>
+</head>
+
