@@ -1,0 +1,139 @@
+body{
+  font-family:'open sans', sans-serif;
+  margin:50px;
+}
+#box{
+  background-color: white;
+  /* box-shadow: 0px 0px 5px rgba(0,0,0,0.8); */
+  border-radius: 4px;
+  padding: 14px 14px 4px 14px;
+  max-width: 370px;
+  border: 1px solid black;
+  margin-bottom: 50px;
+}
+#box td{
+  padding: 7px 0px;
+}
+.candidateName{
+  font-size: 21px;
+  font-weight: 800;
+}
+.constituencyName{
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 16px;
+}
+.label{
+  font-size: 12px;
+}
+.value{
+  font-size: 16px;
+  font-weight: 800;
+}
+.partycircle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: inherit;
+  float: left;
+  margin-right: 10px;
+}
+.bjpColor{
+  background-color:#FF9115;
+}
+.bjpSymbol{
+
+}
+.criminalCases{
+
+}
+.netAssets{
+
+}
+.liabilities{
+
+}
+.education{
+
+}
+.educationPoints{
+
+}
+
+.legend{
+  background-color: white;
+  /* box-shadow: 0px 0px 5px rgba(0,0,0,0.8); */
+  border-radius: 4px;
+  padding: 14px;
+  max-width: 370px;
+  border: 1px solid black;
+  margin-bottom: 50px;
+}
+.legendLabel{
+  margin-left: 10px;
+}
+.legendTitle{
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.legendColor{
+  border:1px solid black;
+  float:left;
+  width:30px;
+  height:25px;
+  margin-right: 10px;
+}
+
+/*Colors for education*/
+.illiterate{
+  background-color: rgba(255,0,0,1);
+}
+
+.class12{
+  background-color: rgba(41,37,16,1);
+}
+
+.graduate{
+  background-color: rgba(130,96,34,1);
+}
+
+.postgraduate{
+  background-color: rgba(232,185,65,1);
+}
+
+.doctorate{
+  background-color: rgba(250,243,185,1);
+}
+
+/*Colors for Criminal Cases*/
+.zeroCases{
+  background-color: rgba(171,171,171,0);
+}
+.upto10Cases{
+  background-color: #666;
+}
+.moreThan10Cases{
+  background-color: black;
+}
+
+/*Colors for Net Assets*/
+.upto10Lacs{
+  background-color: rgba(219,255,219,1);
+}
+.10to50lacs{
+  background-color: rgba(188,227,172,1);
+}
+.50lacto1Cr{
+  background-color: rgba(113,166,120,1);
+}
+.1Crto10Cr{
+  background-color: rgba(73,107,52,1);
+}
+.10Crto100Cr{
+  background-color: rgba(28,71,28,1);
+}
+.100CrPlus{
+  background-color: rgba(3,26,3,1);
+}
