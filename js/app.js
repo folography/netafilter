@@ -256,7 +256,7 @@ window.NetaFilter.mapView = {
           // });
 
           self.map.on('mousemove', function(e) {
-            $('#map-tooltip').css({top: e.point.y, left: e.point.x})
+            $('#map-tooltip').css({top: e.point.y, left: e.point.x, display: 'inline'})
             self.map.featuresAt(e.point, {
               layer: ['myneta-baselayer'],
               radius: 4
