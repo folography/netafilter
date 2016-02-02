@@ -14,27 +14,27 @@ window.NetaFilter.filterModel = [{
       { color: 'rgb(250, 100, 28)',
         label: '8th pass',
         layer: 'education-8th-pass',
-        mapFilter: [["<=", "myneta Education Points", 9], [">", "myneta Education Points", 0]]
+        mapFilter: [[">", "myneta Education Points", 0], ["<=", "myneta Education Points", 8]]
       },
       { color: 'rgb(255, 174, 0)',
-        label: '10th pass',
-        layer: 'education-10th-pass',
-        mapFilter: [[">=", "myneta Education Points", 10], ["<=", "myneta Education Points", 12]]
+        label: '12th pass',
+        layer: 'education-12th-pass',
+        mapFilter: [[">", "myneta Education Points", 8], ["<=", "myneta Education Points", 12]]
       },
       { color: 'rgb(255, 255, 0)',
         label: 'Graduate',
         layer: 'education-graduate',
-        mapFilter: [[">=", "myneta Education Points", 13], ["<=", "myneta Education Points", 15]]
+        mapFilter: [[">", "myneta Education Points", 12], ["<=", "myneta Education Points", 15]]
       },
       { color: 'rgb(250, 255, 0)',
         label: 'Graduate Professional',
         layer: 'education-graduate-professional',
-        mapFilter: [[">=", "myneta Education Points", 16], ["<=", "myneta Education Points", 17]]
+        mapFilter: [[">", "myneta Education Points", 15], ["<=", "myneta Education Points", 17]]
       },
       { color: 'rgb(179, 255, 0)',
         label: 'Post Graduate',
         layer: 'education-post-graduate',
-        mapFilter: [[">=", "myneta Education Points", 18], ["<=", "myneta Education Points", 20]]
+        mapFilter: [[">", "myneta Education Points", 17], ["<=", "myneta Education Points", 20]]
       },
       { color: 'rgb(60, 232, 60)',
         label: 'PhD',
