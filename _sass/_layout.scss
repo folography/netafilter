@@ -149,6 +149,8 @@
     tr:first-child {
       border-bottom: 1px solid #999;
     }
+    position: fixed;
+    display: none;
     td {
       padding: 7px 14px 7px 0;
       border: none;

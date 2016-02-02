@@ -235,27 +235,28 @@ window.NetaFilter.mapView = {
            "hidden": false
           }, 'aeroway_runway');
 
-          self.map.on('click', function(e){
-            self.map.featuresAt(e.point, {
-              layer: ['myneta-baselayer'],
-              radius: 4,
-              includeGeometry: true
-            }, function(err, features) {
-              // Reset the tooltip if a different constituency is selected
-              if (selectedConstituency !== features[0].properties['PC_NAME2']) {
-                tooltip.setFeatures(features);
-                selectedConstituency = features[0].properties['PC_NAME2'];
-                self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', selectedConstituency]);
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
-              } else {
-                // Selected constituency was unselected.
-                selectedConstituency = '';
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
-              }
-            });
-          });
+          // self.map.on('click', function(e){
+          //   self.map.featuresAt(e.point, {
+          //     layer: ['myneta-baselayer'],
+          //     radius: 4,
+          //     includeGeometry: true
+          //   }, function(err, features) {
+          //     // Reset the tooltip if a different constituency is selected
+          //     if (selectedConstituency !== features[0].properties['PC_NAME2']) {
+          //       tooltip.setFeatures(features);
+          //       selectedConstituency = features[0].properties['PC_NAME2'];
+          //       self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', selectedConstituency]);
+          //       self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
+          //     } else {
+          //       // Selected constituency was unselected.
+          //       selectedConstituency = '';
+          //       self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
+          //     }
+          //   });
+          // });
 
           self.map.on('mousemove', function(e) {
+            $('#map-tooltip').css({top: e.point.y, left: e.point.x, display: 'inline'})
             self.map.featuresAt(e.point, {
               layer: ['myneta-baselayer'],
               radius: 4
