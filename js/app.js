@@ -177,8 +177,10 @@ window.NetaFilter.mapView = {
       },
       oninit: function(){
 
+        // Turn off tile errors
         self.map.off('tile.error', self.map.onError);
 
+        // Creates map layers using a filter tree
         var treeToLayer = function(tree){
           var parentLayer;
           var isSelected;
@@ -197,7 +199,10 @@ window.NetaFilter.mapView = {
 
         treeToLayer(filters);
 
+
         self.map.on('style.load', function () {
+
+          // Show map tooltips on hover
           var tooltip = new Ractive({
             el: '#map-tooltip',
             template: '#myneta-template',
@@ -219,41 +224,43 @@ window.NetaFilter.mapView = {
           });
 
           var selectedConstituency = '';
+
+          // Create a layer to highlight hovered over features
           var selectedLayer = self.map.addLayer({
            "id": "selected-constituency",
-           "type": "line",
+           "type": "fill",
            "source": "mapbox://planemad.6wpgu5qz",
            "source-layer": "myneta-loksabha",
            "layout": {
               "visibility": "none"
            },
            "paint": {
-              "line-color": 'cyan',
-              "line-opacity": 1.0,
-              "line-width": 5
+              "fill-color": 'white',
+              "fill-opacity": 0.6
            },
            "hidden": false
           }, 'aeroway_runway');
 
-          // self.map.on('click', function(e){
-          //   self.map.featuresAt(e.point, {
-          //     layer: ['myneta-baselayer'],
-          //     radius: 4,
-          //     includeGeometry: true
-          //   }, function(err, features) {
-          //     // Reset the tooltip if a different constituency is selected
-          //     if (selectedConstituency !== features[0].properties['PC_NAME2']) {
-          //       tooltip.setFeatures(features);
-          //       selectedConstituency = features[0].properties['PC_NAME2'];
-          //       self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', selectedConstituency]);
-          //       self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
-          //     } else {
-          //       // Selected constituency was unselected.
-          //       selectedConstituency = '';
-          //       self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
-          //     }
-          //   });
-          // });
+
+          self.map.on('mousemove', function(e){
+            self.map.featuresAt(e.point, {
+              layer: ['myneta-baselayer'],
+              radius: 4,
+              includeGeometry: true
+            }, function(err, features) {
+              // Reset the tooltip if a different constituency is selected
+              if (selectedConstituency !== features[0].properties['PC_NAME2']) {
+                tooltip.setFeatures(features);
+                selectedConstituency = features[0].properties['PC_NAME2'];
+                self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', selectedConstituency]);
+                self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
+              } else {
+                // Selected constituency was unselected.
+                selectedConstituency = '';
+                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
+              }
+            });
+          });
 
           self.map.on('mousemove', function(e) {
             $('#map-tooltip').css({top: e.point.y, left: e.point.x, display: 'inline'})
@@ -296,5 +303,6 @@ window.NetaFilter.mapView = {
   }
 };
 
+// Set the initial map theme to education data
 window.NetaFilter.filterView.init(window.NetaFilter.filterModel, 'education');
 window.NetaFilter.mapView.init(window.NetaFilter.filterModel, 'education');
