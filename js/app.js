@@ -141,6 +141,8 @@ window.NetaFilter.filterView = {
         selectedLayer: selectedLayer
       }
     });
+
+    // Update filters and legend
     this.ractive.on('changeFilter', function(e, layer, mapFilter){
       self.ractive.get('filters').forEach(function(parentFilter){
         if (parentFilter.layer === self.ractive.get('selectedLayer') || parentFilter.layer === layer) {
@@ -196,7 +198,7 @@ window.NetaFilter.mapView = {
             });
           });
         }
-
+        
         treeToLayer(filters);
 
 
@@ -207,23 +209,21 @@ window.NetaFilter.mapView = {
             el: '#map-tooltip',
             template: '#myneta-template',
             data: {},
-            setFeatures: function(features){
+            setFeatures: function(feature){
               this.set({
-                id: features[0].properties['myneta Sno'],
-                candidate: features[0].properties['myneta Candidate'],
-                constituency: features[0].properties['PC_NAME2'],
-                state: features[0].properties['ST_NAME'],
-                category: features[0].properties['Res'],
-                party: features[0].properties['myneta Party'],
-                cases: features[0].properties['myneta Criminal Case'],
-                qualification: features[0].properties['myneta Education'],
-                assets: (features[0].properties['myneta Total Assets']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
-                liabilities: (features[0].properties['myneta Liabilities']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore'
+                id: feature.properties['myneta Sno'],
+                candidate: feature.properties['myneta Candidate'],
+                constituency: feature.properties['PC_NAME2'],
+                state: feature.properties['ST_NAME'],
+                category: feature.properties['Res'],
+                party: feature.properties['myneta Party'],
+                cases: feature.properties['myneta Criminal Case'],
+                qualification: feature.properties['myneta Education'],
+                assets: (feature.properties['myneta Total Assets']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
+                liabilities: (feature.properties['myneta Liabilities']/10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore'
               });
             }
           });
-
-          var selectedConstituency = '';
 
           // Create a layer to highlight hovered over features
           var selectedLayer = self.map.addLayer({
@@ -243,36 +243,28 @@ window.NetaFilter.mapView = {
 
 
           self.map.on('mousemove', function(e){
-            self.map.featuresAt(e.point, {
-              layer: ['myneta-baselayer'],
-              radius: 4,
-              includeGeometry: true
-            }, function(err, features) {
-              // Reset the tooltip if a different constituency is selected
-              if (selectedConstituency !== features[0].properties['PC_NAME2']) {
-                tooltip.setFeatures(features);
-                selectedConstituency = features[0].properties['PC_NAME2'];
-                self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', selectedConstituency]);
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
-              } else {
-                // Selected constituency was unselected.
-                selectedConstituency = '';
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
-              }
-            });
-          });
 
-          self.map.on('mousemove', function(e) {
-            $('#map-tooltip').css({top: e.point.y, left: e.point.x, display: 'inline'})
             self.map.featuresAt(e.point, {
               layer: ['myneta-baselayer'],
               radius: 4
             }, function(err, features) {
-              // Reset tooltip only if no constituency is currently selected.
-              if (selectedConstituency === '' && features.length > 0) {
-                tooltip.setFeatures(features);
+              // Reset the tooltip if a different constituency is selected
+              if (features) {
+                self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
+                //tooltip.setFeatures(features[0]);
+                self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', features[0].properties['PC_NAME2']]);
+
+              } else {
+                // Selected constituency was unselected.
+                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
               }
+
+              // Position map tooltip
+              $('#map-tooltip').css({top: e.point.y + 5, left: e.point.x + 5, display: 'inline'})
+
             });
+
+
           });
 
         });
