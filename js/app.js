@@ -248,20 +248,19 @@ window.NetaFilter.mapView = {
               layer: ['myneta-baselayer'],
               radius: 1
             }, function(err, features) {
-              console.log(features[0].properties)
-              // Reset the tooltip if a different constituency is selected
-              // if (features) {
+
+              // Show tooltip only if data is found
+               if (features[0]) {
               //   self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
                 tooltip.setFeatures(features[0]);
                 // self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', features[0].properties['PC_NAME2']]);
-              //
-              // } else {
-              //   // Selected constituency was unselected.
-              //   self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
-              // }
-
               // Position map tooltip
               $('#map-tooltip').css({top: e.point.y + 5, left: e.point.x + 5, display: 'inline'})
+              } else {
+                // Selected constituency was unselected.
+                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
+                $('#map-tooltip').css({display: 'none'})
+              }
 
             });
 
