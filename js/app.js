@@ -1,5 +1,6 @@
 window.NetaFilter = {};
 
+// The interactive map legend model
 window.NetaFilter.filterModel = [{
     label: 'Education',
     color: '#f2f2f2',
@@ -129,7 +130,7 @@ window.NetaFilter.filterModel = [{
   }
 ];
 
-
+// Create the legend view
 window.NetaFilter.filterView = {
   init: function(filters, selectedLayer){
     var self = this;
@@ -142,7 +143,7 @@ window.NetaFilter.filterView = {
       }
     });
 
-    // Update filters and legend
+    // Update map filters on legend interaction
     this.ractive.on('changeFilter', function(e, layer, mapFilter){
       self.ractive.get('filters').forEach(function(parentFilter){
         if (parentFilter.layer === self.ractive.get('selectedLayer') || parentFilter.layer === layer) {
@@ -162,6 +163,7 @@ window.NetaFilter.filterView = {
   }
 };
 
+// Create the map
 window.NetaFilter.mapView = {
   init: function(filters, selectedLayer){
     var self = this;
@@ -179,9 +181,6 @@ window.NetaFilter.mapView = {
       },
       oninit: function(){
 
-        // Turn off tile errors
-        self.map.off('tile.error', self.map.onError);
-
         // Creates map layers using a filter tree
         var treeToLayer = function(tree){
           var parentLayer;
@@ -198,13 +197,13 @@ window.NetaFilter.mapView = {
             });
           });
         }
-        
+
         treeToLayer(filters);
 
 
         self.map.on('style.load', function () {
 
-          // Show map tooltips on hover
+          // The map tooltip
           var tooltip = new Ractive({
             el: '#map-tooltip',
             template: '#myneta-template',
@@ -232,7 +231,7 @@ window.NetaFilter.mapView = {
            "source": "mapbox://planemad.6wpgu5qz",
            "source-layer": "myneta-loksabha",
            "layout": {
-              "visibility": "none"
+              "visibility": "true"
            },
            "paint": {
               "fill-color": 'white',
@@ -244,26 +243,27 @@ window.NetaFilter.mapView = {
 
           self.map.on('mousemove', function(e){
 
+            // Get feature at mouse pointer
             self.map.featuresAt(e.point, {
               layer: ['myneta-baselayer'],
-              radius: 4
+              radius: 1
             }, function(err, features) {
+              console.log(features[0].properties)
               // Reset the tooltip if a different constituency is selected
-              if (features) {
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
-                //tooltip.setFeatures(features[0]);
-                self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', features[0].properties['PC_NAME2']]);
-
-              } else {
-                // Selected constituency was unselected.
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
-              }
+              // if (features) {
+              //   self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
+                tooltip.setFeatures(features[0]);
+                // self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', features[0].properties['PC_NAME2']]);
+              //
+              // } else {
+              //   // Selected constituency was unselected.
+              //   self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
+              // }
 
               // Position map tooltip
               $('#map-tooltip').css({top: e.point.y + 5, left: e.point.x + 5, display: 'inline'})
 
             });
-
 
           });
 
@@ -271,25 +271,26 @@ window.NetaFilter.mapView = {
       }
     });
   },
-  createLayer: function(config){
+// Create map layers based on legend filter model
+createLayer: function(config) {
     this.map.addLayer({
-     "id": config.name,
-     "type": "fill",
-     "source": "mapbox://planemad.6wpgu5qz",
-     "source-layer": "myneta-loksabha",
-     "filter": [].concat('all', config.mapFilter),
-     "layout": {
+      "id": config.name,
+      "type": "fill",
+      "source": "mapbox://planemad.6wpgu5qz",
+      "source-layer": "myneta-loksabha",
+      "filter": [].concat('all', config.mapFilter),
+      "layout": {
         "visibility": config.selected ? "visible" : "none"
-     },
-     "paint": {
+      },
+      "paint": {
         "fill-color": config.color,
         "fill-opacity": 1.0,
         "visibility": "visible"
-     },
-     "hidden": false
+      },
+      "hidden": false
     }, 'aeroway_runway');
   },
-  toggleVisibility: function(layer){
+  toggleVisibility: function(layer) {
     var status = this.map.getLayoutProperty(layer, 'visibility');
     this.map.setLayoutProperty(layer, 'visibility', status === 'visible' ? 'none' : 'visible');
   }
