@@ -226,12 +226,12 @@ window.NetaFilter.mapView = {
 
           // Create a layer to highlight hovered over features
           var selectedLayer = self.map.addLayer({
-           "id": "selected-constituency",
+           "id": "highlight-feature",
            "type": "fill",
            "source": "mapbox://planemad.6wpgu5qz",
            "source-layer": "myneta-loksabha",
            "layout": {
-              "visibility": "true"
+              "visibility": "false"
            },
            "paint": {
               "fill-color": 'white',
@@ -240,25 +240,33 @@ window.NetaFilter.mapView = {
            "hidden": false
           }, 'aeroway_runway');
 
+          var activeFeature = {};
 
           self.map.on('mousemove', function(e){
 
             // Get feature at mouse pointer
             self.map.featuresAt(e.point, {
               layer: ['myneta-baselayer'],
-              radius: 1
+              radius: 2
             }, function(err, features) {
 
+              try{
+                // If active feature has changed, highlight it
+                if(activeFeature.properties['PC_NAME2'] != features[0].properties['PC_NAME2']){
+                  self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', features[0].properties['PC_NAME2']]);
+                  console.log(JSON.stringify(features[0].properties))
+                }
+              }catch(err){}
+
+              activeFeature = features[0];
+
               // Show tooltip only if data is found
-               if (features[0]) {
-              //   self.map.setLayoutProperty('selected-constituency', 'visibility', 'visible');
-                tooltip.setFeatures(features[0]);
-                // self.map.setFilter('selected-constituency', ['==', 'PC_NAME2', features[0].properties['PC_NAME2']]);
-              // Position map tooltip
-              $('#map-tooltip').css({top: e.point.y + 5, left: e.point.x + 5, display: 'inline'})
+               if (activeFeature) {
+                tooltip.setFeatures(activeFeature);
+                $('#map-tooltip').css({top: e.point.y, left: e.point.x + 20, display: 'inline'})
               } else {
                 // Selected constituency was unselected.
-                self.map.setLayoutProperty('selected-constituency', 'visibility', 'none');
+                self.map.setLayoutProperty('highlight-feature', 'visibility', 'none');
                 $('#map-tooltip').css({display: 'none'})
               }
 
