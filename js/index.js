@@ -87,7 +87,7 @@ map.on('style.load', function(e) {
           "visibility": "visible"
       },
       "paint": {
-          "fill-color": '#eee',
+          "fill-color": '#888',
           "fill-opacity": 0.1
       }
   }, 'myneta-loksabha selected');

@@ -301,7 +301,7 @@ window.NetaFilter.mapView = {
                     // Create a layer to highlight hovered over features
                     var selectedLayer = self.map.addLayer({
                         "id": "highlight-feature",
-                        "type": "line",
+                        "type": "fill",
                         "source": "mapbox://planemad.6wpgu5qz",
                         "source-layer": "myneta-loksabha",
                         "filter": ["==","a","a"],
@@ -309,10 +309,10 @@ window.NetaFilter.mapView = {
                             "visibility": "visible"
                         },
                         "paint": {
-                            "line-color": 'black',
-                            "line-width": 4
+                            "fill-color": 'black',
+                            "fill-opacity": 0.5
                         }
-                    }, 'myneta-loksabha selected');
+                    }, 'admin-3-4-boundaries-bg');
 
                     var activeFeature = {};
 
@@ -333,36 +333,15 @@ window.NetaFilter.mapView = {
                           $('#map-tooltip').css({
                               display: 'none'
                           });
-                          self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', ""]);
+                          map.setFilter('highlight-feature', ['==', 'PC_NAME2', ""]);
                         }else{
                           tooltip.setFeatures(activeFeature);
                           $('#map-tooltip').css({
                               display: 'block'
                           });
-                          self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', activeFeature.properties['PC_NAME2']]);
+                          map.setFilter('highlight-feature', ['==', 'myneta Candidate', activeFeature.properties['myneta Candidate']]);
 
                         }
-                        //
-                        // try {
-                        //     // If active feature has changed, highlight it
-                        //     if (activeFeature.properties['PC_NAME2'] != queryResults[0].properties['PC_NAME2']) {
-                        //         self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', queryResults[0].properties['PC_NAME2']]);
-                        //     }
-                        // } catch (err) {}
-                        //
-
-
-                        // Show tooltip only if data is found
-                        if (activeFeature) {
-
-                        } else {
-                            // Selected constituency was unselected.
-                            self.map.setLayoutProperty('highlight-feature', 'visibility', 'none');
-                            $('#map-tooltip').css({
-                                display: 'none'
-                            })
-                        }
-
                     });
 
                 });
