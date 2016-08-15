@@ -802,6 +802,7 @@ var map = new mapboxgl.Map(mapOptions);
 var geolocate = map.addControl(new mapboxgl.Geolocate({
     position: 'bottom-left'
 }));
+
 // map.addControl(new mapboxgl.Navigation());
 
 // Export module
