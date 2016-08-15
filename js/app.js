@@ -1,3 +1,6 @@
+// Read map legend options
+var legend = require('./map-legend');
+
 window.NetaFilter = {};
 
 // The interactive map legend model
@@ -195,7 +198,8 @@ window.NetaFilter.filterModel = [{
 
 // Create the legend view
 window.NetaFilter.filterView = {
-    init: function(filters, selectedLayer) {
+    init: function(selectedLayer) {
+        filters = window.NetaFilter.filterModel;
         var self = this;
         this.ractive = new Ractive({
             el: '#netafilters',
@@ -229,16 +233,11 @@ window.NetaFilter.filterView = {
 
 // Create the map
 window.NetaFilter.mapView = {
-    init: function(filters, selectedLayer) {
+    init: function(selectedLayer, map) {
         var self = this;
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
-        self.map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/planemad/cijswl6y7009rcakwxo2nuu7x',
-            hash: true,
-            maxBounds: [[50.3,5.45], [110,39]]
-        });
+        filters = window.NetaFilter.filterModel;
+        self.map = map;
 
         this.ractive = new Ractive({
             data: {
@@ -281,7 +280,7 @@ window.NetaFilter.mapView = {
                     // The map tooltip
                     var tooltip = new Ractive({
                         el: '#map-tooltip',
-                        template: '#myneta-template',
+                        template: '#myneta-tooltip',
                         data: {},
                         setFeatures: function(feature) {
                             this.set({
@@ -290,7 +289,7 @@ window.NetaFilter.mapView = {
                                 constituency: feature.properties['PC_NAME2'],
                                 state: feature.properties['ST_NAME'],
                                 category: feature.properties['Res'],
-                                party: feature.properties['myneta Party'].replace(/\(|\)/g,'').replace(/\s+/g, '-').replace(/\./g,''),
+                                party: feature.properties['myneta Party'].replace(/\(|\)/g, '').replace(/\s+/g, '-').replace(/\./g, ''),
                                 cases: feature.properties['myneta Criminal Case'],
                                 qualification: feature.properties['myneta Education'],
                                 assets: (feature.properties['myneta Total Assets'] / 10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
@@ -317,12 +316,34 @@ window.NetaFilter.mapView = {
 
                     var activeFeature = {};
 
+                    var mapTooltip = new mapboxgl.Popup({
+                        closeButton: false,
+                        closeOnClick: false
+                    });
+
                     self.map.on('mousemove', function(e) {
 
                         // Get feature at mouse pointer
                         var queryResults = self.map.queryRenderedFeatures(e.point, {
                             layers: ['myneta-baselayer']
                         });
+
+                        activeFeature = queryResults[0];
+
+                        // Change cursor on interactive objects
+                        map.getCanvas().style.cursor = (queryResults.length) ? 'pointer' : '';
+
+                        // Remove tooltip if no results
+                        if (!queryResults.length) {
+                            mapTooltip.remove();
+                            return;
+                        }else{
+                          tooltip.setFeatures(activeFeature);
+                          mapTooltip.setLngLat(e.lngLat)
+                              .setHTML($('#map-tooltip').html())
+                              .addTo(map);
+
+                        }
 
                         try {
                             // If active feature has changed, highlight it
@@ -331,16 +352,17 @@ window.NetaFilter.mapView = {
                             }
                         } catch (err) {}
 
-                        activeFeature = queryResults[0];
+
 
                         // Show tooltip only if data is found
                         if (activeFeature) {
-                            tooltip.setFeatures(activeFeature);
-                            $('#map-tooltip').css({
-                                top: e.point.y,
-                                left: e.point.x + 20,
-                                display: 'inline'
-                            })
+
+                            // tooltip.setFeatures(activeFeature);
+                            // $('#map-tooltip').css({
+                            //     top: e.point.y,
+                            //     left: e.point.x + 20,
+                            //     display: 'inline'
+                            // })
                         } else {
                             // Selected constituency was unselected.
                             self.map.setLayoutProperty('highlight-feature', 'visibility', 'none');
@@ -377,7 +399,3 @@ window.NetaFilter.mapView = {
         this.map.setLayoutProperty(layer, 'visibility', status === 'visible' ? 'none' : 'visible');
     }
 };
-
-// Set the initial map theme to education data
-window.NetaFilter.filterView.init(window.NetaFilter.filterModel, 'education');
-window.NetaFilter.mapView.init(window.NetaFilter.filterModel, 'education');

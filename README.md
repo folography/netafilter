@@ -1,8 +1,10 @@
 # Netafilter
 A tool to filter our netas using data available from the Indian government. **[netafilter.in](http://folography.github.io/netafilter/)**
 
-### Contributing
-Site is built using [Jekyll](http://jekyllrb.com/). Clone the repository and run `jekyll serve` from the directory to test your changes.
+### Develop
+Site is built using [Jekyll](http://jekyllrb.com/). 
+- Clone the repository
+- `npm install && npm start`
 
 The [SASS stylesheet](http://sass-lang.com/) is at `/_sass/_layout.scss`
 
