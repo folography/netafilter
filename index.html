@@ -95,10 +95,11 @@ description: Explore candidate information on interactive maps
     <tr>
       <td colspan=2>
         <div class='dot micro fl {{party}} party'>
-          <span>{{party}}</span>
+          
         </div>
         <div class='fl'>
           <div class='candidateName'>{{candidate}}</div>
+          <img class='icon-location' src='img/location.png'/>
           <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
         </div>
       </td>
@@ -108,10 +109,12 @@ description: Explore candidate information on interactive maps
 
     <tr>
       <td>
+        <img class='icon' src='img/criminal-cases.png'/>
         <div class='label'>No. of Criminal Cases</div>
         <div class='criminalCases value'>{{cases}}</div>
       </td>
       <td>
+      <img class='icon' src='img/education.png'/>
         <div class='label'>Educational qualification</div>
         <div class='education value'>{{qualification}}</div>
       </td>
@@ -119,10 +122,12 @@ description: Explore candidate information on interactive maps
 
     <tr>
       <td>
+      <img class='icon' src='img/assets.png'/>
         <div class='label'>Net Assets (in Rs)</div>
         <div class='netAssets value'>{{assets}}</div>
       </td>
       <td>
+      <img class='icon' src='img/liabilities.png'/>
         <div class='label'>Liabilities (in Rs)</div>
         <div class='liabilities value'>{{liabilities}}</div>
       </td>

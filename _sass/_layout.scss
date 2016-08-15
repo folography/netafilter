@@ -3,6 +3,9 @@ body{
   padding: 0;
   margin: 0;
 }
+a{
+  text-decoration: none;
+}
 .background {
   width: 100%;
   top: 0;
@@ -175,15 +178,20 @@ body{
   font-size: 21px;
   font-weight: 800;
   line-height: 1.3em;
+  letter-spacing: -0.3px;
 }
 .constituencyName {
-  font-size: 15px;
+  font-size: 14px;
   color: #666;
   margin-bottom: 5px;
   padding-bottom: 5px;
+  padding-top: 1px;
+  text-decoration: none;
 }
 .label {
   font-size: 12px;
+  color: #888;
+  letter-spacing: 0.4px;
 }
 .value {
   font-size: 16px;
@@ -202,9 +210,6 @@ body{
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-}
-.BJP {
-  background-color: #dd9900;
 }
 
 .limiter {
@@ -238,4 +243,32 @@ body{
   background-color: #dedede;
   height: 1px;
   width: 100%;
+}
+.icon{
+  height: 36px;
+  float: left;
+  margin-right: 10px;
+  opacity: 0.6;
+}
+.icon-location{
+  height: 20px;
+  margin-right: 5px;
+  float: left;
+}
+
+.AAP {
+  background-image: url(../img/party-logos/aap.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.BJP {
+  background-image: url(../img/party-logos/bjp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.INC {
+  background-image: url(../img/party-logos/inc.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.SP {
+  background-image: url(../img/party-logos/sp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
 }
