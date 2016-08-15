@@ -14,14 +14,12 @@ function toggle(id) {
 }
 
 // Hide all except one layer from a group
-function showOnlyLayers(toggleLayers, showLayerItem) {
+function showOnlyLayers(map, showLayerItem, toggleLayers) {
     for (var layerItem in toggleLayers) {
-        for (var layer in toggleLayers[layerItem].layers) {
-            if (showLayerItem == layerItem)
-                map.setLayoutProperty(toggleLayers[layerItem].layers[layer], 'visibility', 'visible');
-            else
-                map.setLayoutProperty(toggleLayers[layerItem].layers[layer], 'visibility', 'none');
-        }
+            if (showLayerItem == toggleLayers[layerItem] || showLayerItem == 'all') {
+                map.setLayoutProperty(toggleLayers[layerItem], 'visibility', 'visible');
+            } else
+                map.setLayoutProperty(toggleLayers[layerItem], 'visibility', 'none');
     }
     // Highlight menu items
     $('.toggles a').removeClass('active');
@@ -215,3 +213,5 @@ function addMapboxLayers(map, layers) {
 module.exports.addMapboxLayers = addMapboxLayers;
 module.exports.queryLayerFeatures = queryLayerFeatures;
 module.exports.createHTML = createHTML;
+module.exports.mapToggleLayerId = toggle;
+module.exports.mapToggleLayerIdFromGroup = showOnlyLayers;

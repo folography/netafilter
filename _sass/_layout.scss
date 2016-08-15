@@ -384,7 +384,14 @@ label{
     border: 2px solid rgba(255,255,255,0.3);
     color: white;
   }
+  &.active{
+    border: 2px solid rgba(255,255,255,0.6);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: white;
+  }
 }
+<<<<<<< HEAD
 .selectionGroupButtonSelected{
   border: 2px solid rgba(255,255,255,0.6);
   padding: 3px 9px;
@@ -392,6 +399,9 @@ label{
   color: white;
   background-color: rgba(255,255,255,0.2);
 }
+=======
+
+>>>>>>> origin/independence-sprint
 .mapboxgl-popup-content{
   width: 250px;
 }
@@ -542,6 +552,7 @@ label{
 .rounded-toggle{
   float: right;
 }
+<<<<<<< HEAD
 .helpText{
   font-size: 13px;
   border-top: 1px solid #dedede;
@@ -561,4 +572,15 @@ label{
     background-color: white;
     border: 1px solid #36a1ff;
   }
+=======
+.toggles .dot {
+  margin-left:2px;
+	width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  display: inline-block;
+>>>>>>> origin/independence-sprint
 }

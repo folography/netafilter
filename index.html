@@ -26,9 +26,10 @@ description: Explore candidate information on interactive maps
         <div class='selectionGroup'><input type="radio" name="layer" value="assets" id="assets"><label for="assets">Assets</label><br></div>
         <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div> -->
         <div class='selectionGroup'>
-          <div class="selectionGroupButton selectionGroupButtonSelected" id='showEducation'>Education</div>
-          <div class="selectionGroupButton" id='showAssets'>Assets</div>
-          <div class="selectionGroupButton" id='showCriminalCases'>Criminal Cases</div>
+          <div class="toggles selectionGroupButton active" data-layer="all">All</div>
+          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points education">Education <span class='dot' style="background:hsl(116, 85%, 39%)"></span></div>
+          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points assets">Assets <span class='dot' style="background:white"></span></div>
+          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points criminal">Criminal Cases <span class='dot' style="background:#f37321"></span></div>
         </div>
       </form>
     </div>
@@ -185,15 +186,7 @@ $("#showEducation").click(function(){
   $("#showEducation").addClass('selectionGroupButtonSelected');
 })
 
-$("#showAssets").click(function(){
-  $(".selectionGroupButton").removeClass('selectionGroupButtonSelected');
-  $("#showAssets").addClass('selectionGroupButtonSelected');
-})
 
-$("#showCriminalCases").click(function(){
-  $(".selectionGroupButton").removeClass('selectionGroupButtonSelected');
-  $("#showCriminalCases").addClass('selectionGroupButtonSelected');
-})
 
 });
 </script>
