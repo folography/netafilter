@@ -157,26 +157,25 @@ a{
   #map-search{
     float: right;
   }
-  #map-tooltip {
-    margin-top: 0.6em;
-    float: right;
-    clear: right;
-    background-color: rgba(255,255,255,0.95);
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
-    border-radius: 10px;
-    padding: 7px 12px 3px 12px;
-    position: fixed;
-    display: none;
-    width: 450px;
-    tr:first-child {
-      border-bottom: 1px solid #dedede;
-    }
-    td {
-      padding: 7px 14px 7px 0;
-      border: none;
-    }
-  }
+}
 
+#map-tooltip {
+  margin-top: 0.6em;
+  position: absolute;
+  bottom:25px;
+  right:5px;
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+  border-radius: 10px;
+  padding: 7px 12px 3px 12px;
+  width: 450px;
+  tr:first-child {
+    border-bottom: 1px solid #dedede;
+  }
+  td {
+    padding: 7px 14px 7px 0;
+    border: none;
+  }
 }
 
 /* Hover data */
