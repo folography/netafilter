@@ -301,17 +301,17 @@ window.NetaFilter.mapView = {
                     // Create a layer to highlight hovered over features
                     var selectedLayer = self.map.addLayer({
                         "id": "highlight-feature",
-                        "type": "fill",
+                        "type": "line",
                         "source": "mapbox://planemad.6wpgu5qz",
                         "source-layer": "myneta-loksabha",
+                        "filter": ["==","a","a"],
                         "layout": {
-                            "visibility": "false"
+                            "visibility": "visible"
                         },
                         "paint": {
-                            "fill-color": 'white',
-                            "fill-opacity": 0.6
-                        },
-                        "hidden": false
+                            "line-color": 'blue',
+                            "line-width": 4
+                        }
                     }, 'myneta-loksabha selected');
 
                     var activeFeature = {};
@@ -334,10 +334,12 @@ window.NetaFilter.mapView = {
                               display: 'none'
                           });
                         }else{
+                          tooltip.setFeatures(activeFeature);
                           $('#map-tooltip').css({
                               display: 'block'
                           });
-                          tooltip.setFeatures(activeFeature);
+                          self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', activeFeature.properties['PC_NAME2']]);
+
                         }
 
                         try {
