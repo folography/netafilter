@@ -5,17 +5,24 @@ title: Netafilter Map
 description: Explore candidate information on interactive maps
 ---
 
-<div class='col12 clearfix'>
+<div>
 
   <div id='map' class=''></div>
 
-  <div id='sidebar' class='col3 pad2 dark fill-navy pin-left'>
+  <div id='sidebar'>
 
-    <h1 class='fancy'><a href='http://netafilter.in'>Netafilter
-        <span class='tagline'>MP Info</span></a>
+    <h1><a href='http://netafilter.in'>Netafilter
+        <span>MP Info</span></a>
     </h1>
 
-    <div class='rounded-toggle space-bottom2'>
+    <div id='layer-toggle'>
+      <form>
+        <input type="radio" name="layer" value="male" checked>Education<br>
+        <input type="radio" name="layer" value="female">Assets<br>
+        <input type="radio" name="layer" value="other"> Criminal Cases
+      </form>
+    </div>
+    <div class='rounded-toggle'>
       <a class='active' href='#'>Map</a>
       <button>About</button>
     </div>
