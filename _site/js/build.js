@@ -380,6 +380,8 @@ var project = {
     map: {
       container: 'map',
       style: 'mapbox://styles/planemad/cijswl6y7009rcakwxo2nuu7x',
+      zoom: 5.1,
+      center: [80.181,27.161],
       maxBounds: [[50.3,5.45], [110,39]]
     },
     accessToken: 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ'
@@ -440,10 +442,10 @@ map.on('style.load', function(e) {
             "property": "myneta Tot",
             "stops": [
               [0,0],
-              [10000,1],
-              [1000000,4],
-              [100000000,10],
-              [10000000000,30]
+              [1000000,2],
+              [100000000,15],
+              [1000000000,25],
+              [10000000000,40],
             ]
           }
       }
@@ -487,6 +489,7 @@ map.on('style.load', function(e) {
   // Layer switcher
   $(".selectionGroupButton").each(function(){
     $(this).click(function(){
+      console.log(this);
       $(".selectionGroupButton").removeClass('active');
       $(this).addClass('active');
       mapboxglUtils.mapToggleLayerIdFromGroup(map, $(this).data( "layer"),["myneta-loksabha-points education", "myneta-loksabha-points criminal", "myneta-loksabha-points assets"]);
