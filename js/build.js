@@ -487,7 +487,6 @@ map.on('style.load', function(e) {
   // Layer switcher
   $(".selectionGroupButton").each(function(){
     $(this).click(function(){
-      console.log(this);
       $(".selectionGroupButton").removeClass('active');
       $(this).addClass('active');
       mapboxglUtils.mapToggleLayerIdFromGroup(map, $(this).data( "layer"),["myneta-loksabha-points education", "myneta-loksabha-points criminal", "myneta-loksabha-points assets"]);
