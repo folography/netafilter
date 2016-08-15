@@ -235,7 +235,8 @@ window.NetaFilter.mapView = {
         self.map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/planemad/cijswl6y7009rcakwxo2nuu7x',
-            hash: true
+            hash: true,
+            maxBounds: [[50.3,5.45], [110,39]]
         });
 
         this.ractive = new Ractive({

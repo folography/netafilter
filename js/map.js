@@ -1,12 +1,5 @@
 // Simple map
 mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
-var map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/planemad/ciix3a6g900tkalkidus93oy3', //stylesheet location
-  hash: true,
-  minZoom: 3.7,
-  maxBounds: [[60.3,5.45], [102,39]]
-});
 
 // Add geocoder https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md
 map.addControl(new mapboxgl.Geocoder({'position':'top-right','container':'map-search'}));
