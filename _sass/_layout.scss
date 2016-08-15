@@ -389,6 +389,7 @@ label{
     padding: 3px 9px;
     border-radius: 20px;
     color: white;
+    background-color: rgba(255,255,255,0.3);
   }
 }
 
@@ -564,7 +565,7 @@ label{
   }
 }
 .toggles .dot{
-  margin-left:2px;
+  margin-right:4px;
 	width: 10px;
 	height: 10px;
 	background: red;
