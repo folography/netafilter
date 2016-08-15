@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Netafilter - Charts</title>
+  <meta name="description" content="Indian MP, MLA, Councillor statistics, information and comparisons based on open data from the government. Netafilter can easily filter your polticial candidate based on education, assets, criminal cases, party and constituency from the affidavit information
+">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="canonical" href="http://netafilter.in/chart.html">
+
+  
+
+  
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="js/vendor/nv.d3.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="js/vendor/nv.d3.css">
+  
+
+  <!-- <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=devanagari" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=" /css/main.css ">
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.5/redux.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+
+<body >
+  <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+<!-- Content -->
+
+
+  <h1>Neta ji, how do you do?</h1>
+
+<h2>Education vs declared assets</h2>
+<svg id='chart1' style="height:400px;"></svg>
+
+<h2>Criminal cases vs declared assets</h2>
+<svg id='chart2' style="height:400px;"></svg>
+
+<h2>Party vs criminal cases</h2>
+<svg id='chart3' style="height:400px;"></svg>
+
+<h2>Stae vs criminal cases</h2>
+<svg id='chart4' style="height:400px;"></svg>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+window.chart = [];
+
+//
+// Chart 1: Scatter chart of candidate education vs assets
+nv.addGraph(function() {
+  chart[1] = nv.models.scatterChart()
+    .showDistY(true)
+    .duration(100)
+    .x(function(d) {
+      return d['myneta Education Points'];
+    })
+    .y(function(d) {
+      return d['myneta Total Assets'];
+    })
+    .pointSize(function(d) {
+      return d['myneta Criminal Case'];
+    })
+    // .color(d3.scale.category20().range());
+    .color(d3.scale.category20().range())
+    .width(800);
+
+  // Chart formatting
+  chart[1].tooltip.contentGenerator(function(obj) {
+    console.log(obj);
+    return '<h3>' + obj.point['myneta Candidate'] + '</h3><br><h4>' + obj.point['PC_NAME2'] + ', ' + obj.point['ST_NAME'] + '</h4><p>' + obj.point['myneta Criminal Case'] + ' criminal cases</p>'
+  }).headerEnabled(true)
+  chart[1].xAxis.axisLabel('Education (years)').tickFormat(d3.format('d'))
+  chart[1].yAxis.axisLabel('Assets (Rs. crore)').tickFormat(d3.format('d'));
+
+  // Resize charts
+  nv.utils.windowResize(chart[1].update);
+
+  // Attach chart to the page
+  d3.select('#chart1')
+    .datum(mynetaData)
+    .call(chart[1]);
+
+  return chart;
+
+});
+
+  var mynetaData;
+
+  d3.csv("data/myneta-loksabha.csv", function(data) {
+
+    // Data cleanup: parse strings to integers http://learnjsdata.com/read_data.html
+    data.forEach(function(d, i) {
+      d['myneta Education Points'] = +d['myneta Education Points']
+      d['myneta Total Assets'] = +d['myneta Total Assets'] / 10000000
+      d['myneta Criminal Case'] = +d['myneta Criminal Case']
+    });
+
+    // Group data by state
+    mynetaData = d3.nest()
+      .key(function(d) {
+        return d['ST_NAME'];
+      })
+      .sortKeys(d3.ascending)
+      .entries(data);
+
+    // DEBUG
+    window.data = mynetaData;
+    console.log(window.data);
+
+
+
+  });
+
+
+</script>
+
+</body>
+
+</html>

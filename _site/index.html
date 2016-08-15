@@ -1,11 +1,43 @@
----
-layout: default
-map: true
-title: Netafilter Map
-description: Explore candidate information on interactive maps
----
+<!DOCTYPE html>
+<html>
 
-<div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Netafilter Map</title>
+  <meta name="description" content="Indian MP, MLA, Councillor statistics, information and comparisons based on open data from the government. Netafilter can easily filter your polticial candidate based on education, assets, criminal cases, party and constituency from the affidavit information
+">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="canonical" href="http://netafilter.in/">
+
+  
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.22.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.22.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v0.0.0/mapbox-gl-geocoder.js'></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
+  
+
+  
+
+  <!-- <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=devanagari" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=" /css/main.css ">
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.5/redux.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+
+<body class='map'>
+  <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+<!-- Content -->
+
+
+  <div>
 
   <div id='map' class=''></div>
 
@@ -72,7 +104,7 @@ description: Explore candidate information on interactive maps
 
     <!-- <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3> -->
 
-    {% raw %}
+    
       <div id="netafilters"></div>
       <script id='netafilters-template' type='text/ractive'>
         <form method="GET">
@@ -103,12 +135,12 @@ description: Explore candidate information on interactive maps
         {{/partial}}
 
       </script>
-    {% endraw %}
+    
   </div>
 </div>
 
 <!-- Escape ractive handlebars from Jekyll parsing -->
-{% raw %}
+
 <script id='myneta-tooltip' type='text/ractive'>
 {{#if (typeof id === 'undefined') }}
   <p>
@@ -158,7 +190,7 @@ description: Explore candidate information on interactive maps
   </table>
   {{/if}}
 </script>
-{% endraw %}
+
 
 <link rel="stylesheet" href="js/vendor/nv.d3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -186,3 +218,7 @@ $("#showEducation").click(function(){
 
 });
 </script>
+
+</body>
+
+</html>
