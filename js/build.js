@@ -246,34 +246,34 @@ window.NetaFilter.mapView = {
             },
             oninit: function() {
 
-                // Creates map layers using a filter tree
-                var treeToLayer = function(tree) {
-                    var parentLayer;
-                    var isSelected;
-                    tree.forEach(function(node) {
-                        parentLayer = node.layer;
-                        self.map.on('style.load', function() {
-                            self.createLayer({
-                                name: node.layer,
-                                mapFilter: node.mapFilter,
-                                color: node.color,
-                                selected: node.layer === selectedLayer
-                            });
-                            if (typeof node.filters === 'object') {
-                                node.filters.forEach(function(subnode) {
-                                    self.createLayer({
-                                        name: subnode.layer,
-                                        mapFilter: subnode.mapFilter,
-                                        color: subnode.color,
-                                        selected: node.layer === selectedLayer
-                                    });
-                                })
-                            }
-                        });
-                    });
-                }
-
-                treeToLayer(filters);
+                // // Creates map layers using a filter tree
+                // var treeToLayer = function(tree) {
+                //     var parentLayer;
+                //     var isSelected;
+                //     tree.forEach(function(node) {
+                //         parentLayer = node.layer;
+                //         self.map.on('style.load', function() {
+                //             self.createLayer({
+                //                 name: node.layer,
+                //                 mapFilter: node.mapFilter,
+                //                 color: node.color,
+                //                 selected: node.layer === selectedLayer
+                //             });
+                //             if (typeof node.filters === 'object') {
+                //                 node.filters.forEach(function(subnode) {
+                //                     self.createLayer({
+                //                         name: subnode.layer,
+                //                         mapFilter: subnode.mapFilter,
+                //                         color: subnode.color,
+                //                         selected: node.layer === selectedLayer
+                //                     });
+                //                 })
+                //             }
+                //         });
+                //     });
+                // }
+                //
+                // treeToLayer(filters);
 
 
                 self.map.on('style.load', function() {
@@ -305,15 +305,15 @@ window.NetaFilter.mapView = {
                         "type": "fill",
                         "source": "mapbox://planemad.6wpgu5qz",
                         "source-layer": "myneta-loksabha",
+                        "filter": ["==","a","a"],
                         "layout": {
-                            "visibility": "false"
+                            "visibility": "visible"
                         },
                         "paint": {
-                            "fill-color": 'white',
-                            "fill-opacity": 0.6
-                        },
-                        "hidden": false
-                    }, 'myneta-loksabha selected');
+                            "fill-color": 'black',
+                            "fill-opacity": 0.5
+                        }
+                    }, 'admin-3-4-boundaries-bg');
 
                     var activeFeature = {};
 
@@ -321,7 +321,7 @@ window.NetaFilter.mapView = {
 
                         // Get feature at mouse pointer
                         var queryResults = self.map.queryRenderedFeatures(e.point, {
-                            layers: ['myneta-baselayer']
+                            layers: ['myneta-loksabha fill']
                         });
 
                         activeFeature = queryResults[0];
@@ -331,31 +331,18 @@ window.NetaFilter.mapView = {
 
                         // Remove tooltip if no results
                         if (!queryResults.length) {
-
+                          $('#map-tooltip').css({
+                              display: 'none'
+                          });
+                          map.setFilter('highlight-feature', ['==', 'PC_NAME2', ""]);
                         }else{
                           tooltip.setFeatures(activeFeature);
+                          $('#map-tooltip').css({
+                              display: 'block'
+                          });
+                          map.setFilter('highlight-feature', ['==', 'myneta Candidate', activeFeature.properties['myneta Candidate']]);
+
                         }
-
-                        try {
-                            // If active feature has changed, highlight it
-                            if (activeFeature.properties['PC_NAME2'] != queryResults[0].properties['PC_NAME2']) {
-                                self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', queryResults[0].properties['PC_NAME2']]);
-                            }
-                        } catch (err) {}
-
-
-
-                        // Show tooltip only if data is found
-                        if (activeFeature) {
-
-                        } else {
-                            // Selected constituency was unselected.
-                            self.map.setLayoutProperty('highlight-feature', 'visibility', 'none');
-                            $('#map-tooltip').css({
-                                display: 'none'
-                            })
-                        }
-
                     });
 
                 });
@@ -419,7 +406,82 @@ window.NetaFilter.mapView.init('education', map);
 // Map ready
 map.on('style.load', function(e) {
 
+  map.addLayer({
+      "id": "myneta-loksabha-points education",
+      "type": "circle",
+      "source": "mapbox://planemad.7hf43eyu",
+      "source-layer": "myneta-loksabha-points",
+      "filter": ["!=","PC_CODE",-1],
+      "paint": {
+          "circle-color": 'hsl(116, 85%, 39%)',
+          "circle-opacity": 0.6,
+          "circle-radius": {
+            "property": "myneta E_1",
+            "stops": [
+              [0, 0],
+              [8, 2],
+              [18, 4],
+              [30, 30],
+            ]
+          }
+      }
+  }, 'myneta-loksabha selected');
 
+  map.addLayer({
+      "id": "myneta-loksabha-points assets",
+      "type": "circle",
+      "source": "mapbox://planemad.7hf43eyu",
+      "source-layer": "myneta-loksabha-points",
+      "filter": ["!=","PC_CODE",-1],
+      "paint": {
+          "circle-color": 'white',
+          "circle-opacity": 0.4,
+          "circle-radius": {
+            "property": "myneta Tot",
+            "stops": [
+              [0,0],
+              [10000,1],
+              [1000000,4],
+              [100000000,10],
+              [10000000000,30]
+            ]
+          }
+      }
+  }, 'myneta-loksabha selected');
+
+  map.addLayer({
+      "id": "myneta-loksabha-points criminal",
+      "type": "circle",
+      "source": "mapbox://planemad.7hf43eyu",
+      "source-layer": "myneta-loksabha-points",
+      "filter": ["!=","PC_CODE",-1],
+      "paint": {
+          "circle-color": '#f37321',
+          "circle-opacity": 0.7,
+          "circle-radius": {
+            "property": "myneta Cri",
+            "stops": [
+              [0,0],
+              [4,8],
+              [30,30]
+            ]
+          }
+      }
+  }, 'myneta-loksabha selected');
+
+ map.addLayer({
+      "id": "myneta-loksabha fill",
+      "type": "fill",
+      "source": "mapbox://planemad.6wpgu5qz",
+      "source-layer": "myneta-loksabha",
+      "layout": {
+          "visibility": "visible"
+      },
+      "paint": {
+          "fill-color": '#888',
+          "fill-opacity": 0.1
+      }
+  }, 'myneta-loksabha selected');
 
 });
 
