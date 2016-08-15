@@ -322,13 +322,10 @@ window.NetaFilter.mapView = {
                             layers: ['myneta-baselayer']
                         });
 
-                        console.log(queryResults)
-
                         try {
                             // If active feature has changed, highlight it
                             if (activeFeature.properties['PC_NAME2'] != queryResults[0].properties['PC_NAME2']) {
                                 self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', queryResults[0].properties['PC_NAME2']]);
-                                console.log(JSON.stringify(queryResults[0].properties))
                             }
                         } catch (err) {}
 
