@@ -1,8 +1,15 @@
 # Netafilter
-A tool to filter our netas using data available from the Indian government. **[netafilter.in](http://folography.github.io/netafilter/)**
+![untitled2](https://cloud.githubusercontent.com/assets/126868/17679646/eb6ca026-6359-11e6-900e-581c9d1365a4.gif)
+A tool to filter our Netas using data available from the Indian government. **[netafilter.in](http://folography.github.io/netafilter/)**
+
+**Features**
+- Get an overview of the background profile of Member of Parliaments in India
+- Explore constituency boundaries and MP affidavit details including educational qualification, criminal cases, assets and political party<br>![untitled2](https://cloud.githubusercontent.com/assets/126868/17679740/659799dc-635a-11e6-9644-298105e36419.gif)
+- Geolocate the current device to find the constituency and MP details
+- Mobile friendly
 
 ### Develop
-Site is built using [Jekyll](http://jekyllrb.com/). 
+Site is built using [Jekyll](http://jekyllrb.com/).
 - Clone the repository
 - `npm install && npm start`
 

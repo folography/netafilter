@@ -1,6 +1,6 @@
 {
   "name": "Netafilter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Info about MPs",
   "main": "js/index.js",
   "scripts": {
@@ -13,14 +13,13 @@
     "url": ""
   },
   "keywords": [
-    "mapbox"
+    "mapbox",
+    "lok sabha"
   ],
   "author": "Arun Ganesh, Shreyas Satish, Aditya Dipankar",
   "license": "ISC",
   "dependencies": {
-    "mapbox": "^0.12.0",
     "merge": "^1.2.0",
-    "mustache": "^2.2.1",
     "watchify": "^3.7.0"
   }
 }
