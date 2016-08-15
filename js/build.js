@@ -800,7 +800,7 @@ var map = new mapboxgl.Map(mapOptions);
 
 // Add map controls
 var geolocate = map.addControl(new mapboxgl.Geolocate({
-    position: 'bottom-right'
+    position: 'bottom-left'
 }));
 map.addControl(new mapboxgl.Navigation());
 
