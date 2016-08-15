@@ -226,6 +226,7 @@ window.NetaFilter.filterView = {
     }
 };
 
+
 // Create the map
 window.NetaFilter.mapView = {
     init: function(filters, selectedLayer) {
@@ -289,7 +290,7 @@ window.NetaFilter.mapView = {
                                 constituency: feature.properties['PC_NAME2'],
                                 state: feature.properties['ST_NAME'],
                                 category: feature.properties['Res'],
-                                party: feature.properties['myneta Party'],
+                                party: feature.properties['myneta Party'].replace(/\(|\)/g,'').replace(/\s+/g, '-'),
                                 cases: feature.properties['myneta Criminal Case'],
                                 qualification: feature.properties['myneta Education'],
                                 assets: (feature.properties['myneta Total Assets'] / 10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
