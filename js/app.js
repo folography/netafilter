@@ -199,7 +199,7 @@ window.NetaFilter.filterModel = [{
 // Create the legend view
 window.NetaFilter.filterView = {
     init: function(selectedLayer) {
-      filters = window.NetaFilter.filterModel;
+        filters = window.NetaFilter.filterModel;
         var self = this;
         this.ractive = new Ractive({
             el: '#netafilters',
@@ -280,7 +280,7 @@ window.NetaFilter.mapView = {
                     // The map tooltip
                     var tooltip = new Ractive({
                         el: '#map-tooltip',
-                        template: '#myneta-template',
+                        template: '#myneta-tooltip',
                         data: {},
                         setFeatures: function(feature) {
                             this.set({
@@ -289,7 +289,7 @@ window.NetaFilter.mapView = {
                                 constituency: feature.properties['PC_NAME2'],
                                 state: feature.properties['ST_NAME'],
                                 category: feature.properties['Res'],
-                                party: feature.properties['myneta Party'].replace(/\(|\)/g,'').replace(/\s+/g, '-').replace(/\./g,''),
+                                party: feature.properties['myneta Party'].replace(/\(|\)/g, '').replace(/\s+/g, '-').replace(/\./g, ''),
                                 cases: feature.properties['myneta Criminal Case'],
                                 qualification: feature.properties['myneta Education'],
                                 assets: (feature.properties['myneta Total Assets'] / 10000000).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' crore',
@@ -316,12 +316,34 @@ window.NetaFilter.mapView = {
 
                     var activeFeature = {};
 
+                    var mapTooltip = new mapboxgl.Popup({
+                        closeButton: false,
+                        closeOnClick: false
+                    });
+
                     self.map.on('mousemove', function(e) {
 
                         // Get feature at mouse pointer
                         var queryResults = self.map.queryRenderedFeatures(e.point, {
                             layers: ['myneta-baselayer']
                         });
+
+                        activeFeature = queryResults[0];
+
+                        // Change cursor on interactive objects
+                        map.getCanvas().style.cursor = (queryResults.length) ? 'pointer' : '';
+
+                        // Remove tooltip if no results
+                        if (!queryResults.length) {
+                            mapTooltip.remove();
+                            return;
+                        }else{
+                          tooltip.setFeatures(activeFeature);
+                          mapTooltip.setLngLat(e.lngLat)
+                              .setHTML($('#map-tooltip').html())
+                              .addTo(map);
+
+                        }
 
                         try {
                             // If active feature has changed, highlight it
@@ -330,16 +352,17 @@ window.NetaFilter.mapView = {
                             }
                         } catch (err) {}
 
-                        activeFeature = queryResults[0];
+
 
                         // Show tooltip only if data is found
                         if (activeFeature) {
-                            tooltip.setFeatures(activeFeature);
-                            $('#map-tooltip').css({
-                                top: e.point.y,
-                                left: e.point.x + 20,
-                                display: 'inline'
-                            })
+
+                            // tooltip.setFeatures(activeFeature);
+                            // $('#map-tooltip').css({
+                            //     top: e.point.y,
+                            //     left: e.point.x + 20,
+                            //     display: 'inline'
+                            // })
                         } else {
                             // Selected constituency was unselected.
                             self.map.setLayoutProperty('highlight-feature', 'visibility', 'none');
