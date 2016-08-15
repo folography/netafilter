@@ -1,0 +1,25 @@
+{
+  "name": "Netafilter",
+  "version": "1.0.0",
+  "description": "Info about MPs",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "npm run build & jekyll serve",
+    "build": "watchify js/index.js -o js/build.js -v",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "mapbox",
+    "lok sabha"
+  ],
+  "author": "Arun Ganesh, Shreyas Satish, Aditya Dipankar",
+  "license": "ISC",
+  "dependencies": {
+    "merge": "^1.2.0",
+    "watchify": "^3.7.0"
+  }
+}

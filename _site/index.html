@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Netafilter Map</title>
+  <meta name="description" content="Indian MP, MLA, Councillor statistics, information and comparisons based on open data from the government. Netafilter can easily filter your polticial candidate based on education, assets, criminal cases, party and constituency from the affidavit information
+">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <link rel="canonical" href="http://netafilter.in/">
+
+  
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.22.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.22.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v0.0.0/mapbox-gl-geocoder.js'></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
+  
+
+  
+
+  <!-- <link href="https://www.mapbox.com/base/latest/base.css" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=devanagari" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=" /css/main.css ">
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.5/redux.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+
+<body class='map'>
+  <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+<!-- Content -->
+
+
+  <div>
+
+  <div id='map' class=''></div>
+
+  <div id='sidebar'>
+
+    <div class='siteTitle'>
+      <a href='http://netafilter.in'>Netafilter</a>
+      <img src='img/info.png' class='infoButton'/>
+    </div>
+
+    <div id='layer-toggle'>
+      <form>
+        <h2>Showing</h2>
+        <!-- <div class='selectionGroup'><input type="radio" name="layer" value="education" id="education" checked><label for="education">Education</label><br></div>
+
+        <div class='selectionGroup'><input type="radio" name="layer" value="all" id="all" checked><label for="all">All</label><br></div>
+        <div class='selectionGroup'><input type="radio" name="layer" value="education" id="education"><label for="education">Education</label><br></div>
+        <div class='selectionGroup'><input type="radio" name="layer" value="assets" id="assets"><label for="assets">Assets</label><br></div>
+        <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div> -->
+        <div class='selectionGroup'>
+          <div class="toggles selectionGroupButton active" data-layer="all">All</div>
+          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points education"><span class='dot' style="background:hsl(116, 85%, 39%)"></span>Education</div>
+          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points assets"><span class='dot' style="background:white"></span>Assets</div>
+          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points criminal"><span class='dot' style="background:#f37321"></span>Criminal Cases</div>
+        </div>
+      </form>
+    </div>
+    <div class='rounded-toggle'>
+      <!-- <a class='active' href='#'>Map</a> -->
+      <!-- <a href='https://github.com/folography/netafilter' target="_blank"><img src='img/github.png' target="_blank" class='contribute'/></a> -->
+    </div>
+
+  </div>
+</div>
+
+<div id='map-tooltip'>
+
+<div id='map-control'>
+  <div id='map-search'>
+  </div>
+
+  </div>
+</div>
+
+<div id='darkBackground'></div>
+<div id='info'>
+  <h2>About NetaFilter</h2>
+  <img class='infoButton infoCloseButton' src='img/close.png'/>
+  <p>Netafilter has been built on top of <a href='http://www.myneta.info' target='_blank'>MyNeta's</a> database which contains data of the educational qualifications, net assests owned and criminal cases, as declared by the Lok Sabha members of the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha.</a></p>
+
+  <div class='lightGreyLine'></div>
+
+  <h2>A quick guide to NetaFilter</h2>
+  <img src='img/helperImage1.png' class='helperImage'/>
+
+  <img src='img/helperImage2.png' class='helperImage'/>
+  <p>Hover over a constituency to view information about the MP of that constituency in the tooltip on bottom-right.</p>
+
+  <p class='helpText' style='margin-top:10px;'>You are empowered to copy, share and improve this project for a better tomorrow <a class='forkMe github button short' href='https://github.com/folography/netafilter' style='margin-left: 7px;'>Contribute &amp; Provide Feedback</a></p>
+</div>
+
+<div id='mapLegend'>
+  <div data-map='legend'>
+
+    <!-- <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3> -->
+
+    
+      <div id="netafilters"></div>
+      <script id='netafilters-template' type='text/ractive'>
+        <form method="GET">
+          {{#filters}}
+            {{>filterlist}}
+          {{/}}
+        </form>
+        {{#partial filterlist}}
+          <fieldset><input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
+          <label  for='{{label}}'>{{label}}</label></fieldset>
+          <dl class="keyline-top space-bottom1">
+            {{# {parent: layer}}}
+              {{#filters}}
+                {{> filternode {parent: parent}}}
+              {{/}}
+            {{/}}
+          </dl>
+        {{/partial}}
+        {{#partial filternode}}
+          <dt>
+            <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
+            <span class='dot' style="background-color:{{color}}"></span>
+            <label  for='{{label}}'>{{label}}</label>
+            {{#if typeof this.filters !== 'undefined'}}
+              {{>filterlist}}
+            {{/if}}
+          </dt>
+        {{/partial}}
+
+      </script>
+    
+  </div>
+</div>
+
+<!-- Escape ractive handlebars from Jekyll parsing -->
+
+<script id='myneta-tooltip' type='text/ractive'>
+{{#if (typeof id === 'undefined') }}
+  <p>
+    Hover over a constituency for details
+  </p>
+  {{else}}
+  <table width=100%>
+
+    <tr>
+      <td colspan=2 style='padding-top: 0px;'>
+        <div class='fl'>
+          <div class='dot micro fl {{party}} party'></div>
+          <div class='candidateName'>{{candidate}}</div>
+          <div class='label colorBlack partyName'>{{party}}</div>
+        </div>
+        <div class='locationGroup'>
+          <img class='icon-location' src='img/location.png'/>
+          <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)" target='_blank'>{{constituency}} ({{state}}) - {{category}}</a></div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <img class='icon' src='img/criminal-cases.png'/>
+        <div class='label'>Criminal Cases</div>
+        <div class='criminalCases value'>{{cases}}</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <img class='icon' src='img/education.png'/>
+        <div class='label'>Educational qualification</div>
+        <div class='education value'>{{qualification}}</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <img class='icon' src='img/assets.png'/>
+        <div class='label'>Net Assets (in Rs)</div>
+        <div class='netAssets value'>{{assets}}</div>
+      </td>
+    </tr>
+
+  </table>
+  {{/if}}
+</script>
+
+
+<link rel="stylesheet" href="js/vendor/nv.d3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/build.js"></script>
+<!-- <script type="text/javascript" src="/js/app.js"></script> -->
+
+<script>
+$( document ).ready(function() {
+$( ".infoButton" ).click(function() {
+  $( "#info" ).toggle();
+  $("#darkBackground").toggle();
+});
+
+$("#darkBackground").click(function(){
+  $( "#info" ).toggle();
+  $("#darkBackground").toggle();
+});
+
+$("#showEducation").click(function(){
+  $(".selectionGroupButton").removeClass('selectionGroupButtonSelected');
+  $("#showEducation").addClass('selectionGroupButtonSelected');
+})
+
+
+
+});
+</script>
+
+</body>
+
+</html>

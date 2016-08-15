@@ -1,0 +1,617 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #36a1ff; }
+
+.fl .label {
+  color: black;
+  font-size: 16px; }
+
+.locationGroup {
+  margin: 0px 20px 5px 10px;
+  float: left;
+  clear: both;
+  width: 100%; }
+
+.background {
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  position: absolute; }
+  .background::after {
+    content: "";
+    background: url(../img/background.jpg) top right;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+
+.siteTitle {
+  font-family: 'Oswald', sans-serif;
+  color: #48abd4;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 6px 10px 8px 10px;
+  letter-spacing: 1.5px;
+  float: left;
+  background: #0d2538;
+  margin: 0px;
+  font-size: 24px; }
+
+.map h1,
+.map h1.fancy {
+  font-size: 1.3em;
+  line-height: 1.1em; }
+.map .tagline {
+  letter-spacing: inherit;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5); }
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
+
+.dark a {
+  color: rgba(255, 255, 255, 0.7); }
+
+#sidebar {
+  background-color: rgba(51, 81, 99, 0.8);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  #sidebar fieldset {
+    margin: 0;
+    cursor: pointer; }
+    #sidebar fieldset input {
+      display: none; }
+    #sidebar fieldset label {
+      margin: 0;
+      display: inline-block;
+      font-size: 14px;
+      cursor: pointer; }
+  #sidebar form dl {
+    cursor: pointer; }
+    #sidebar form dl .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #aaa;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+      float: left;
+      margin: 5px 7px 0 0; }
+    #sidebar form dl .bar {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #aaa;
+      float: left;
+      margin: 5px 7px 0 0; }
+    #sidebar form dl label {
+      cursor: pointer;
+      padding-left: 0.5em; }
+  #sidebar form fieldset :not(:checked) ~ label, #sidebar form fieldset :not(:checked) ~ span {
+    opacity: 0.5; }
+    #sidebar form fieldset :not(:checked) ~ label:hover, #sidebar form fieldset :not(:checked) ~ span:hover {
+      opacity: 0.8; }
+  #sidebar form input[type=checkbox]:not(:checked) {
+    opacity: 0.5; }
+
+@media only screen and (max-width: 620px) {
+  #sidebar {
+    display: none; } }
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+  #map {
+    position: relative; } }
+/* Map tooltip */
+#map-control {
+  position: absolute;
+  right: 0.6em;
+  top: 0.6em; }
+  #map-control #map-search {
+    float: right; }
+
+#map-tooltip {
+  margin-top: 0.6em;
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
+  width: 400px; }
+  #map-tooltip tr:first-child {
+    border-bottom: 1px solid #dedede;
+    background: #fefefe;
+    background: -moz-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #e3e3e3));
+    background: -webkit-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+    background: -o-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+    background: -ms-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+    background: linear-gradient(to bottom, #fefefe 0%, #e3e3e3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e3e3e3', GradientType=0 ); }
+  #map-tooltip td {
+    border: none;
+    padding: 7px 0px; }
+
+/* Hover data */
+.candidateName {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.3em;
+  letter-spacing: -0.3px;
+  padding: 7px 10px 10px 0px; }
+
+.constituencyName {
+  font-size: 14px;
+  color: #3295d4;
+  margin-bottom: 5px;
+  padding-top: 1px;
+  text-decoration: none; }
+  .constituencyName:hover {
+    text-decoration: underline; }
+    .constituencyName:hover:after {
+      content: ">";
+      margin-left: 5px;
+      color: #999;
+      text-decoration: none; }
+
+.partyName {
+  margin-top: -8px; }
+
+.label {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 0.4px;
+  padding-top: 7px; }
+
+.value {
+  font-size: 16px;
+  font-weight: 800; }
+
+.party {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  margin: 10px 15px 15px 10px;
+  text-align: center;
+  line-height: 48px;
+  float: left;
+  border: 1px solid #ccc; }
+
+.party span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal; }
+
+.limiter {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px 40px 20px 40px; }
+
+.fill-navy {
+  background: transparent; }
+
+.infoButton {
+  opacity: 0.2;
+  width: 32px;
+  cursor: pointer;
+  vertical-align: sub; }
+  .infoButton:hover {
+    opacity: 0.7; }
+
+#darkBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  cursor: pointer; }
+  #darkBackground:hover {
+    opacity: 1; }
+
+#info {
+  position: absolute;
+  width: 500px;
+  background-color: white;
+  color: black;
+  left: 50%;
+  padding: 20px;
+  margin-left: -250px;
+  z-index: 1000;
+  display: none;
+  line-height: 28px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 0px 0px 5px 5px; }
+  #info .infoCloseButton {
+    float: right; }
+  #info h2 {
+    float: left;
+    margin: 2px 0px 10px 0px;
+    font-size: 16px; }
+  #info p {
+    float: left;
+    margin: 0px; }
+
+#mapLegend {
+  display: none;
+  position: absolute;
+  width: 240px;
+  background-color: #34414e;
+  overflow: hidden;
+  bottom: 20px;
+  left: 20px; }
+
+.lightGreyLine {
+  background-color: #dedede;
+  height: 1px;
+  width: 100%;
+  display: block;
+  float: left;
+  margin: 10px 0px; }
+
+.icon {
+  height: 36px;
+  float: left;
+  margin: 10px 10px 5px 10px; }
+
+.icon-location {
+  height: 20px;
+  margin-right: 5px;
+  float: left;
+  opacity: 0.5; }
+
+#layer-toggle {
+  margin-top: 9px; }
+  #layer-toggle h2 {
+    vertical-align: bottom;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #0d2538;
+    letter-spacing: 1.2px;
+    float: left;
+    padding: 4px 10px 0px 20px;
+    margin-top: 3px; }
+  #layer-toggle label {
+    padding-left: 5px;
+    vertical-align: bottom;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px; }
+
+.helperImage {
+  width: 460px;
+  opacity: 1;
+  margin-top: 10px; }
+
+.selectionGroup {
+  padding: 0px 10px; }
+
+.selectionGroupButton {
+  float: left;
+  color: rgba(255, 255, 255, 0.6);
+  border: 2px solid transparent;
+  padding: 3px 9px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  letter-spacing: 0.8px; }
+  .selectionGroupButton:hover {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white; }
+  .selectionGroupButton.active {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3); }
+
+.mapboxgl-popup-content {
+  width: 250px; }
+
+.AAP {
+  background-image: url(../img/party-logos/aap.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.BJP {
+  background-image: url(../img/party-logos/bjp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.INC {
+  background-image: url(../img/party-logos/inc.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.SP {
+  background-image: url(../img/party-logos/sp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.JKPDP {
+  background-image: url(../img/party-logos/jkpdp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.SHS {
+  background-image: url(../img/party-logos/shs.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.TRS {
+  background-image: url(../img/party-logos/trs.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.BJD {
+  background-image: url(../img/party-logos/bjd.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.TRS {
+  background-image: url(../img/party-logos/trs.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.TDP {
+  background-image: url(../img/party-logos/tdp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.JDS {
+  background-image: url(../img/party-logos/jd-s.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.AIADMK {
+  background-image: url(../img/party-logos/aiadmk.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.CPIM {
+  background-image: url(../img/party-logos/cpi-m.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.CPI {
+  background-image: url(../img/party-logos/cpi.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.PMK {
+  background-image: url(../img/party-logos/pmk.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.SAD {
+  background-image: url(../img/party-logos/sad.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.INLD {
+  background-image: url(../img/party-logos/inld.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.Apna-Dal {
+  background-image: url(../img/party-logos/apna-dal.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.Rashtriya-Lok-Samta-Party {
+  background-image: url(../img/party-logos/rlsp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.JDU {
+  background-image: url(../img/party-logos/jdu.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.LJP {
+  background-image: url(../img/party-logos/ljp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.RJD {
+  background-image: url(../img/party-logos/rjd.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.NCP {
+  background-image: url(../img/party-logos/ncp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.JMM {
+  background-image: url(../img/party-logos/jmm.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.AITC {
+  background-image: url(../img/party-logos/aitc.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.Yuvajana-Sramika-Rythu-Congress-Party {
+  background-image: url(../img/party-logos/ysr.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.All-India-NR-Congress {
+  background-image: url(../img/party-logos/ainrc.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.RSP {
+  background-image: url(../img/party-logos/rsp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.KCM {
+  background-image: url(../img/party-logos/kcm.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.IUML {
+  background-image: url(../img/party-logos/iuml.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.Swabhimani-Paksha {
+  background-image: url(../img/party-logos/spp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.NPP {
+  background-image: url(../img/party-logos/npp.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.AIUDF {
+  background-image: url(../img/party-logos/aiudf.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.NPF {
+  background-image: url(../img/party-logos/npf.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.SDF {
+  background-image: url(../img/party-logos/sdf.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.colorBlack {
+  color: black; }
+
+.borderBottom {
+  border-bottom: 1px solid #dedede; }
+
+.borderTop {
+  border-top: 1px solid #dedede;
+  padding-top: 4px; }
+
+.contribute {
+  height: 36px;
+  opacity: 0.5;
+  cursor: pointer; }
+  .contribute:hover {
+    opacity: 0.8; }
+
+.rounded-toggle {
+  float: right; }
+
+.helpText {
+  font-size: 13px;
+  border-top: 1px solid #dedede;
+  padding-top: 10px;
+  letter-spacing: 0.4px;
+  line-height: 28px;
+  color: #a9a9a9; }
+
+.forkMe {
+  margin-left: 3px;
+  padding: 1px 5px;
+  background-color: #36a1ff;
+  border-radius: 4px;
+  color: white; }
+  .forkMe:hover {
+    color: #36a1ff;
+    background-color: white;
+    border: 1px solid #36a1ff; }
+
+.toggles .dot {
+  margin-right: 7px;
+  width: 10px;
+  height: 10px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 1px; }
