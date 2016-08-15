@@ -317,11 +317,6 @@ window.NetaFilter.mapView = {
 
                     var activeFeature = {};
 
-                    var mapTooltip = new mapboxgl.Popup({
-                        closeButton: false,
-                        closeOnClick: false
-                    });
-
                     self.map.on('mousemove', function(e) {
 
                         // Get feature at mouse pointer
@@ -336,14 +331,9 @@ window.NetaFilter.mapView = {
 
                         // Remove tooltip if no results
                         if (!queryResults.length) {
-                            mapTooltip.remove();
-                            return;
+
                         }else{
                           tooltip.setFeatures(activeFeature);
-                          mapTooltip.setLngLat(e.lngLat)
-                              .setHTML($('#map-tooltip').html())
-                              .addTo(map);
-
                         }
 
                         try {
@@ -358,12 +348,6 @@ window.NetaFilter.mapView = {
                         // Show tooltip only if data is found
                         if (activeFeature) {
 
-                            // tooltip.setFeatures(activeFeature);
-                            // $('#map-tooltip').css({
-                            //     top: e.point.y,
-                            //     left: e.point.x + 20,
-                            //     display: 'inline'
-                            // })
                         } else {
                             // Selected constituency was unselected.
                             self.map.setLayoutProperty('highlight-feature', 'visibility', 'none');

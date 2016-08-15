@@ -34,10 +34,12 @@ description: Explore candidate information on interactive maps
   </div>
 </div>
 
+<div id='map-tooltip'>
+
 <div id='map-control'>
   <div id='map-search'>
   </div>
-  <div id='map-tooltip'>
+
   </div>
 </div>
 
@@ -89,7 +91,7 @@ description: Explore candidate information on interactive maps
 <!-- Escape ractive handlebars from Jekyll parsing -->
 {% raw %}
 <script id='myneta-tooltip' type='text/ractive'>
-  {{#if (typeof id === 'undefined') }}
+{{#if (typeof id === 'undefined') }}
   <p>
     Select a constituency for details
   </p>
