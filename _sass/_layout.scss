@@ -5,6 +5,7 @@ body{
 }
 a{
   text-decoration: none;
+  color: inherit;
 }
 .background {
   width: 100%;
@@ -23,7 +24,14 @@ a{
     z-index: -1;
   }
 }
-
+.siteTitle{
+  font-family: 'Oswald', sans-serif;
+  color:#48abd4;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 0px 10px;
+  letter-spacing: 1.5px;
+}
 // Page specific overrides
 .map {
   h1,
@@ -52,9 +60,7 @@ a{
 }
 
 #sidebar {
-  background-color: rgba(40, 53, 61, 1);
-  overflow: hidden;
-  background-color: #28353d;
+  background-color: rgba(51, 81, 99,0.7);
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -219,6 +225,9 @@ a{
 .fill-navy {
     background: rgba(0,0,0,0);
 }
+#info-button{
+  float: right;
+}
 #info{
   position: absolute;
   width: 500px;
@@ -255,6 +264,35 @@ a{
   float: left;
 }
 
+#layer-toggle{
+h2{
+  vertical-align: bottom;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #92b6cc;
+  letter-spacing: 1.2px;
+  float: left;
+  padding: 0px 10px 0px 10px;
+  margin-top: 3px;
+}
+label{
+  padding-left: 5px;
+  vertical-align: bottom;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1.2px;
+}
+}
+
+.selectionGroup{
+  float:left;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+}
+
+// Party Logos
+
 .AAP {
   background-image: url(../img/party-logos/aap.png);
   height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
@@ -281,5 +319,101 @@ a{
 }
 .TRS {
   background-image: url(../img/party-logos/trs.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.BJD {
+  background-image: url(../img/party-logos/bjd.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.TRS {
+  background-image: url(../img/party-logos/trs.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.TDP {
+  background-image: url(../img/party-logos/tdp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.JDS {
+  background-image: url(../img/party-logos/jd-s.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.AIADMK {
+  background-image: url(../img/party-logos/aiadmk.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.CPIM {
+  background-image: url(../img/party-logos/cpi-m.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.CPI {
+  background-image: url(../img/party-logos/cpi.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.PMK {
+  background-image: url(../img/party-logos/pmk.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.SAD {
+  background-image: url(../img/party-logos/sad.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.INLD {
+  background-image: url(../img/party-logos/inld.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.Apna-Dal {
+  background-image: url(../img/party-logos/apna-dal.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.Rashtriya-Lok-Samta-Party{
+  background-image: url(../img/party-logos/rlsp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.JDU{
+  background-image: url(../img/party-logos/jdu.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.LJP{
+  background-image: url(../img/party-logos/ljp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.RJD{
+  background-image: url(../img/party-logos/rjd.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.NCP{
+  background-image: url(../img/party-logos/ncp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.JMM{
+  background-image: url(../img/party-logos/jmm.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.AITC{
+  background-image: url(../img/party-logos/aitc.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.Yuvajana-Sramika-Rythu-Congress-Party{
+  background-image: url(../img/party-logos/ysr.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.All-India-NR-Congress{
+  background-image: url(../img/party-logos/ainrc.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.RSP{
+  background-image: url(../img/party-logos/rsp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.KCM{
+  background-image: url(../img/party-logos/kcm.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.IUML{
+  background-image: url(../img/party-logos/iuml.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.Swabhimani-Paksha{
+  background-image: url(../img/party-logos/spp.png);
   height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
 }
