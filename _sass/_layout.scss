@@ -5,6 +5,7 @@ body{
 }
 a{
   text-decoration: none;
+  color: inherit;
 }
 .background {
   width: 100%;
@@ -23,7 +24,14 @@ a{
     z-index: -1;
   }
 }
-
+.siteTitle{
+  font-family: 'Oswald', sans-serif;
+  color:#48abd4;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 0px 10px;
+  letter-spacing: 1.5px;
+}
 // Page specific overrides
 .map {
   h1,
@@ -52,9 +60,7 @@ a{
 }
 
 #sidebar {
-  background-color: rgba(40, 53, 61, 1);
-  overflow: hidden;
-  background-color: #28353d;
+  background-color: rgba(51, 81, 99,0.7);
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -219,6 +225,9 @@ a{
 .fill-navy {
     background: rgba(0,0,0,0);
 }
+#info-button{
+  float: right;
+}
 #info{
   position: absolute;
   width: 500px;
@@ -256,6 +265,35 @@ a{
   float: left;
 }
 
+#layer-toggle{
+h2{
+  vertical-align: bottom;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #92b6cc;
+  letter-spacing: 1.2px;
+  float: left;
+  padding: 0px 10px 0px 10px;
+  margin-top: 3px;
+}
+label{
+  padding-left: 5px;
+  vertical-align: bottom;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1.2px;
+}
+}
+
+.selectionGroup{
+  float:left;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+}
+
+// Party Logos
+
 .AAP {
   background-image: url(../img/party-logos/aap.png);
   height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
@@ -282,5 +320,21 @@ a{
 }
 .TRS {
   background-image: url(../img/party-logos/trs.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.BJD {
+  background-image: url(../img/party-logos/bjd.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.TRS {
+  background-image: url(../img/party-logos/trs.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.TDP {
+  background-image: url(../img/party-logos/tdp.png);
+  height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.JDS {
+  background-image: url(../img/party-logos/jd-s.png);
   height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
 }

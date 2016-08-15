@@ -11,20 +11,19 @@ description: Explore candidate information on interactive maps
 
   <div id='sidebar'>
 
-    <h1><a href='http://netafilter.in'>Netafilter
-        <span>MP Info</span></a>
-    </h1>
+    <h1 class='siteTitle'><a href='http://netafilter.in'>Netafilter</span></a></h1>
 
     <div id='layer-toggle'>
       <form>
-        <input type="radio" name="layer" value="education" id="education" checked><label for="education">Education</label><br>
-        <input type="radio" name="layer" value="assets" id="assets"><label for="assets">Assets</label><br>
-        <input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label>
+        <h2>Showing</h2>
+        <div class='selectionGroup'><input type="radio" name="layer" value="education" id="education" checked><label for="education">Education</label><br></div>
+        <div class='selectionGroup'><input type="radio" name="layer" value="assets" id="assets"><label for="assets">Assets</label><br></div>
+        <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div>
       </form>
     </div>
     <div class='rounded-toggle'>
-      <a class='active' href='#'>Map</a>
-      <button>About</button>
+      <!-- <a class='active' href='#'>Map</a> -->
+      <button id='info-button'>About</button>
     </div>
 
   </div>
@@ -110,7 +109,7 @@ description: Explore candidate information on interactive maps
     <tr>
       <td>
         <img class='icon' src='img/criminal-cases.png'/>
-        <div class='label'>No. of Criminal Cases</div>
+        <div class='label'>Criminal Cases</div>
         <div class='criminalCases value'>{{cases}}</div>
       </td>
       <td>
@@ -126,7 +125,7 @@ description: Explore candidate information on interactive maps
         <div class='label'>Net Assets (in Rs)</div>
         <div class='netAssets value'>{{assets}}</div>
       </td>
-      <td>
+      <td style='display:none;'>
       <img class='icon' src='img/liabilities.png'/>
         <div class='label'>Liabilities (in Rs)</div>
         <div class='liabilities value'>{{liabilities}}</div>
@@ -146,7 +145,7 @@ description: Explore candidate information on interactive maps
 <script type="text/javascript" src="/js/app.js"></script>
 
 <script>
-$( "button" ).click(function() {
+$( "button-info" ).click(function() {
   $( "info" ).toggle();
 });
 </script>
