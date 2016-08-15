@@ -331,8 +331,13 @@ window.NetaFilter.mapView = {
 
                         // Remove tooltip if no results
                         if (!queryResults.length) {
-
+                          $('#map-tooltip').css({
+                              display: 'none'
+                          });
                         }else{
+                          $('#map-tooltip').css({
+                              display: 'block'
+                          });
                           tooltip.setFeatures(activeFeature);
                         }
 
