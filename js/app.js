@@ -312,7 +312,7 @@ window.NetaFilter.mapView = {
                             "fill-opacity": 0.6
                         },
                         "hidden": false
-                    }, 'aeroway_runway');
+                    }, 'myneta-loksabha selected');
 
                     var activeFeature = {};
 
@@ -369,7 +369,7 @@ window.NetaFilter.mapView = {
                 "fill-color": config.color,
                 "fill-opacity": 1.0
             }
-        }, 'aeroway_runway');
+        }, 'myneta-loksabha selected');
     },
     toggleVisibility: function(layer) {
         var status = this.map.getLayoutProperty(layer, 'visibility');
