@@ -113,7 +113,7 @@ description: Explore candidate information on interactive maps
 <script id='myneta-tooltip' type='text/ractive'>
 {{#if (typeof id === 'undefined') }}
   <p>
-    Select a constituency for details
+    Hover over a constituency for details
   </p>
   {{else}}
   <table width=100%>
@@ -161,11 +161,8 @@ description: Explore candidate information on interactive maps
 </script>
 {% endraw %}
 
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="js/vendor/nv.d3.min.js" charset="utf-8"></script>
 <link rel="stylesheet" href="js/vendor/nv.d3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="/js/mapbox-gl-js-common.js"></script>
 <script type="text/javascript" src="/js/build.js"></script>
 <!-- <script type="text/javascript" src="/js/app.js"></script> -->
 

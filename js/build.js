@@ -803,7 +803,7 @@ var geolocate = map.addControl(new mapboxgl.Geolocate({
     position: 'bottom-left'
 }));
 
-// map.addControl(new mapboxgl.Navigation());
+// map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
 
 // Export module
 module.exports = map;
