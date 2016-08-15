@@ -44,7 +44,7 @@ description: Explore candidate information on interactive maps
 <div id='mapLegend'>
   <div data-map='legend'>
 
-    <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3>
+    <!-- <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3> -->
 
     {% raw %}
       <div id="netafilters"></div>
@@ -94,12 +94,14 @@ description: Explore candidate information on interactive maps
     <tr>
       <td colspan=2>
         <div class='dot micro fl {{party}} party'>
-          <span>{{party}}</span>
         </div>
         <div class='fl'>
           <div class='candidateName'>{{candidate}}</div>
-          <img class='icon-location' src='img/location.png'/>
-          <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
+          <div class='label'>{{party}}</div>
+          <div class='locationGroup'>
+            <img class='icon-location' src='img/location.png'/>
+            <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
+          </div>
         </div>
       </td>
       <div class='lightGreyLine'></div>
