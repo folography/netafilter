@@ -2,7 +2,7 @@
 // Requires mapbox-gl.js and jquery
 
 // Dependencies
-var mapboxLayers = require('./layers').layers;
+// var mapboxLayers = require('./layers').layers;
 // var mapboxDataset = require('./dataset');
 
 
