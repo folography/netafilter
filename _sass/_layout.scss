@@ -300,11 +300,24 @@ label{
 }
 
 .selectionGroup{
-  float:left;
   padding: 0px 10px;
   margin-bottom: 10px;
 }
-
+.selectionGroupButton{
+  float: left;
+  color: white;
+  border: 2px solid transparent;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+.selectionGroupButtonSelected{
+  border: 2px solid white;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+.mapboxgl-popup-content{
+  width: 250px;
+}
 // Party Logos
 
 .AAP {

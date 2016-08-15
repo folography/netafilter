@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+
+var fs = require('fs'),
+    path = require('path'),
+    geojsonhint = require('../'),
+    chalk = require('chalk'),
+    table = require('text-table'),
+    concat = require('concat-stream'),
+    argv = require('minimist')(process.argv.slice(2));
+
+if (process.stdin.isTTY && !argv._[0]) {
+    process.stdout.write(fs.readFileSync(path.join(__dirname, '/HELP.md')));
+    process.exit(1);
+}
+
+var filename;
+if (argv._[0]) {
+    filename = argv._[0];
+}
+
+(filename ? fs.createReadStream(filename) : process.stdin).pipe(concat(hint));
+
+/**
+ * Given a word and a count, append an s if count is not one.
+ * @param {string} word A word in its singular form.
+ * @param {int} count A number controlling whether word should be pluralized.
+ * @returns {string} The original word with an s on the end if count is not one.
+ */
+function pluralize(word, count) {
+    return (count === 1 ? word : word + 's');
+}
+
+function hint(input) {
+
+    var options = {
+      noDuplicateMembers: argv.noDuplicateMembers !== 'false'
+    };
+
+    var errors = geojsonhint.hint(input.toString(), options);
+
+    if (!errors || !errors.length) {
+        process.exit(0);
+    }
+
+    var format = argv.f || argv.format || 'pretty';
+
+    if (format === 'json') {
+        if (errors instanceof Error) {
+            console.log(JSON.stringify(errors.toString(), null, 2));
+        } else {
+            console.log(JSON.stringify(errors, null, 2));
+        }
+    } else if (format === 'pretty') {
+        if (errors instanceof Error) {
+            console.log(chalk.red('invalid JSON'));
+            throw errors;
+        }
+        var output = table(errors.map(function(e) {
+          return [
+            e.line + ':',
+            chalk.red(e.message)
+          ];
+        }), {
+          align: ['r', 'l']
+        }) + '\n\n' + errors.length + ' ' + pluralize('error', errors.length);
+        console.log(output);
+    } else if (format === 'compact') {
+        if (errors instanceof Error) {
+            console.log(chalk.red('invalid JSON'));
+            throw errors;
+        }
+        var filePart = filename ? filename + ': ' : '';
+        errors.forEach(function(e) {
+          console.log(filePart + 'line ' + e.line + ' - ' + e.message);
+        });
+    } else {
+        throw new Error('Format unknown');
+    }
+}

@@ -16,9 +16,14 @@ description: Explore candidate information on interactive maps
     <div id='layer-toggle'>
       <form>
         <h2>Showing</h2>
-        <div class='selectionGroup'><input type="radio" name="layer" value="education" id="education" checked><label for="education">Education</label><br></div>
+        <!-- <div class='selectionGroup'><input type="radio" name="layer" value="education" id="education" checked><label for="education">Education</label><br></div>
         <div class='selectionGroup'><input type="radio" name="layer" value="assets" id="assets"><label for="assets">Assets</label><br></div>
-        <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div>
+        <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div> -->
+        <div class='selectionGroup'>
+          <div class="selectionGroupButton">Education</div>
+          <div class="selectionGroupButton">Assets</div>
+          <div class="selectionGroupButton">Criminal Cases</div>
+        </div>
       </form>
     </div>
     <div class='rounded-toggle'>
@@ -107,15 +112,17 @@ description: Explore candidate information on interactive maps
       <div class='lightGreyLine'></div>
     </tr>
 
-
     <tr>
       <td>
         <img class='icon' src='img/criminal-cases.png'/>
         <div class='label'>Criminal Cases</div>
         <div class='criminalCases value'>{{cases}}</div>
       </td>
+    </tr>
+
+    <tr>
       <td>
-      <img class='icon' src='img/education.png'/>
+        <img class='icon' src='img/education.png'/>
         <div class='label'>Educational qualification</div>
         <div class='education value'>{{qualification}}</div>
       </td>
@@ -123,16 +130,19 @@ description: Explore candidate information on interactive maps
 
     <tr>
       <td>
-      <img class='icon' src='img/assets.png'/>
+        <img class='icon' src='img/assets.png'/>
         <div class='label'>Net Assets (in Rs)</div>
         <div class='netAssets value'>{{assets}}</div>
       </td>
-      <td style='display:none;'>
-      <img class='icon' src='img/liabilities.png'/>
-        <div class='label'>Liabilities (in Rs)</div>
-        <div class='liabilities value'>{{liabilities}}</div>
-      </td>
     </tr>
+
+      // <tr style='display:none;'>
+      //   <td>
+      //     <img class='icon' src='img/liabilities.png'/>
+      //     <div class='label'>Liabilities (in Rs)</div>
+      //     <div class='liabilities value'>{{liabilities}}</div>
+      //   </td>
+      // </tr>
 
   </table>
   {{/if}}
