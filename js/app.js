@@ -333,6 +333,7 @@ window.NetaFilter.mapView = {
                           $('#map-tooltip').css({
                               display: 'none'
                           });
+                          self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', ""]);
                         }else{
                           tooltip.setFeatures(activeFeature);
                           $('#map-tooltip').css({
@@ -341,14 +342,14 @@ window.NetaFilter.mapView = {
                           self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', activeFeature.properties['PC_NAME2']]);
 
                         }
-
-                        try {
-                            // If active feature has changed, highlight it
-                            if (activeFeature.properties['PC_NAME2'] != queryResults[0].properties['PC_NAME2']) {
-                                self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', queryResults[0].properties['PC_NAME2']]);
-                            }
-                        } catch (err) {}
-
+                        //
+                        // try {
+                        //     // If active feature has changed, highlight it
+                        //     if (activeFeature.properties['PC_NAME2'] != queryResults[0].properties['PC_NAME2']) {
+                        //         self.map.setFilter('highlight-feature', ['==', 'PC_NAME2', queryResults[0].properties['PC_NAME2']]);
+                        //     }
+                        // } catch (err) {}
+                        //
 
 
                         // Show tooltip only if data is found
