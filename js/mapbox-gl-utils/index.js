@@ -3,7 +3,7 @@
 
 // Dependencies
 var mapboxLayers = require('./layers').layers;
-var mapboxDataset = require('./dataset');
+// var mapboxDataset = require('./dataset');
 
 
 // Toggle visibility of a layer
@@ -214,5 +214,4 @@ function addMapboxLayers(map, layers) {
 // API
 module.exports.addMapboxLayers = addMapboxLayers;
 module.exports.queryLayerFeatures = queryLayerFeatures;
-module.exports.getOverlayFeatures = mapboxDataset.getOverlayFeatures;
 module.exports.createHTML = createHTML;

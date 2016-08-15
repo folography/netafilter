@@ -1,3 +1,6 @@
+// Read map legend options
+var legend = require('./map-legend');
+
 window.NetaFilter = {};
 
 // The interactive map legend model
@@ -195,7 +198,8 @@ window.NetaFilter.filterModel = [{
 
 // Create the legend view
 window.NetaFilter.filterView = {
-    init: function(filters, selectedLayer) {
+    init: function(selectedLayer) {
+      filters = window.NetaFilter.filterModel;
         var self = this;
         this.ractive = new Ractive({
             el: '#netafilters',
@@ -229,16 +233,11 @@ window.NetaFilter.filterView = {
 
 // Create the map
 window.NetaFilter.mapView = {
-    init: function(filters, selectedLayer) {
+    init: function(selectedLayer, map) {
         var self = this;
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
-        self.map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/planemad/cijswl6y7009rcakwxo2nuu7x',
-            hash: true,
-            maxBounds: [[50.3,5.45], [110,39]]
-        });
+        filters = window.NetaFilter.filterModel;
+        self.map = map;
 
         this.ractive = new Ractive({
             data: {
@@ -377,7 +376,3 @@ window.NetaFilter.mapView = {
         this.map.setLayoutProperty(layer, 'visibility', status === 'visible' ? 'none' : 'visible');
     }
 };
-
-// Set the initial map theme to education data
-window.NetaFilter.filterView.init(window.NetaFilter.filterModel, 'education');
-window.NetaFilter.mapView.init(window.NetaFilter.filterModel, 'education');

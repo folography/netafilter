@@ -15,7 +15,7 @@
   "keywords": [
     "mapbox"
   ],
-  "author": "Arun Ganesh, SHreyas Satish, Aditya Dipankar",
+  "author": "Arun Ganesh, Shreyas Satish, Aditya Dipankar",
   "license": "ISC",
   "dependencies": {
     "mapbox": "^0.12.0",

@@ -16,3 +16,5 @@ var legend = [{
     }
   }]
 }]
+
+module.exports = legend;
