@@ -246,34 +246,34 @@ window.NetaFilter.mapView = {
             },
             oninit: function() {
 
-                // Creates map layers using a filter tree
-                var treeToLayer = function(tree) {
-                    var parentLayer;
-                    var isSelected;
-                    tree.forEach(function(node) {
-                        parentLayer = node.layer;
-                        self.map.on('style.load', function() {
-                            self.createLayer({
-                                name: node.layer,
-                                mapFilter: node.mapFilter,
-                                color: node.color,
-                                selected: node.layer === selectedLayer
-                            });
-                            if (typeof node.filters === 'object') {
-                                node.filters.forEach(function(subnode) {
-                                    self.createLayer({
-                                        name: subnode.layer,
-                                        mapFilter: subnode.mapFilter,
-                                        color: subnode.color,
-                                        selected: node.layer === selectedLayer
-                                    });
-                                })
-                            }
-                        });
-                    });
-                }
-
-                treeToLayer(filters);
+                // // Creates map layers using a filter tree
+                // var treeToLayer = function(tree) {
+                //     var parentLayer;
+                //     var isSelected;
+                //     tree.forEach(function(node) {
+                //         parentLayer = node.layer;
+                //         self.map.on('style.load', function() {
+                //             self.createLayer({
+                //                 name: node.layer,
+                //                 mapFilter: node.mapFilter,
+                //                 color: node.color,
+                //                 selected: node.layer === selectedLayer
+                //             });
+                //             if (typeof node.filters === 'object') {
+                //                 node.filters.forEach(function(subnode) {
+                //                     self.createLayer({
+                //                         name: subnode.layer,
+                //                         mapFilter: subnode.mapFilter,
+                //                         color: subnode.color,
+                //                         selected: node.layer === selectedLayer
+                //                     });
+                //                 })
+                //             }
+                //         });
+                //     });
+                // }
+                //
+                // treeToLayer(filters);
 
 
                 self.map.on('style.load', function() {
@@ -310,7 +310,7 @@ window.NetaFilter.mapView = {
                             "visibility": "visible"
                         },
                         "paint": {
-                            "line-color": 'blue',
+                            "line-color": 'black',
                             "line-width": 4
                         }
                     }, 'myneta-loksabha selected');
@@ -321,7 +321,7 @@ window.NetaFilter.mapView = {
 
                         // Get feature at mouse pointer
                         var queryResults = self.map.queryRenderedFeatures(e.point, {
-                            layers: ['myneta-baselayer']
+                            layers: ['myneta-loksabha fill']
                         });
 
                         activeFeature = queryResults[0];
@@ -432,9 +432,10 @@ map.on('style.load', function(e) {
       "type": "circle",
       "source": "mapbox://planemad.7hf43eyu",
       "source-layer": "myneta-loksabha-points",
+      "filter": ["!=","PC_CODE",-1],
       "paint": {
           "circle-color": 'hsl(116, 85%, 39%)',
-          "circle-opacity": 0.9,
+          "circle-opacity": 0.6,
           "circle-radius": {
             "property": "myneta E_1",
             "stops": [
@@ -452,6 +453,7 @@ map.on('style.load', function(e) {
       "type": "circle",
       "source": "mapbox://planemad.7hf43eyu",
       "source-layer": "myneta-loksabha-points",
+      "filter": ["!=","PC_CODE",-1],
       "paint": {
           "circle-color": 'white',
           "circle-opacity": 0.4,
@@ -473,6 +475,7 @@ map.on('style.load', function(e) {
       "type": "circle",
       "source": "mapbox://planemad.7hf43eyu",
       "source-layer": "myneta-loksabha-points",
+      "filter": ["!=","PC_CODE",-1],
       "paint": {
           "circle-color": '#f37321',
           "circle-opacity": 0.7,
@@ -487,7 +490,19 @@ map.on('style.load', function(e) {
       }
   }, 'myneta-loksabha selected');
 
-
+ map.addLayer({
+      "id": "myneta-loksabha fill",
+      "type": "fill",
+      "source": "mapbox://planemad.6wpgu5qz",
+      "source-layer": "myneta-loksabha",
+      "layout": {
+          "visibility": "visible"
+      },
+      "paint": {
+          "fill-color": '#eee',
+          "fill-opacity": 0.1
+      }
+  }, 'myneta-loksabha selected');
 
 });
 
