@@ -15,53 +15,11 @@ description: Explore candidate information on interactive maps
         <span class='tagline'>MP Info</span></a>
     </h1>
 
-
-    <p>Find out about your elected Member of Parliament in the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a>.
-    <a class='icon github' href="https://github.com/folography/visavis/tree/gh-pages/data">view source</a></p>
-
-
     <div class='rounded-toggle space-bottom2'>
       <a class='active' href='#'>Map</a>
-      <a href='about.html'>About</a>
+      <button>About</button>
     </div>
 
-    <div data-map='legend'>
-
-      <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3>
-
-      {% raw %}
-        <div id="netafilters"></div>
-        <script id='netafilters-template' type='text/ractive'>
-          <form method="GET">
-            {{#filters}}
-              {{>filterlist}}
-            {{/}}
-          </form>
-          {{#partial filterlist}}
-            <fieldset><input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
-            <label  for='{{label}}'>{{label}}</label></fieldset>
-            <dl class="keyline-top space-bottom1">
-              {{# {parent: layer}}}
-                {{#filters}}
-                  {{> filternode {parent: parent}}}
-                {{/}}
-              {{/}}
-            </dl>
-          {{/partial}}
-          {{#partial filternode}}
-            <dt>
-              <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
-              <span class='dot' style="background-color:{{color}}"></span>
-              <label  for='{{label}}'>{{label}}</label>
-              {{#if typeof this.filters !== 'undefined'}}
-                {{>filterlist}}
-              {{/if}}
-            </dt>
-          {{/partial}}
-
-        </script>
-      {% endraw %}
-    </div>
   </div>
 </div>
 
@@ -71,6 +29,52 @@ description: Explore candidate information on interactive maps
   <div id='map-tooltip'>
   </div>
 </div>
+
+<div id='info' style='display:none;'>
+  <h2>About NetaFilter</h2>
+  <p>Find out about your elected Member of Parliament in the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a><a class='icon github' href="https://github.com/folography/visavis/tree/gh-pages/data">view source</a></p>
+</div>
+
+<div id='mapLegend'>
+  <div data-map='legend'>
+
+    <h3><a class="active" href="#" data-map-layer='myneta-loksabha' onclick="mapToggle(this)">MP Information</a></h3>
+
+    {% raw %}
+      <div id="netafilters"></div>
+      <script id='netafilters-template' type='text/ractive'>
+        <form method="GET">
+          {{#filters}}
+            {{>filterlist}}
+          {{/}}
+        </form>
+        {{#partial filterlist}}
+          <fieldset><input name='main-filter' id='{{label}}' type="radio" {{#if layer === selectedLayer}}checked{{/if}} on-change="changeFilter:{{layer}},{{mapFilter}}">
+          <label  for='{{label}}'>{{label}}</label></fieldset>
+          <dl class="keyline-top space-bottom1">
+            {{# {parent: layer}}}
+              {{#filters}}
+                {{> filternode {parent: parent}}}
+              {{/}}
+            {{/}}
+          </dl>
+        {{/partial}}
+        {{#partial filternode}}
+          <dt>
+            <input id='{{label}}' type="checkbox" {{#if parent === selectedLayer}}checked{{else}}disabled{{/if}} on-change="changeSubfilter:{{parent}}, {{layer}},{{mapFilter}}">
+            <span class='dot' style="background-color:{{color}}"></span>
+            <label  for='{{label}}'>{{label}}</label>
+            {{#if typeof this.filters !== 'undefined'}}
+              {{>filterlist}}
+            {{/if}}
+          </dt>
+        {{/partial}}
+
+      </script>
+    {% endraw %}
+  </div>
+</div>
+
 <!-- Escape ractive handlebars from Jekyll parsing -->
 {% raw %}
 <script id='myneta-template' type='text/ractive'>
@@ -91,7 +95,9 @@ description: Explore candidate information on interactive maps
           <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
         </div>
       </td>
+      <div class='lightGreyLine'></div>
     </tr>
+
 
     <tr>
       <td>
@@ -126,6 +132,12 @@ description: Explore candidate information on interactive maps
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/mapbox-gl-js-common.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
+
+<script>
+$( "button" ).click(function() {
+  $( "info" ).toggle();
+});
+</script>
 
 <script>
   // Load data
