@@ -226,6 +226,7 @@ window.NetaFilter.filterView = {
     }
 };
 
+
 // Create the map
 window.NetaFilter.mapView = {
     init: function(filters, selectedLayer) {
