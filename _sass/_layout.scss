@@ -514,3 +514,13 @@ label{
 .rounded-toggle{
   float: right;
 }
+.dot {
+  margin-left:2px;
+	width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  display: inline-block;
+}
