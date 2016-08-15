@@ -197,6 +197,7 @@ body{
   margin-right: 15px;
   text-align: center;
   line-height: 48px;
+  float: left;
 }
 .party span {
   display: inline-block;
@@ -233,4 +234,9 @@ body{
   overflow: hidden;
   bottom: 20px;
   left: 20px;
+}
+.lightGreyLine{
+  background-color: #dedede;
+  height: 1px;
+  width: 100%;
 }
