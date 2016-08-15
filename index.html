@@ -49,12 +49,22 @@ description: Explore candidate information on interactive maps
   </div>
 </div>
 
-<div id='darkBackground' class='infoButton'></div>
+<div id='darkBackground'></div>
 <div id='info'>
   <h2>About NetaFilter</h2>
   <img class='infoButton infoCloseButton' src='img/close.png'/>
-  <p>Netafilter has been built on top of <a href='http://www.myneta.info' target='_blank'>MyNeta</a>MyNeta's</a> database which contains data of the educational qualifications, net assests owned and criminal cases filed against the Lok Sabha members in the parliament house. <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a><a class='icon github' href="https://github.com/folography/visavis/tree/gh-pages/data">view source</a></p>
-  <p style='color:#3887be;'>You are empowered to copy, share and improve this project for a better tomorrow <a class='icon github button short' href='https://github.com/folography/netafilter' style='margin-left: 7px;'>Fork me</a></p>
+  <p>Netafilter has been built on top of <a href='http://www.myneta.info' target='_blank'></a>MyNeta's</a> database which contains data of the educational qualifications, net assests owned and criminal cases filed against the Lok Sabha members in the parliament house. <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a><a class='forkMe github button short' href="https://github.com/folography/visavis/tree/gh-pages/data">view source</a></p>
+
+  <div class='lightGreyLine'></div>
+
+  <h2>A quick guide to NetaFilter</h2>
+  <img src='img/helperImage1.png' class='helperImage'/>
+  <p>The visualisation let's you see educational qualifications, criminal cases registared against and net assets declared by candidates at the time of filing their affidavits.</p>
+
+  <img src='img/helperImage2.png' class='helperImage'/>
+  <p>Hover over a constituency to view information about the MP of that constituency in the information box.</p>
+
+  <p class='helpText' style='margin-top:10px;'>You are empowered to copy, share and improve this project for a better tomorrow <a class='forkMe github button short' href='https://github.com/folography/netafilter' style='margin-left: 7px;'>Fork this project on GitHub</a></p>
 </div>
 
 <div id='mapLegend'>
@@ -108,20 +118,20 @@ description: Explore candidate information on interactive maps
   <table width=100%>
 
     <tr>
-      <td colspan=2>
+      <td colspan=2 style='padding-top: 0px;'>
         <div class='fl'>
           <div class='dot micro fl {{party}} party'></div>
           <div class='candidateName'>{{candidate}}</div>
-          <div class='label colorBlack'>{{party}}</div>
+          <div class='label colorBlack partyName'>{{party}}</div>
         </div>
-        <div class='locationGroup borderBottom borderTop'>
+        <div class='locationGroup'>
           <img class='icon-location' src='img/location.png'/>
           <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)" target='_blank'>{{constituency}} ({{state}}) - {{category}}</a></div>
         </div>
       </td>
     </tr>
 
-    <tr class='borderBottom'>
+    <tr>
       <td>
         <img class='icon' src='img/criminal-cases.png'/>
         <div class='label'>Criminal Cases</div>
@@ -130,7 +140,7 @@ description: Explore candidate information on interactive maps
     </tr>
 
     <tr>
-      <td class='borderBottom'>
+      <td>
         <img class='icon' src='img/education.png'/>
         <div class='label'>Educational qualification</div>
         <div class='education value'>{{qualification}}</div>
@@ -138,7 +148,7 @@ description: Explore candidate information on interactive maps
     </tr>
 
     <tr>
-      <td class='borderBottom'>
+      <td>
         <img class='icon' src='img/assets.png'/>
         <div class='label'>Net Assets (in Rs)</div>
         <div class='netAssets value'>{{assets}}</div>
@@ -161,6 +171,11 @@ description: Explore candidate information on interactive maps
 <script>
 $( document ).ready(function() {
 $( ".infoButton" ).click(function() {
+  $( "#info" ).toggle();
+  $("#darkBackground").toggle();
+});
+
+$("#darkBackground").click(function(){
   $( "#info" ).toggle();
   $("#darkBackground").toggle();
 });

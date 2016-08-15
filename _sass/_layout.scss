@@ -14,7 +14,10 @@ a{
   }
 }
 .locationGroup{
-  margin-top: 20px;
+  margin: 0px 20px 5px 10px;
+  float: left;
+  clear: both;
+  width: 100%;
 }
 .background {
   width: 100%;
@@ -174,19 +177,30 @@ a{
 #map-tooltip {
   margin-top: 0.6em;
   position: absolute;
-  bottom:25px;
-  right:5px;
-  background-color: rgba(255,255,255,0.95);
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
-  border-radius: 10px;
-  padding: 5px 12px 3px 12px;
+  bottom:15px;
+  right:15px;
+  background-color: rgba(255,255,255,0.92);
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.8);
+  // padding: 5px 12px 3px 12px;
   width: 400px;
   tr:first-child {
     border-bottom: 1px solid #dedede;
+    background: rgba(254,254,254,1);
+    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(100%, rgba(227,227,227,1)));
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
+    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e3e3e3', GradientType=0 );
+  }
+  tr:second-child {
+
   }
   td {
-    padding: 7px 14px 7px 0;
+    // padding: 5px 0px;
     border: none;
+    padding: 7px 0px;
   }
 }
 
@@ -196,6 +210,7 @@ a{
   font-weight: 800;
   line-height: 1.3em;
   letter-spacing: -0.3px;
+  padding: 7px 10px 10px 0px;
 }
 .constituencyName {
   font-size: 14px;
@@ -214,12 +229,13 @@ a{
   }
 }
 .partyName{
-
+  margin-top: -8px;
 }
 .label {
   font-size: 12px;
   color: #888;
   letter-spacing: 0.4px;
+  padding-top: 7px;
 }
 .value {
   font-size: 16px;
@@ -229,10 +245,11 @@ a{
   width: 50px;
   height: 50px;
   background-color: #eee;
-  margin-right: 15px;
+  margin: 10px 15px 15px 10px;
   text-align: center;
   line-height: 48px;
   float: left;
+  border: 1px solid #ccc;
 }
 .party span {
   display: inline-block;
@@ -253,7 +270,7 @@ a{
   cursor: pointer;
   vertical-align: sub;
   &:hover{
-    opacity:0.8;
+    opacity:0.7;
   }
 }
 #darkBackground{
@@ -264,32 +281,36 @@ a{
   z-index: 999;
   display: none;
   cursor: pointer;
+  &:hover{
+    opacity:1;
+  }
 }
 #info{
   position: absolute;
   width: 500px;
-  height: 400px;
   background-color: white;
   color: black;
   left: 50%;
-  top: 50%;
   padding: 20px;
   margin-left: -250px;
   z-index: 1000;
-  margin-top: -200px;
   display: none;
+  line-height: 28px;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
+  border-radius: 0px 0px 5px 5px;
+  .infoCloseButton{
+    float:right;
+  }
   h2{
     float: left;
+    margin: 2px 0px 10px 0px;
+    font-size: 16px;
   }
   p{
     float: left;
+    margin: 0px;
   }
   img{
-    opacity: 0.4;
-    float: right;
-    &:hover{
-      opacity:0.7;
-    }
   }
 }
 #mapLegend{
@@ -305,11 +326,14 @@ a{
   background-color: #dedede;
   height: 1px;
   width: 100%;
+  display: block;
+  float: left;
+  margin: 10px 0px;
 }
 .icon{
   height: 36px;
   float: left;
-  margin-right: 10px;
+  margin: 10px 10px 5px 10px;
   // opacity: 0.6;
 }
 .icon-location{
@@ -340,7 +364,11 @@ label{
   letter-spacing: 1.2px;
 }
 }
-
+.helperImage{
+  width: 460px;
+  opacity: 1;
+  margin-top: 10px;
+}
 .selectionGroup{
   padding: 0px 10px;
 }
@@ -362,6 +390,7 @@ label{
   padding: 3px 9px;
   border-radius: 20px;
   color: white;
+  background-color: rgba(255,255,255,0.2);
 }
 .mapboxgl-popup-content{
   width: 250px;
@@ -512,4 +541,24 @@ label{
 }
 .rounded-toggle{
   float: right;
+}
+.helpText{
+  font-size: 13px;
+  border-top: 1px solid #dedede;
+  padding-top: 10px;
+  letter-spacing: 0.4px;
+  line-height: 28px;
+  color: #a9a9a9;
+}
+.forkMe{
+  margin-left: 3px;
+  padding: 1px 5px;
+  background-color: #36a1ff;
+  border-radius: 4px;
+  color: white;
+  &:hover{
+    color: #36a1ff;
+    background-color: white;
+    border: 1px solid #36a1ff;
+  }
 }
