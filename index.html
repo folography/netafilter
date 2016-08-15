@@ -11,7 +11,10 @@ description: Explore candidate information on interactive maps
 
   <div id='sidebar'>
 
-    <h1 class='siteTitle'><a href='http://netafilter.in'>Netafilter</span></a></h1>
+    <div class='siteTitle'>
+      <a href='http://netafilter.in'>Netafilter</a>
+      <img src='img/info.png' class='infoButton'/>
+    </div>
 
     <div id='layer-toggle'>
       <form>
@@ -20,15 +23,15 @@ description: Explore candidate information on interactive maps
         <div class='selectionGroup'><input type="radio" name="layer" value="assets" id="assets"><label for="assets">Assets</label><br></div>
         <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div> -->
         <div class='selectionGroup'>
-          <div class="selectionGroupButton">Education</div>
-          <div class="selectionGroupButton">Assets</div>
-          <div class="selectionGroupButton">Criminal Cases</div>
+          <div class="selectionGroupButton selectionGroupButtonSelected" id='showEducation'>Education</div>
+          <div class="selectionGroupButton" id='showAssets'>Assets</div>
+          <div class="selectionGroupButton" id='showCriminalCases'>Criminal Cases</div>
         </div>
       </form>
     </div>
     <div class='rounded-toggle'>
       <!-- <a class='active' href='#'>Map</a> -->
-      <button id='info-button'>About</button>
+      <a href='https://github.com/folography/netafilter' target="_blank"><img src='img/github.png' target="_blank" class='contribute'/></a>
     </div>
 
   </div>
@@ -43,9 +46,12 @@ description: Explore candidate information on interactive maps
   </div>
 </div>
 
-<div id='info' style='display:none;'>
+<div id='darkBackground' class='infoButton'></div>
+<div id='info'>
   <h2>About NetaFilter</h2>
-  <p>Find out about your elected Member of Parliament in the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a><a class='icon github' href="https://github.com/folography/visavis/tree/gh-pages/data">view source</a></p>
+  <img class='infoButton infoCloseButton' src='img/close.png'/>
+  <p>Netafilter has been built on top of <a href='http://www.myneta.info' target='_blank'>MyNeta</a>MyNeta's</a> database which contains data of the educational qualifications, net assests owned and criminal cases filed against the Lok Sabha members in the parliament house. <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a><a class='icon github' href="https://github.com/folography/visavis/tree/gh-pages/data">view source</a></p>
+  <p style='color:#3887be;'>You are empowered to copy, share and improve this project for a better tomorrow <a class='icon github button short' href='https://github.com/folography/netafilter' style='margin-left: 7px;'>Fork me</a></p>
 </div>
 
 <div id='mapLegend'>
@@ -100,21 +106,19 @@ description: Explore candidate information on interactive maps
 
     <tr>
       <td colspan=2>
-        <div class='dot micro fl {{party}} party'>
-        </div>
         <div class='fl'>
+          <div class='dot micro fl {{party}} party'></div>
           <div class='candidateName'>{{candidate}}</div>
-          <div class='label'>{{party}}</div>
-          <div class='locationGroup'>
-            <img class='icon-location' src='img/location.png'/>
-            <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)">{{constituency}} ({{state}}) - {{category}}</a></div>
-          </div>
+          <div class='label colorBlack'>{{party}}</div>
+        </div>
+        <div class='locationGroup borderBottom borderTop'>
+          <img class='icon-location' src='img/location.png'/>
+          <div class='constituencyName'><a href="https://en.wikipedia.org/wiki/{{constituency}}_(Lok_Sabha_constituency)" target='_blank'>{{constituency}} ({{state}}) - {{category}}</a></div>
         </div>
       </td>
-      <div class='lightGreyLine'></div>
     </tr>
 
-    <tr>
+    <tr class='borderBottom'>
       <td>
         <img class='icon' src='img/criminal-cases.png'/>
         <div class='label'>Criminal Cases</div>
@@ -123,7 +127,7 @@ description: Explore candidate information on interactive maps
     </tr>
 
     <tr>
-      <td>
+      <td class='borderBottom'>
         <img class='icon' src='img/education.png'/>
         <div class='label'>Educational qualification</div>
         <div class='education value'>{{qualification}}</div>
@@ -131,20 +135,12 @@ description: Explore candidate information on interactive maps
     </tr>
 
     <tr>
-      <td>
+      <td class='borderBottom'>
         <img class='icon' src='img/assets.png'/>
         <div class='label'>Net Assets (in Rs)</div>
         <div class='netAssets value'>{{assets}}</div>
       </td>
     </tr>
-
-      // <tr style='display:none;'>
-      //   <td>
-      //     <img class='icon' src='img/liabilities.png'/>
-      //     <div class='label'>Liabilities (in Rs)</div>
-      //     <div class='liabilities value'>{{liabilities}}</div>
-      //   </td>
-      // </tr>
 
   </table>
   {{/if}}
@@ -160,7 +156,26 @@ description: Explore candidate information on interactive maps
 <!-- <script type="text/javascript" src="/js/app.js"></script> -->
 
 <script>
-$( "button-info" ).click(function() {
-  $( "info" ).toggle();
+$( document ).ready(function() {
+$( ".infoButton" ).click(function() {
+  $( "#info" ).toggle();
+  $("#darkBackground").toggle();
+});
+
+$("#showEducation").click(function(){
+  $(".selectionGroupButton").removeClass('selectionGroupButtonSelected');
+  $("#showEducation").addClass('selectionGroupButtonSelected');
+})
+
+$("#showAssets").click(function(){
+  $(".selectionGroupButton").removeClass('selectionGroupButtonSelected');
+  $("#showAssets").addClass('selectionGroupButtonSelected');
+})
+
+$("#showCriminalCases").click(function(){
+  $(".selectionGroupButton").removeClass('selectionGroupButtonSelected');
+  $("#showCriminalCases").addClass('selectionGroupButtonSelected');
+})
+
 });
 </script>

@@ -10,6 +10,7 @@ a{
 .fl{
   .label{
       color:black;
+      font-size: 16px;
   }
 }
 .locationGroup{
@@ -34,14 +35,15 @@ a{
 }
 .siteTitle{
   font-family: 'Oswald', sans-serif;
-  color:#48abd4;
+  color: #48abd4;
   text-transform: uppercase;
   font-weight: 400;
-  padding: 14px 10px;
+  padding: 6px 10px 8px 10px;
   letter-spacing: 1.5px;
   float: left;
   background: #0d2538;
   margin: 0px;
+  font-size: 24px;
 }
 // Page specific overrides
 .map {
@@ -177,8 +179,8 @@ a{
   background-color: rgba(255,255,255,0.95);
   box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
   border-radius: 10px;
-  padding: 7px 12px 3px 12px;
-  width: 450px;
+  padding: 5px 12px 3px 12px;
+  width: 400px;
   tr:first-child {
     border-bottom: 1px solid #dedede;
   }
@@ -197,11 +199,19 @@ a{
 }
 .constituencyName {
   font-size: 14px;
-  color: #666;
+  color: #3295d4;
   margin-bottom: 5px;
-  padding-bottom: 5px;
   padding-top: 1px;
   text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+    &:after{
+      content: ">";
+      margin-left: 5px;
+      color: #999;
+      text-decoration: none;
+    }
+  }
 }
 .partyName{
 
@@ -237,19 +247,50 @@ a{
 .fill-navy {
     background: rgba(0,0,0,0);
 }
-#info-button{
-  float: right;
+.infoButton{
+  opacity: 0.2;
+  width: 32px;
+  cursor: pointer;
+  vertical-align: sub;
+  &:hover{
+    opacity:0.8;
+  }
+}
+#darkBackground{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+  cursor: pointer;
 }
 #info{
   position: absolute;
   width: 500px;
-  height:400px;
+  height: 400px;
   background-color: white;
   color: black;
-  left: 0;
-  top: 90px;
+  left: 50%;
+  top: 50%;
   padding: 20px;
+  margin-left: -250px;
+  z-index: 1000;
+  margin-top: -200px;
   display: none;
+  h2{
+    float: left;
+  }
+  p{
+    float: left;
+  }
+  img{
+    opacity: 0.4;
+    float: right;
+    &:hover{
+      opacity:0.7;
+    }
+  }
 }
 #mapLegend{
   position: absolute;
@@ -268,16 +309,17 @@ a{
   height: 36px;
   float: left;
   margin-right: 10px;
-  opacity: 0.6;
+  // opacity: 0.6;
 }
 .icon-location{
   height: 20px;
   margin-right: 5px;
   float: left;
+  opacity: 0.5;
 }
 
 #layer-toggle{
-  margin-top: 12px;
+  margin-top: 9px;
 h2{
   vertical-align: bottom;
   font-size: 14px;
@@ -285,7 +327,7 @@ h2{
   color: #92b6cc;
   letter-spacing: 1.2px;
   float: left;
-  padding: 0px 10px 0px 10px;
+  padding: 4px 10px 0px 20px;
   margin-top: 3px;
 }
 label{
@@ -300,19 +342,25 @@ label{
 
 .selectionGroup{
   padding: 0px 10px;
-  margin-bottom: 10px;
 }
 .selectionGroupButton{
   float: left;
-  color: white;
+  color: rgba(255,255,255,0.6);
   border: 2px solid transparent;
   padding: 3px 9px;
-  border-radius: 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  &:hover{
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+  }
 }
 .selectionGroupButtonSelected{
-  border: 2px solid white;
+  border: 2px solid rgba(255,255,255,0.6);
   padding: 3px 9px;
-  border-radius: 4px;
+  border-radius: 20px;
+  color: white;
 }
 .mapboxgl-popup-content{
   width: 250px;
@@ -442,4 +490,25 @@ label{
 .Swabhimani-Paksha{
   background-image: url(../img/party-logos/spp.png);
   height: 50px; width: 50px; background-repeat: no-repeat; background-size: contain;
+}
+.colorBlack{
+  color:black;
+}
+.borderBottom{
+  border-bottom:1px solid #dedede;
+}
+.borderTop{
+  border-top:1px solid #dedede;
+  padding-top: 4px;
+}
+.contribute{
+  height: 36px;
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+.rounded-toggle{
+  float: right;
 }
