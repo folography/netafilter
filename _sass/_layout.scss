@@ -356,13 +356,14 @@ label{
     border: 2px solid rgba(255,255,255,0.3);
     color: white;
   }
+  &.active{
+    border: 2px solid rgba(255,255,255,0.6);
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: white;
+  }
 }
-.selectionGroupButtonSelected{
-  border: 2px solid rgba(255,255,255,0.6);
-  padding: 3px 9px;
-  border-radius: 20px;
-  color: white;
-}
+
 .mapboxgl-popup-content{
   width: 250px;
 }
