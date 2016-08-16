@@ -22,14 +22,14 @@
     }
     tr:nth-child(2){
       width: auto;
-      margin-left: 5px;
+      margin-left: 0px;
       height: 57px;
-      margin-right: 12px;
+      margin-right: 6px;
     }
     tr:nth-child(3), tr:nth-child(4){
       height: 50px;
       width: auto;
-      margin-right: 12px;
+      margin-right: 6px;
     }
     tr {
       float: left;
@@ -44,25 +44,22 @@
     .value{
       float: left;
       font-size: 13px;
-      margin: 19px 0px 0px 6px;
+      margin: 19px 0px 0px 4px;
+      letter-spacing: -0.3px;
     }
-
     .candidateName{
       float: left;
       font-size: 18px;
     }
-
     .fl{
       float: left;
       .label{
         font-size: 13px;
       }
     }
-
     .icon{
       margin: 10px auto 5px auto;
     }
-
     .titleText{
       display: none;
     }
@@ -155,6 +152,7 @@
     .emptyTooltip{
       width: 1000%;
       padding: 0px 0px 0px 10px;
+      font-size: 13px;
     }
     .hoverORTap-Hover{
       display: none;
@@ -164,5 +162,8 @@
     }
     .helpText{
       color:ddd;
+    }
+    .breakText{
+      max-width: 80px;
     }
 }
