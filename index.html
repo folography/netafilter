@@ -12,7 +12,7 @@ description: Explore candidate information on interactive maps
   <div id='sidebar'>
 
     <div class='siteTitle'>
-      <a href='http://netafilter.in'>Netafilter</a>
+      <a href='http://netafilter.in' class='NFLogo'>Netafilter</a>
       <img src='img/info.png' class='infoButton'/>
     </div>
 
@@ -27,9 +27,9 @@ description: Explore candidate information on interactive maps
         <div class='selectionGroup'><input type="radio" name="layer" value="criminal-cases" id="criminal-cases"><label for="criminal-cases">Criminal Cases</label></div> -->
         <div class='selectionGroup'>
           <div class="toggles selectionGroupButton active" data-layer="all">All</div>
-          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points education"><span class='dot' style="background:hsl(116, 85%, 39%)"></span>Education</div>
-          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points assets"><span class='dot' style="background:white"></span>Assets</div>
-          <div class="toggles selectionGroupButton" data-layer="myneta-loksabha-points criminal"><span class='dot' style="background:#f37321"></span>Criminal Cases</div>
+          <div class="toggles selectionGroupButton selectionGroupButtonEducation smallTransparent" data-layer="myneta-loksabha-points education"><span class='dot' style="background:hsl(116, 85%, 39%)"></span>Education</div>
+          <div class="toggles selectionGroupButton selectionGroupButtonAssets smallTransparent" data-layer="myneta-loksabha-points assets"><span class='dot' style="background:white"></span>Assets</div>
+          <div class="toggles selectionGroupButton selectionGroupButtonCriminalCases smallTransparent" data-layer="myneta-loksabha-points criminal"><span class='dot' style="background:#f37321"></span>Criminal Cases</div>
         </div>
       </form>
     </div>
@@ -54,7 +54,7 @@ description: Explore candidate information on interactive maps
 <div id='info'>
   <h2>About NetaFilter</h2>
   <img class='infoButton infoCloseButton' src='img/close.png'/>
-  <p>Netafilter has been built on top of <a href='http://www.myneta.info' target='_blank'>MyNeta's</a> database which contains data of the educational qualifications, net assests owned and criminal cases, as declared by the Lok Sabha members of the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha.</a></p>
+  <p style='float:left'>Netafilter has been built on top of <a href='http://www.myneta.info' target='_blank'>MyNeta's</a> database which contains data of the educational qualifications, net assests owned and criminal cases, as declared by the Lok Sabha members of the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha.</a></p>
 
   <div class='lightGreyLine'></div>
 
@@ -64,7 +64,9 @@ description: Explore candidate information on interactive maps
   <img src='img/helperImage2.png' class='helperImage'/>
   <p>Hover over a constituency to view information about the MP of that constituency in the tooltip on bottom-right. Larger circles represent a larger value of each field of data.</p>
 
-  <p class='helpText' style='margin-top:10px;'>You are empowered to copy, share and improve this project for a better tomorrow <a class='forkMe github button short' href='https://github.com/folography/netafilter' style='margin-left: 7px;'>Contribute &amp; Provide Feedback</a></p>
+  <p class='helpText' style='margin-top:10px;'>You are empowered to copy, share and improve this project for a better tomorrow <a class='forkMe github button short' href='https://github.com/folography/netafilter'>Contribute &amp; Provide Feedback</a></p>
+  <img class='infoButton infoCloseButton hideBig' src='img/close.png'/>
+
 </div>
 
 <div id='mapLegend'>
@@ -111,8 +113,8 @@ description: Explore candidate information on interactive maps
 {% raw %}
 <script id='myneta-tooltip' type='text/ractive'>
 {{#if (typeof id === 'undefined') }}
-  <p>
-    Hover over a constituency for details
+  <p class='emptyTooltip'>
+    <span class='hoverORTap-Hover'>Hover over</span><span class='hoverORTap-Tap'>Tap on</span> a constituency for details
   </p>
   {{else}}
   <table width=100%>
@@ -134,7 +136,7 @@ description: Explore candidate information on interactive maps
     <tr>
       <td>
         <img class='icon' src='img/criminal-cases.png'/>
-        <div class='label'>Criminal Cases</div>
+        <div class='label titleText'>Criminal Cases</div>
         <div class='criminalCases value'>{{cases}}</div>
       </td>
     </tr>
@@ -142,7 +144,7 @@ description: Explore candidate information on interactive maps
     <tr>
       <td>
         <img class='icon' src='img/education.png'/>
-        <div class='label'>Educational qualification</div>
+        <div class='label titleText'>Educational qualification</div>
         <div class='education value'>{{qualification}}</div>
       </td>
     </tr>
@@ -150,7 +152,7 @@ description: Explore candidate information on interactive maps
     <tr>
       <td>
         <img class='icon' src='img/assets.png'/>
-        <div class='label'>Net Assets (in Rs)</div>
+        <div class='label titleText'>Net Assets (in Rs)</div>
         <div class='netAssets value'>{{assets}}</div>
       </td>
     </tr>

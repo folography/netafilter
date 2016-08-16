@@ -71,6 +71,7 @@ map.on('style.load', function(e) {
             "property": "myneta Cri",
             "stops": [
               [0,0],
+              [1,2],
               [4,8],
               [30,30]
             ]

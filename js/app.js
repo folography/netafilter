@@ -277,7 +277,7 @@ window.NetaFilter.mapView = {
 
                 self.map.on('style.load', function() {
 
-                    // The map tooltip
+                    // The map tooltip 
                     var tooltip = new Ractive({
                         el: '#map-tooltip',
                         template: '#myneta-tooltip',
@@ -304,7 +304,7 @@ window.NetaFilter.mapView = {
                         "type": "fill",
                         "source": "mapbox://planemad.6wpgu5qz",
                         "source-layer": "myneta-loksabha",
-                        "filter": ["==","a","a"],
+                        "filter": ["==", "a", "a"],
                         "layout": {
                             "visibility": "visible"
                         },
@@ -314,7 +314,8 @@ window.NetaFilter.mapView = {
                         }
                     }, 'admin-3-4-boundaries-bg');
 
-                    var activeFeature = {};
+                    var hoverFeature = {};
+                    var clickedFeature = undefined;
 
                     self.map.on('mousemove', function(e) {
 
@@ -323,25 +324,50 @@ window.NetaFilter.mapView = {
                             layers: ['myneta-loksabha fill']
                         });
 
-                        activeFeature = queryResults[0];
+                        hoverFeature = queryResults[0];
+
 
                         // Change cursor on interactive objects
                         map.getCanvas().style.cursor = (queryResults.length) ? 'pointer' : '';
 
-                        // Remove tooltip if no results
-                        if (!queryResults.length) {
-                          $('#map-tooltip').css({
-                              display: 'none'
-                          });
-                          map.setFilter('highlight-feature', ['==', 'PC_NAME2', ""]);
+                        // If nothing has been clicked set the tooltip to hovered elements
+                        if (typeof clickedFeature == "undefined"){
+                          // Set tooltip
+                          if (queryResults.length) {
+                            tooltip.setFeatures(hoverFeature);
+                            $('#map-tooltip').css({
+                                display: 'block'
+                            });
+                            map.setFilter('highlight-feature', ['==', 'myneta Candidate', hoverFeature.properties['myneta Candidate']]);
+
+
+                          } else {
+
+                              $('#map-tooltip').css({
+                                  display: 'none'
+                              });
+                              map.setFilter('highlight-feature', ['==', 'PC_NAME2', ""]);
+                          }
+
                         }else{
-                          tooltip.setFeatures(activeFeature);
+                          tooltip.setFeatures(clickedFeature);
                           $('#map-tooltip').css({
                               display: 'block'
                           });
-                          map.setFilter('highlight-feature', ['==', 'myneta Candidate', activeFeature.properties['myneta Candidate']]);
-
+                          map.setFilter('highlight-feature', ['==', 'myneta Candidate', clickedFeature.properties['myneta Candidate']]);
                         }
+
+
+                    });
+
+                    //Unstick tooltip if one is already selected
+                    self.map.on('click', function(e) {
+                      if(typeof clickedFeature !== "undefined"){
+                        clickedFeature = undefined;
+                        console.log(clickedFeature);
+                      }else{
+                        clickedFeature = hoverFeature;
+                      }
                     });
 
                 });

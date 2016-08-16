@@ -151,7 +151,6 @@ a{
 // Hide sidebar on mobile
 @media only screen and (max-width: 620px) {
   #sidebar {
-    display: none;
   }
 }
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
@@ -591,4 +590,16 @@ label{
 	border-radius: 50px;
   display: inline-block;
   margin-bottom: 1px;
+}
+.hideBig{
+  display: none;
+}
+.emptyTooltip{
+  padding-left: 10px;
+}
+.hoverORTap-Hover{
+  display: inline;
+}
+.hoverORTap-Tap{
+  display: none;
 }
