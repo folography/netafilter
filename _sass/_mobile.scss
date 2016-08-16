@@ -78,6 +78,13 @@
       border-radius: 0px;
       p{
         float: none;
+        font-size: 13px;
+        line-height: 22px;
+        letter-spacing: 0.3px;
+        color: #676767;
+      }
+      h2{
+        font-size: 13px;
       }
     }
     .helperImage{
@@ -85,8 +92,8 @@
     }
     .forkMe{
       display: inherit;
-      padding: 0px 0px 0px 10px;
-      margin: 6px 0px 0px 0px;
+      padding: 5px 0px 5px 10px;
+      margin: 10px 0px 0px 0px;
     }
     .hideBig{
       display: block;
@@ -128,15 +135,15 @@
     .selectionGroup{
       .selectionGroupButtonEducation{
         background-image: url(../img/education-button.png);
-        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;
+        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;background-position: 50%;
       }
       .selectionGroupButtonAssets{
         background-image: url(../img/assets-button.png);
-        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;
+        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;background-position: 50%;
       }
       .selectionGroupButtonCriminalCases{
         background-image: url(../img/criminal-cases-button.png);
-        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;
+        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;background-position: 50%;
       }
     }
     .toggles .dot{
@@ -154,5 +161,8 @@
     }
     .hoverORTap-Tap{
       display: inline;
+    }
+    .helpText{
+      color:ddd;
     }
 }
