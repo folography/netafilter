@@ -278,7 +278,7 @@ window.NetaFilter.mapView = {
 
                 self.map.on('style.load', function() {
 
-                    // The map tooltip
+                    // The map tooltip 
                     var tooltip = new Ractive({
                         el: '#map-tooltip',
                         template: '#myneta-tooltip',
