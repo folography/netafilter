@@ -14,9 +14,9 @@ var mapOptions = Merge({
 var map = new mapboxgl.Map(mapOptions);
 
 // Add map controls
-var geolocate = map.addControl(new mapboxgl.Geolocate({
-    position: 'bottom-left'
-}));
+// var geolocate = map.addControl(new mapboxgl.Geolocate({
+//     position: 'bottom-left'
+// }));
 
 // map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
 
