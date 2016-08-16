@@ -69,4 +69,90 @@
     .constituencyName{
       font-size: 13px;
     }
+    #info{
+      width: auto;
+      position: relative;
+      left: 0px;
+      margin: 0px;
+      box-shadow: none;
+      border-radius: 0px;
+      p{
+        float: none;
+      }
+    }
+    .helperImage{
+      width: 100%;
+    }
+    .forkMe{
+      display: inherit;
+      padding: 0px 0px 0px 10px;
+      margin: 6px 0px 0px 0px;
+    }
+    .hideBig{
+      display: block;
+      margin: 20px 0px;
+    }
+    .siteTitle{
+      float: right;
+      a{
+        display: none;
+      }
+    }
+    #layer-toggle{
+      h2{
+        display: none;
+      }
+    }
+    .selectionGroupButton{
+      float: left;
+      color: rgba(255,255,255,0.6);
+      border: none;
+      padding: 3px 9px;
+      border-radius: 0px;
+      margin-right: 20px;
+      letter-spacing: 0.8px;
+      opacity:0.5;
+      &:hover{
+        border: 0px;
+        color: white;
+      }
+      &.active{
+        border: none;
+        padding: 3px 9px;
+        opacity: 1;
+        border-radius: 0px;
+        color: white;
+        background-color: transparent;
+      }
+    }
+    .selectionGroup{
+      .selectionGroupButtonEducation{
+        background-image: url(../img/education-button.png);
+        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;
+      }
+      .selectionGroupButtonAssets{
+        background-image: url(../img/assets-button.png);
+        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;
+      }
+      .selectionGroupButtonCriminalCases{
+        background-image: url(../img/criminal-cases-button.png);
+        height: 28px;width: 28px;background-size: contain;background-repeat: no-repeat;
+      }
+    }
+    .toggles .dot{
+      display: none;
+    }
+    .smallTransparent{
+      font-size: 0px;
+    }
+    .emptyTooltip{
+      width: 1000%;
+      padding: 0px 0px 0px 10px;
+    }
+    .hoverORTap-Hover{
+      display: none;
+    }
+    .hoverORTap-Tap{
+      display: inline;
+    }
 }
