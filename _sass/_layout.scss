@@ -14,10 +14,17 @@ a{
   }
 }
 .locationGroup{
-  margin: 0px 20px 5px 10px;
-  float: left;
-  clear: both;
-  width: 100%;
+  margin: 0px 0px 4px 0px;
+  padding: 4px 2px 2px 9px;
+  border-bottom: 1px solid #dedede;
+  background: #fefefe;
+  background: -moz-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #e3e3e3));
+  background: -webkit-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+  background: -o-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+  background: -ms-linear-gradient(top, #fefefe 0%, #e3e3e3 100%);
+  background: linear-gradient(to bottom, #fefefe 0%, #e3e3e3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e3e3e3', GradientType=0 );
 }
 .background {
   width: 100%;
@@ -40,7 +47,7 @@ a{
   font-family: 'Oswald', sans-serif;
   color: #48abd4;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 300;
   padding: 6px 10px 8px 10px;
   letter-spacing: 1.5px;
   float: left;
@@ -183,15 +190,6 @@ a{
   // padding: 5px 12px 3px 12px;
   width: 400px;
   tr:first-child {
-    border-bottom: 1px solid #dedede;
-    background: rgba(254,254,254,1);
-    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,254,254,1)), color-stop(100%, rgba(227,227,227,1)));
-    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
-    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
-    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
-    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%, rgba(227,227,227,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e3e3e3', GradientType=0 );
   }
   tr:second-child {
 
@@ -199,7 +197,7 @@ a{
   td {
     // padding: 5px 0px;
     border: none;
-    padding: 7px 0px;
+    padding: 0px 0px 5px 0px;
   }
 }
 
@@ -209,7 +207,7 @@ a{
   font-weight: 800;
   line-height: 1.3em;
   letter-spacing: -0.3px;
-  padding: 7px 10px 10px 0px;
+  padding: 8px 10px 4px 0px;
 }
 .constituencyName {
   font-size: 14px;
@@ -229,6 +227,7 @@ a{
 }
 .partyName{
   margin-top: -8px;
+  margin-left: 72px;
 }
 .label {
   font-size: 12px;
@@ -241,14 +240,10 @@ a{
   font-weight: 800;
 }
 .party {
-  width: 50px;
-  height: 50px;
   background-color: #eee;
-  margin: 10px 15px 15px 10px;
-  text-align: center;
+  margin: 10px 12px 3px 10px;
   line-height: 48px;
   float: left;
-  border: 1px solid #ccc;
 }
 .party span {
   display: inline-block;
