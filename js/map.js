@@ -7,19 +7,22 @@ var Merge = require('merge');
 // Extend map creation options
 // https://www.mapbox.com/mapbox-gl-js/api/#Map
 var mapOptions = Merge({
-    hash: true
+  hash: true
 }, Config.map);
 
 // Inititalize the map
 var map = new mapboxgl.Map(mapOptions);
 
 // Add map controls
-// var geolocate = map.addControl(new mapboxgl.Geolocate({
-//     position: 'bottom-left'
-// }));
+map.addControl(new MapboxGeocoder({accessToken: mapboxgl.accessToken, country: 'IN'}));
 
-// map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
-
+// Add geolocate control to the map.
+map.addControl(new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true
+}));
 
 // Export module
 module.exports = map;
